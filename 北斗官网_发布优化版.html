@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>北斗智能 · 空间智能体 | 值得信赖的行业 AI 赋能专家</title>
-<meta name="description" content="北斗聚焦空间智能体与行业 AI 员工，面向智慧交通、公共安全、智慧园区物业、公共服务等场景，提供可落地的主动式空间运营智能服务。">
+<meta name="description" content="北斗聚焦空间智能体与行业 AI 员工，面向智慧交通、公共安全、智慧园区物业、公共服务等场景，提供可落地的主动式空间运营智能服务">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b16">
 <meta property="og:title" content="北斗智能 · 空间智能体">
-<meta property="og:description" content="面向物理空间运营的 AI 生产力：感知、推理、决策、执行与持续进化。">
+<meta property="og:description" content="面向物理空间运营的 AI 生产力：感知、推理、决策、执行与持续进化">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -576,7 +576,7 @@ nav .wrap{max-width:none}
 .nav-links{gap:31px}
 .nav-links a{
   color:#aeb9d2;
-  font-size:15px;
+  font-size:14px;
   font-weight:600;
 }
 .nav-links a.active,.nav-links a:hover{color:#fff}
@@ -663,7 +663,7 @@ nav .wrap{max-width:none}
 }
 #page-home .hero-cta .btn{
   min-width:154px;
-  height:52px;
+  height:42px;
   justify-content:center;
 }
 #page-home .engine{
@@ -1054,7 +1054,7 @@ footer,.metrics{
     rgba(8,19,43,.82);
   box-shadow:
     inset 0 0 34px rgba(139,204,255,.42),
-    inset 0 1px 0 rgba(255,255,255,.18),
+    inset 0 1px 0 rgba(255,255,255,.10),
     0 0 0 1px rgba(151,211,255,.42),
     0 0 44px rgba(48,128,255,.56);
 }
@@ -1149,12 +1149,1614 @@ footer,.metrics{
   }
 }
 
+/* ===== BAAI-inspired final visual layer: layout and motion only, content unchanged ===== */
+:root{
+  --bg:#080c13;
+  --bg-2:#0b111b;
+  --panel:rgba(12,18,29,.68);
+  --panel-2:rgba(15,24,39,.72);
+  --line:rgba(136,176,230,.14);
+  --line-2:rgba(112,184,255,.34);
+  --ink:#f7f9ff;
+  --ink-soft:#bdc7d8;
+  --ink-dim:#77849a;
+  --blue:#196fff;
+  --blue-2:#77b7ff;
+  --cyan:#52e5ff;
+  --glow:rgba(31,118,255,.64);
+  --glow-cy:rgba(82,229,255,.34);
+  --maxw:1240px;
+}
+html{background:#080c13}
+body{
+  background:
+    linear-gradient(180deg,#070b12 0%,#0a1019 48%,#070a11 100%);
+  color:var(--ink);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(118deg,transparent 0 18%,rgba(38,111,255,.14) 24%,rgba(78,226,255,.18) 25.5%,rgba(25,111,255,.10) 27%,transparent 36%),
+    linear-gradient(292deg,transparent 0 58%,rgba(32,95,221,.13) 65%,rgba(78,226,255,.12) 66.5%,transparent 74%),
+    linear-gradient(180deg,rgba(5,9,18,.2),rgba(7,12,21,.76));
+  opacity:.95;
+  animation:bgDrift 18s ease-in-out infinite alternate;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(91,153,255,.045) 1px,transparent 1px),
+    linear-gradient(rgba(91,153,255,.04) 1px,transparent 1px);
+  background-size:92px 92px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.62),transparent 72%);
+  opacity:.55;
+}
+@keyframes bgDrift{
+  from{background-position:0 0,0 0,0 0}
+  to{background-position:0 46px,0 -38px,0 0}
+}
+.ambient{display:none!important}
+.grid-bg{
+  opacity:.32;
+  background-image:
+    linear-gradient(rgba(120,176,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(120,176,255,.045) 1px,transparent 1px);
+  background-size:96px 96px;
+  mask-image:linear-gradient(#000 0%,rgba(0,0,0,.8) 40%,transparent 84%);
+}
+.wrap{max-width:var(--maxw)}
+nav{
+  top:0;
+  left:0;
+  right:0;
+  border:0;
+  border-radius:0;
+  background:
+    linear-gradient(90deg,rgba(4,9,18,.92),rgba(7,16,30,.86) 54%,rgba(12,31,58,.72)),
+    linear-gradient(180deg,rgba(12,20,36,.92),rgba(6,10,18,.62));
+  box-shadow:0 1px 0 rgba(105,180,255,.08),0 16px 56px -42px rgba(34,166,255,.82);
+  backdrop-filter:blur(18px) saturate(128%);
+}
+nav.scrolled{
+  top:0;
+  background:
+    linear-gradient(90deg,rgba(4,9,18,.96),rgba(7,16,30,.92) 54%,rgba(10,28,54,.84)),
+    rgba(7,11,18,.9);
+  border-bottom:1px solid rgba(100,214,255,.18);
+  backdrop-filter:blur(22px) saturate(138%);
+}
+.nav-in{height:86px;padding:0 52px}
+.logo-img{height:46px;max-width:min(252px,32vw);filter:drop-shadow(0 0 14px rgba(66,178,255,.26))}
+.nav-links{
+  gap:14px;
+  padding:6px;
+  border-radius:999px;
+  background:linear-gradient(180deg,rgba(7,15,31,.68),rgba(5,9,20,.66));
+  border:1px solid rgba(105,177,255,.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    inset 0 -1px 0 rgba(59,211,255,.08),
+    0 0 0 1px rgba(35,119,255,.05),
+    0 16px 46px -30px rgba(29,151,255,.95);
+  backdrop-filter:blur(18px) saturate(142%);
+}
+.nav-links a{
+  padding:12px 24px;
+  border-radius:999px;
+  border:1px solid transparent;
+  color:transparent;
+  background:linear-gradient(180deg,#ffffff 8%,#dfeeff 46%,#76dfff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-size:18px;
+  font-weight:800;
+  line-height:1;
+  text-shadow:0 0 18px rgba(91,201,255,.18);
+}
+.nav-links a::after{display:none}
+.nav-links a:hover{
+  color:transparent;
+  background:
+    linear-gradient(180deg,#ffffff 5%,#d8f3ff 44%,#5fe8ff 100%),
+    radial-gradient(circle at 70% 0,rgba(94,229,255,.18),transparent 56%),
+    rgba(35,123,255,.12);
+  -webkit-background-clip:text,border-box,border-box;
+  background-clip:text,border-box,border-box;
+  box-shadow:inset 0 0 18px rgba(83,210,255,.08);
+}
+.nav-links a.active{
+  color:transparent;
+  background:
+    linear-gradient(180deg,#ffffff 0%,#e8f6ff 40%,#6eeaff 100%),
+    radial-gradient(circle at 82% 50%,rgba(98,236,255,.36),transparent 46%),
+    linear-gradient(180deg,rgba(35,130,255,.82),rgba(6,31,86,.78));
+  -webkit-background-clip:text,border-box,border-box;
+  background-clip:text,border-box,border-box;
+  border:1px solid rgba(118,228,255,.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -14px 26px rgba(55,227,255,.2),
+    0 0 18px rgba(25,135,255,.42),
+    0 0 34px rgba(80,231,255,.28),
+    0 13px 34px -18px rgba(55,174,255,.95);
+}
+.nav-cta .btn-primary{
+  min-width:148px;
+  height:54px;
+  justify-content:center;
+  border-radius:999px;
+  color:transparent;
+  background:
+    linear-gradient(180deg,#ffffff 4%,#e5f5ff 46%,#74ecff 100%),
+    radial-gradient(circle at 86% 50%,rgba(101,237,255,.42),transparent 36%),
+    linear-gradient(180deg,rgba(22,95,225,.96),rgba(2,21,91,.94));
+  -webkit-background-clip:text,border-box,border-box;
+  background-clip:text,border-box,border-box;
+  -webkit-text-fill-color:transparent;
+  border:1px solid rgba(137,233,255,.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -18px 28px rgba(37,214,255,.18),
+    0 0 16px rgba(27,125,255,.72),
+    0 0 34px rgba(65,224,255,.46),
+    0 0 62px rgba(26,129,255,.32);
+  font-size:18px;
+  font-weight:800;
+}
+.btn{
+  border-radius:999px;
+  transform:translateZ(0);
+}
+.btn-primary{
+  background:
+    radial-gradient(circle at 88% 50%,rgba(99,232,255,.32),transparent 36%),
+    linear-gradient(180deg,#267cff,#062f9d);
+  border:1px solid rgba(134,223,255,.66);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.2),
+    inset 0 -14px 24px rgba(43,221,255,.13),
+    0 0 18px rgba(45,126,255,.58),
+    0 0 38px rgba(74,224,255,.24);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 -16px 28px rgba(43,221,255,.16),
+    0 0 22px rgba(45,126,255,.72),
+    0 0 48px rgba(74,224,255,.36);
+}
+.btn-ghost{
+  background:rgba(8,13,22,.48);
+  border:1px solid rgba(137,178,236,.2);
+}
+#page-home .hero{
+  min-height:100svh;
+  padding:146px 0 76px;
+}
+#page-home .hero::before{
+  background:
+    linear-gradient(120deg,transparent 0 10%,rgba(31,104,255,.18) 18%,rgba(90,239,255,.22) 19%,transparent 30%),
+    linear-gradient(300deg,transparent 0 60%,rgba(28,91,223,.18) 68%,rgba(72,224,255,.15) 69.5%,transparent 78%);
+  transform:none;
+  mask-image:none;
+  opacity:.9;
+  animation:bgDrift 16s ease-in-out infinite alternate;
+}
+#page-home .hero::after{
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(8,12,19,.1),rgba(10,16,26,.72) 47%,rgba(8,12,19,.08)),
+    linear-gradient(180deg,transparent 58%,rgba(7,11,18,.92) 100%);
+}
+#page-home .hero-grid{
+  grid-template-columns:minmax(490px,.94fr) minmax(480px,1.06fr);
+  gap:54px;
+}
+#page-home .hero h1{
+  font-family:'Arial','PingFang SC','Microsoft YaHei',sans-serif!important;
+  font-size:clamp(56px,6.1vw,94px);
+  line-height:.98;
+  font-weight:800;
+  letter-spacing:0!important;
+  color:#fff;
+  text-shadow:0 0 34px rgba(90,163,255,.16);
+}
+#page-home .hero h1 .grad{
+  display:inline-block;
+  margin-top:8px;
+  background:linear-gradient(90deg,#fff 0%,#a9d1ff 42%,#206dff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  white-space:nowrap;
+}
+#page-home .hero .sub{
+  max-width:660px;
+  margin-top:32px;
+  color:#c7d0df;
+  font-size:18px;
+  line-height:1.96;
+}
+#page-home .hero .slogan{
+  color:#8e9aae;
+  font-size:14px;
+  margin-top:16px;
+}
+#page-home .hero-cta{margin-top:32px}
+#page-home .hero-cta .btn{
+  height:54px;
+  padding:0 26px;
+  border-radius:11px;
+}
+#page-home .engine{
+  width:min(46vw,650px);
+  filter:drop-shadow(0 0 46px rgba(45,129,255,.30));
+}
+#page-home .engine .core{
+  border-radius:20px;
+  background:
+    linear-gradient(180deg,rgba(71,151,255,.34),rgba(9,28,69,.78)),
+    rgba(5,12,25,.8);
+  box-shadow:inset 0 0 44px rgba(114,202,255,.28),0 0 0 1px rgba(152,214,255,.4),0 0 58px rgba(39,118,255,.5);
+}
+#page-home .engine .core b{
+  font-size:24px;
+  color:#fff;
+}
+#page-home .ring.r2{animation-duration:54s}
+#page-home .ring.r3{animation-duration:38s}
+#page-home .node .chip{
+  background:linear-gradient(180deg,rgba(52,142,255,.28),rgba(6,14,28,.88));
+  border-color:rgba(135,206,255,.42);
+}
+#page-home .hero-stats{
+  position:relative;
+  left:auto;
+  bottom:auto;
+  transform:none;
+  width:100%;
+  max-width:650px;
+  margin-top:34px;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  backdrop-filter:none;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+}
+#page-home .hero-stats .s{
+  padding:0 22px;
+  text-align:left;
+  border-left:1px solid rgba(130,176,236,.2);
+}
+#page-home .hero-stats .s:first-child{
+  padding-left:0;
+  border-left:none;
+}
+#page-home .hero-stats .s b,
+.mcell .v,
+.ccard .big,
+.metric-row .mc .mv,
+.acard .av,
+.case-inline .cbig{
+  font-family:'Bahnschrift','DIN Alternate','Sora','Arial Narrow','PingFang SC',sans-serif!important;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0!important;
+  color:#dcecff;
+  text-shadow:0 0 18px rgba(96,180,255,.24);
+}
+#page-home .hero-stats .s b{
+  font-size:42px;
+  line-height:1;
+  color:#dfeeff;
+}
+#page-home .hero-stats .s span{
+  display:block;
+  margin-top:10px;
+  color:#8c98aa;
+  font-size:13px;
+  line-height:1.55;
+}
+.trust{
+  width:min(1120px,calc(100vw - 96px));
+  margin:-24px auto 0;
+}
+.trust-row{
+  border-radius:999px;
+  background:linear-gradient(180deg,rgba(11,18,29,.52),rgba(8,13,22,.4));
+  border-color:rgba(138,185,248,.16);
+}
+.trust .badge,.trust .label{
+  border-radius:999px;
+  background:rgba(255,255,255,.026);
+}
+section{padding:104px 0}
+.sec-head{
+  max-width:820px;
+  margin-bottom:64px;
+}
+.sec-head h2,
+.block-title{
+  color:#f8fbff;
+  font-weight:800;
+  letter-spacing:0!important;
+}
+.sec-head h2{font-size:clamp(34px,4.1vw,56px)}
+.block-title{font-size:clamp(28px,3vw,42px)}
+.sec-head p,.lead{
+  color:#b8c3d4;
+  line-height:1.9;
+}
+#problem .sec-head{
+  max-width:1120px;
+}
+#problem .sec-head h2{
+  white-space:nowrap;
+}
+.pcard,.layer,.emp,.mcell,.sol,.ccard,.modal-card,.panel,.techcol,.acard,.shift .col,.def-card,.vs-box,.oslayer,.capcard,.flywheel,.sentry,.metric-row .mc,.vmcard,.cc,.case-inline,.shot-slot,.cta-box{
+  background:
+    linear-gradient(180deg,rgba(14,22,35,.72),rgba(8,13,22,.62));
+  border:1px solid rgba(137,178,236,.15);
+  border-radius:14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 34px 90px -68px rgba(39,111,255,.88);
+  backdrop-filter:blur(12px) saturate(120%);
+}
+.pcard::before,.layer::before,.emp::before,.sol::before,.ccard::before,.panel::before,.techcol::before,.capcard::before,.sentry::before{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:18px;
+  top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(105,219,255,.72),transparent);
+  opacity:.5;
+  pointer-events:none;
+}
+.pcard:hover,.layer:hover,.emp:hover,.sol:hover,.ccard:hover,.panel:hover,.sentry:hover,.capcard:hover,.techcol:hover,.acard:hover{
+  border-color:rgba(113,197,255,.48);
+  transform:translateY(-5px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 34px 100px -54px rgba(48,137,255,.95);
+}
+.layer:hover{transform:translateX(6px)}
+#page-home .spotlight-card{
+  --mx:50%;
+  --my:50%;
+  --spot-opacity:0;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+#page-home .spotlight-card::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  z-index:0;
+  pointer-events:none;
+  opacity:var(--spot-opacity);
+  transition:opacity .24s ease;
+  background-image:
+    radial-gradient(460px circle at var(--mx) var(--my),rgba(37,125,255,.28),rgba(69,215,255,.13) 28%,rgba(56,190,255,.045) 48%,transparent 72%),
+    radial-gradient(circle at 13% 18%,rgba(133,221,255,.08) 0 1px,transparent 1.6px),
+    radial-gradient(circle at 28% 63%,rgba(133,221,255,.055) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 44% 32%,rgba(133,221,255,.06) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 61% 78%,rgba(133,221,255,.05) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 76% 26%,rgba(133,221,255,.06) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 88% 58%,rgba(133,221,255,.045) 0 1px,transparent 1.5px);
+  background-size:auto,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%;
+  mix-blend-mode:screen;
+}
+#page-home .spotlight-card > *{
+  position:relative;
+  z-index:1;
+}
+#page-home .spotlight-card.is-lit{
+  --spot-opacity:1;
+  border-color:rgba(111,214,255,.46);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.075),
+    inset 0 0 34px rgba(36,130,255,.05),
+    0 30px 90px -58px rgba(35,129,255,.82);
+}
+#page-home .spotlight-card.is-lit::before{
+  opacity:.95;
+}
+#page-home .spotlight-card .v,
+#page-home .spotlight-card .big,
+#page-home .spotlight-card h3,
+#page-home .spotlight-card h4,
+#page-home .spotlight-card .sname,
+#page-home .spotlight-card .lname{
+  transition:color .24s ease,text-shadow .24s ease;
+}
+#page-home .spotlight-card.is-lit .v,
+#page-home .spotlight-card.is-lit .big,
+#page-home .spotlight-card.is-lit h3,
+#page-home .spotlight-card.is-lit h4,
+#page-home .spotlight-card.is-lit .sname,
+#page-home .spotlight-card.is-lit .lname{
+  color:#fff;
+  text-shadow:0 0 22px rgba(92,201,255,.28);
+}
+.emp-grid{
+  gap:24px;
+  padding:12px 8px 30px;
+  scroll-padding-inline:8px;
+}
+.emp-grid::after{
+  content:"";
+  flex:0 0 max(24px,calc(100% - clamp(320px,26vw,370px) - 16px));
+  pointer-events:none;
+}
+.emp-grid.is-looping::after{display:none}
+.emp{
+  flex-basis:clamp(320px,26vw,370px);
+  min-height:432px;
+  transform-origin:center;
+  will-change:transform,box-shadow,border-color;
+  transition:
+    transform .36s cubic-bezier(.2,.8,.2,1),
+    border-color .28s ease,
+    background .28s ease,
+    box-shadow .32s ease;
+}
+.emp h4{font-size:24px}
+.emp p{color:#b8c3d5}
+.emp .emp-visual{height:190px}
+.emp .emp-visual img{
+  max-height:188px;
+  filter:drop-shadow(0 22px 30px rgba(38,120,255,.32));
+  transition:transform .38s cubic-bezier(.2,.8,.2,1),filter .32s ease;
+}
+.emp .gain{
+  border-top-color:rgba(137,178,236,.16);
+  color:#8dc7ff;
+}
+#page-home .emp:hover,
+#page-products .emp:hover{
+  transform:translateY(-8px) scale(1.035);
+  border-color:rgba(108,220,255,.62);
+  background:
+    radial-gradient(circle at var(--mx,50%) var(--my,42%),rgba(68,202,255,.18),transparent 34%),
+    linear-gradient(180deg,rgba(13,25,48,.92),rgba(6,12,25,.9));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 0 46px rgba(39,134,255,.10),
+    0 30px 90px -48px rgba(54,151,255,.95),
+    0 0 0 1px rgba(81,216,255,.08);
+  z-index:3;
+}
+#page-home .emp:hover .emp-visual img,
+#page-products .emp:hover .emp-visual img{
+  transform:translateY(-8px) scale(1.08);
+  filter:drop-shadow(0 30px 38px rgba(54,151,255,.50)) drop-shadow(0 0 22px rgba(82,229,255,.22));
+}
+.emp-carousel-dots{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:2px auto 0;
+  min-height:24px;
+}
+.emp-dot{
+  width:8px;
+  height:8px;
+  padding:0;
+  border:1px solid rgba(115,186,255,.38);
+  border-radius:50%;
+  background:rgba(112,178,255,.16);
+  box-shadow:0 0 0 0 rgba(82,229,255,0);
+  cursor:pointer;
+  transition:width .24s ease,border-color .24s ease,background .24s ease,box-shadow .24s ease,transform .24s ease;
+}
+.emp-dot:hover{
+  transform:scale(1.18);
+  border-color:rgba(120,226,255,.74);
+  background:rgba(95,205,255,.42);
+}
+.emp-dot.active{
+  width:22px;
+  border-radius:999px;
+  border-color:rgba(142,232,255,.9);
+  background:linear-gradient(90deg,#1d6fff,#56e7ff);
+  box-shadow:0 0 20px rgba(56,159,255,.45),0 0 34px rgba(82,229,255,.18);
+}
+.mgrid{
+  border-radius:16px;
+  overflow:hidden;
+  border-color:rgba(137,178,236,.16);
+}
+.mcell{padding:34px 26px}
+.mcell .v{
+  font-size:44px;
+  color:#d9ebff;
+}
+.mcell .v .u{
+  font-size:22px;
+  color:#6ee9ff;
+  -webkit-text-fill-color:#6ee9ff;
+}
+.mcell .l{
+  color:#9daabd;
+  line-height:1.7;
+}
+.reveal{
+  opacity:0;
+  transform:translateY(34px);
+  filter:blur(8px);
+  transition:
+    opacity .82s cubic-bezier(.2,.7,.2,1),
+    transform .82s cubic-bezier(.2,.7,.2,1),
+    filter .82s cubic-bezier(.2,.7,.2,1);
+  transition-delay:var(--stagger,0ms);
+}
+.reveal.in{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+.subnav{
+  background:rgba(8,13,22,.84);
+  border-bottom-color:rgba(137,178,236,.14);
+}
+.subnav-in a.active{
+  color:#fff;
+}
+footer{
+  background:rgba(6,10,17,.72);
+}
+@media(max-width:1240px) and (min-width:981px){
+  .nav-in{padding:0 30px}
+  .logo-img{height:42px;max-width:min(220px,28vw)}
+  .nav-links{gap:8px}
+  .nav-links a{padding:11px 17px;font-size:16px}
+  .nav-cta .btn-primary{min-width:132px;height:48px;font-size:16px}
+}
+@media(max-width:980px){
+  nav{top:0;left:0;right:0;border-radius:0}
+  .nav-in{height:auto;min-height:78px;padding:12px 18px;gap:10px}
+  .logo-img{height:38px;max-width:min(190px,45vw)}
+  .nav-links{
+    order:3;
+    width:100%;
+    overflow-x:auto;
+    justify-content:flex-start;
+    scrollbar-width:none;
+    gap:10px;
+    padding:5px;
+  }
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{
+    white-space:nowrap;
+    padding:10px 17px;
+    font-size:16px;
+  }
+  .nav-cta .btn-primary{min-width:126px;height:46px;font-size:16px}
+  #page-home .hero{
+    min-height:auto;
+    padding:142px 0 72px;
+  }
+  #page-home .hero-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  #page-home .hero h1{
+    font-size:clamp(44px,11vw,66px);
+  }
+  #page-home .hero h1 .grad{
+    white-space:normal;
+  }
+  #page-home .hero .sub{
+    font-size:16px;
+    line-height:1.85;
+  }
+  #page-home .engine{
+    width:min(86vw,520px);
+    margin:4px auto 0;
+  }
+  #page-home .hero-stats{
+    max-width:none;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  #problem .sec-head h2{
+    white-space:normal;
+  }
+  .trust{
+    width:calc(100vw - 32px);
+    margin-top:24px;
+  }
+  .trust-row{
+    border-radius:16px;
+  }
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  #page-home .hero{
+    padding-top:132px;
+  }
+  #page-home .hero h1{
+    font-size:42px;
+    line-height:1.05;
+  }
+  #page-home .hero-cta .btn{
+    width:100%;
+  }
+  #page-home .hero-stats{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  #page-home .hero-stats .s{
+    padding:0 0 18px;
+    border-left:none;
+    border-bottom:1px solid rgba(130,176,236,.18);
+  }
+  #page-home .hero-stats .s:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+  }
+  .emp{flex-basis:min(84vw,340px)}
+  .emp-grid::after{
+    flex-basis:max(24px,calc(100% - min(84vw,340px) - 16px));
+  }
+  .emp .emp-visual{height:170px}
+}
+
+/* Homepage abstract light hero: replaces the previous diagram visual */
+#page-home .hero{
+  --hx:72%;
+  --hy:24%;
+  --light-push-x:0px;
+  --light-push-y:0px;
+  min-height:100svh;
+  padding:150px 0 86px;
+  align-items:center;
+  overflow:hidden;
+}
+#page-home .hero::before{
+  display:none;
+}
+#page-home .hero::after{
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(circle at var(--hx) var(--hy),rgba(28,92,255,.28),rgba(22,72,190,.10) 22%,transparent 46%),
+    radial-gradient(circle at 11% 86%,rgba(29,105,255,.24),rgba(25,210,232,.10) 16%,transparent 36%),
+    linear-gradient(180deg,rgba(6,10,17,.04) 0%,rgba(7,11,18,.76) 72%,#070b12 100%);
+}
+#page-home .hero-grid{
+  position:relative;
+  z-index:2;
+  display:block;
+  max-width:1040px;
+  text-align:center;
+}
+#page-home .hero-grid > div{
+  max-width:980px;
+  margin:0 auto;
+}
+#page-home .hero h1{
+  font-size:clamp(64px,7.15vw,112px);
+  line-height:1.02;
+}
+#page-home .hero .sub{
+  margin:32px auto 0;
+  max-width:780px;
+}
+#page-home .hero .slogan{
+  text-align:center;
+}
+#page-home .hero-cta{
+  justify-content:center;
+}
+#page-home .hero-stats{
+  max-width:720px;
+  margin:36px auto 0;
+}
+.hero-light-field{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at var(--hx) var(--hy),rgba(97,238,255,.20),rgba(28,112,255,.18) 7%,rgba(17,60,164,.10) 20%,transparent 42%),
+    radial-gradient(ellipse at 52% 44%,rgba(30,78,190,.13),transparent 46%);
+  filter:saturate(118%);
+  animation:fieldBreath 12s ease-in-out infinite alternate;
+}
+.hero-light-canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:1;
+  mix-blend-mode:screen;
+  filter:saturate(128%) contrast(108%);
+}
+.hero-light-field::before,
+.hero-light-field::after,
+.hero-light-field .light-core,
+.hero-light-field .light-strand{
+  content:"";
+  position:absolute;
+  display:block;
+  pointer-events:none;
+}
+.hero-light-field::before{
+  width:66vw;
+  height:34vw;
+  right:-7vw;
+  top:-5vw;
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse at 50% 50%,rgba(76,238,255,.34),rgba(25,102,255,.38) 12%,rgba(11,45,135,.18) 34%,transparent 68%);
+  filter:blur(22px);
+  transform:translate(var(--light-push-x),var(--light-push-y)) rotate(-18deg);
+  opacity:.74;
+  animation:lightPulse 8s ease-in-out infinite alternate;
+}
+.hero-light-field::after{
+  width:50vw;
+  height:28vw;
+  left:-12vw;
+  bottom:-9vw;
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse at 52% 52%,rgba(88,242,255,.28),rgba(20,101,255,.36) 14%,rgba(11,44,126,.20) 40%,transparent 72%);
+  filter:blur(20px);
+  transform:translate(calc(var(--light-push-x) * -.55),calc(var(--light-push-y) * -.45)) rotate(21deg);
+  opacity:.62;
+  animation:lightPulse 9s ease-in-out infinite alternate-reverse;
+}
+.hero-light-field .light-core{
+  left:var(--hx);
+  top:var(--hy);
+  width:24vw;
+  height:24vw;
+  min-width:260px;
+  min-height:260px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(circle,rgba(157,255,250,.72) 0 3%,rgba(75,229,255,.38) 9%,rgba(31,111,255,.34) 22%,rgba(19,69,185,.15) 42%,transparent 70%);
+  filter:blur(10px);
+  opacity:.72;
+  mix-blend-mode:screen;
+}
+.hero-light-field .light-strand{
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(33,111,255,.18),rgba(84,236,255,.62),rgba(27,102,255,.34),transparent);
+  box-shadow:0 0 22px rgba(36,119,255,.55),0 0 42px rgba(71,226,255,.16);
+  filter:blur(.35px);
+  opacity:.7;
+  transform-origin:50% 50%;
+}
+.hero-light-field .strand-a{
+  width:64vw;
+  right:-7vw;
+  top:24%;
+  transform:translate(var(--light-push-x),var(--light-push-y)) rotate(12deg) scaleY(1.5);
+  animation:strandFlowA 10s ease-in-out infinite alternate;
+}
+.hero-light-field .strand-b{
+  width:54vw;
+  right:-5vw;
+  top:34%;
+  transform:translate(calc(var(--light-push-x) * .55),calc(var(--light-push-y) * .6)) rotate(-34deg) scaleY(1.25);
+  opacity:.52;
+  animation:strandFlowB 13s ease-in-out infinite alternate;
+}
+.hero-light-field .strand-c{
+  width:48vw;
+  left:-12vw;
+  bottom:16%;
+  transform:translate(calc(var(--light-push-x) * -.45),calc(var(--light-push-y) * -.4)) rotate(19deg) scaleY(1.5);
+  opacity:.62;
+  animation:strandFlowC 12s ease-in-out infinite alternate;
+}
+.hero-light-field .strand-d{
+  width:30vw;
+  left:-8vw;
+  top:28%;
+  transform:rotate(76deg) scaleY(1.35);
+  opacity:.28;
+}
+@keyframes lightPulse{
+  from{opacity:.52;filter:blur(24px) saturate(112%)}
+  to{opacity:.82;filter:blur(18px) saturate(130%)}
+}
+@keyframes fieldBreath{
+  from{filter:saturate(108%) brightness(.92)}
+  to{filter:saturate(130%) brightness(1.06)}
+}
+@keyframes strandFlowA{
+  from{right:-10vw;top:20%;opacity:.48}
+  to{right:-3vw;top:29%;opacity:.76}
+}
+@keyframes strandFlowB{
+  from{right:-12vw;top:39%;opacity:.36}
+  to{right:0;top:29%;opacity:.62}
+}
+@keyframes strandFlowC{
+  from{left:-18vw;bottom:10%;opacity:.44}
+  to{left:-8vw;bottom:21%;opacity:.68}
+}
+@media(max-width:980px){
+  #page-home .hero{
+    padding-top:138px;
+  }
+  #page-home .hero h1{
+    font-size:clamp(46px,12vw,72px);
+  }
+  #page-home .hero h1 .grad{
+    white-space:normal;
+  }
+  .hero-light-field{
+    left:18%;
+    right:-38%;
+    width:auto;
+    opacity:.72;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.22) 20%,#000 46%,#000 100%);
+    mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.22) 20%,#000 46%,#000 100%);
+  }
+  .hero-light-canvas{
+    opacity:.42;
+    filter:saturate(112%) brightness(.78);
+  }
+  .hero-light-field::before{
+    width:100vw;
+    height:68vw;
+    right:-35vw;
+    top:8vw;
+    opacity:.36;
+  }
+  .hero-light-field::after{
+    width:86vw;
+    height:58vw;
+    left:-42vw;
+    bottom:8vw;
+    opacity:.28;
+  }
+  .hero-light-field .light-core{
+    min-width:210px;
+    min-height:210px;
+    opacity:.26;
+  }
+  .hero-light-field .light-strand{
+    opacity:.28;
+  }
+}
+
+/* Restore left-aligned copy with a richer right-side interactive light visual */
+@media(min-width:981px){
+  #page-home .hero{
+    padding:146px 0 86px;
+  }
+  #page-home .hero-grid{
+    display:grid;
+    grid-template-columns:minmax(540px,.9fr) minmax(440px,1.1fr);
+    gap:58px;
+    max-width:var(--maxw);
+    text-align:left;
+  }
+  #page-home .hero-grid > div{
+    max-width:none;
+    margin:0;
+  }
+  #page-home .hero h1{
+    font-size:clamp(58px,6vw,94px);
+    line-height:1.03;
+  }
+  #page-home .hero .sub{
+    margin:32px 0 0;
+    max-width:700px;
+    text-align:left;
+  }
+  #page-home .hero .slogan{
+    text-align:left;
+  }
+  #page-home .hero-cta{
+    justify-content:flex-start;
+  }
+  #page-home .hero-stats{
+    margin:36px 0 0;
+  }
+  .hero-light-field{
+    left:34%;
+    width:66%;
+    right:0;
+    overflow:visible;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.12) 7%,rgba(0,0,0,.76) 20%,#000 38%,#000 100%);
+    mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.12) 7%,rgba(0,0,0,.76) 20%,#000 38%,#000 100%);
+  }
+  .hero-light-field::before{
+    width:78vw;
+    height:50vw;
+    right:-26vw;
+    top:-5vw;
+    opacity:.78;
+  }
+  .hero-light-field::after{
+    width:62vw;
+    height:38vw;
+    left:auto;
+    right:6vw;
+    bottom:-13vw;
+    opacity:.42;
+  }
+  .hero-light-field .light-core{
+    min-width:440px;
+    min-height:440px;
+    opacity:.64;
+  }
+  .hero-light-field .strand-a{
+    width:70vw;
+    right:-13vw;
+    top:25%;
+  }
+  .hero-light-field .strand-b{
+    width:62vw;
+    right:-9vw;
+    top:38%;
+  }
+  .hero-light-field .strand-c{
+    width:46vw;
+    left:auto;
+    right:16vw;
+    bottom:14%;
+  }
+  .hero-light-field .strand-d{
+    left:auto;
+    right:37vw;
+    top:9%;
+    opacity:.22;
+  }
+}
+
+/* Final hero metrics: cardless, left-aligned proof row */
+#page-home .hero{
+  padding-bottom:86px;
+}
+#page-home .hero-grid{
+  overflow:visible;
+}
+#page-home .hero-stats{
+  position:static;
+  left:auto;
+  top:auto;
+  bottom:auto;
+  transform:none;
+  width:min(860px,100%);
+  max-width:860px;
+  min-height:0;
+  margin:42px 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  overflow:visible;
+  isolation:auto;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.trust{
+  margin:40px auto 0;
+}
+.trust .label{
+  margin-right:0;
+  padding:8px 16px;
+  border:1px solid rgba(111,158,235,.24);
+  border-radius:999px;
+  background:rgba(11,23,46,.58);
+  color:var(--ink-soft);
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0;
+  line-height:1;
+}
+#page-home .hero-stats::before{
+  display:none;
+}
+#page-home .hero-stats .s{
+  position:relative;
+  z-index:1;
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding:0 32px;
+  text-align:left;
+  border-left:1px solid rgba(139,172,220,.24);
+}
+#page-home .hero-stats .s:first-child{
+  padding-left:0;
+  border-left:none;
+}
+#page-home .hero-stats .s b{
+  display:block;
+  font-family:'Bahnschrift','DIN Alternate','Sora','Arial Narrow','PingFang SC',sans-serif!important;
+  font-size:clamp(38px,4vw,58px);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:0!important;
+  color:transparent;
+  background:linear-gradient(180deg,#ffffff 0%,#edf6ff 34%,#afd2ff 68%,#68aaff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:none;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+  word-break:keep-all;
+}
+#page-home .hero-stats .s span{
+  display:block;
+  margin-top:12px;
+  color:#8f99aa;
+  font-size:clamp(13px,.95vw,16px);
+  font-weight:700;
+  line-height:1.35;
+}
+@media(max-width:980px){
+  #page-home .hero{
+    padding-bottom:76px;
+  }
+  #page-home .hero-stats{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    width:100%;
+    max-width:760px;
+    min-height:0;
+    margin:36px 0 0;
+    padding:0;
+    border-radius:0;
+  }
+  #page-home .hero-stats .s{
+    padding:0 20px;
+  }
+  #page-home .hero-stats .s:first-child{
+    padding-left:0;
+  }
+  #page-home .hero-stats .s b{
+    font-size:clamp(34px,8.6vw,52px);
+  }
+  #page-home .hero-stats .s span{
+    margin-top:9px;
+    font-size:14px;
+  }
+}
+@media(max-width:560px){
+  #page-home .hero-stats{
+    grid-template-columns:1fr;
+    gap:0;
+    padding:0;
+  }
+  #page-home .hero-stats .s,
+  #page-home .hero-stats .s:first-child{
+    padding:18px 0;
+    border-left:none;
+    border-bottom:1px solid rgba(139,172,220,.24);
+  }
+  #page-home .hero-stats .s:first-child{
+    padding-top:0;
+  }
+  #page-home .hero-stats .s:last-child{
+    padding-bottom:0;
+    border-bottom:none;
+  }
+}
+
+/* Homepage metrics matrix: subtle glass headers, keep native number typography */
+#page-home #metrics{
+  padding:86px 0 94px;
+  background:
+    radial-gradient(circle at 9% 14%,rgba(32,118,255,.16),transparent 28%),
+    radial-gradient(circle at 86% 78%,rgba(38,203,255,.07),transparent 32%),
+    linear-gradient(180deg,rgba(5,10,18,.14),rgba(8,13,22,.5) 48%,rgba(5,10,18,.34));
+}
+#page-home #metrics .wrap{
+  max-width:1420px;
+}
+#page-home #metrics .sec-head{
+  margin-bottom:34px;
+}
+#page-home #metrics .mgroup-title{
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:22px 0 0;
+  color:#dfeeff;
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:18px;
+  font-weight:800;
+  letter-spacing:0!important;
+  text-transform:none;
+  background:
+    radial-gradient(circle at 88% 50%,rgba(101,237,255,.12),transparent 38%),
+    radial-gradient(circle at 12% 0%,rgba(55,143,255,.10),transparent 46%),
+    linear-gradient(180deg,rgba(16,49,104,.58),rgba(5,18,48,.78));
+  border:1px solid rgba(118,209,255,.22);
+  border-bottom:0;
+  border-radius:12px 12px 0 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -10px 20px rgba(37,214,255,.055),
+    0 0 18px rgba(65,224,255,.055),
+    0 18px 54px -50px rgba(43,133,255,.58);
+  text-shadow:0 0 14px rgba(120,225,255,.14);
+}
+#page-home #metrics .mgrid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  min-height:128px;
+  margin:0 0 22px;
+  gap:0;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 0% 50%,rgba(23,95,196,.12),transparent 38%),
+    linear-gradient(180deg,rgba(13,20,31,.88),rgba(7,12,21,.9));
+  border:1px solid rgba(112,176,255,.14);
+  border-top:0;
+  border-radius:0 0 12px 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.026),
+    0 22px 72px -68px rgba(28,119,255,.68);
+}
+#page-home #metrics .mcell{
+  min-height:128px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px 28px;
+  text-align:center;
+  background:transparent;
+  border-left:1px solid rgba(126,164,220,.15);
+  border-radius:0;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+#page-home #metrics .mcell:first-child{
+  border-left:none;
+}
+#page-home #metrics .mcell:hover{
+  background:
+    radial-gradient(circle at var(--mx,50%) var(--my,42%),rgba(51,167,255,.09),transparent 42%),
+    rgba(24,93,190,.032);
+  transform:none;
+}
+#page-home #metrics .mcell .v{
+  font-size:clamp(40px,3vw,54px);
+  line-height:1;
+  color:#d9ebff;
+  text-shadow:0 0 18px rgba(96,180,255,.24);
+}
+#page-home #metrics .mcell .v .u{
+  font-size:.48em;
+  margin-left:4px;
+  color:#6ee9ff;
+  -webkit-text-fill-color:#6ee9ff;
+}
+#page-home #metrics .mcell .l{
+  margin-top:14px;
+  color:#9faabd;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.45;
+}
+@media(max-width:980px){
+  #page-home #metrics{
+    padding:72px 0 82px;
+  }
+  #page-home #metrics .mgroup-title{
+    height:50px;
+    font-size:20px;
+    border-radius:16px 16px 0 0;
+  }
+  #page-home #metrics .mgrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-radius:0 0 16px 16px;
+  }
+  #page-home #metrics .mcell{
+    min-height:132px;
+    padding:26px 20px;
+    border-top:1px solid rgba(126,164,220,.16);
+  }
+  #page-home #metrics .mcell:nth-child(-n+2){
+    border-top:none;
+  }
+  #page-home #metrics .mcell:nth-child(odd){
+    border-left:none;
+  }
+  #page-home #metrics .mcell .v{
+    font-size:clamp(38px,8vw,52px);
+  }
+  #page-home #metrics .mcell .l{
+    margin-top:14px;
+    font-size:14px;
+  }
+}
+@media(max-width:560px){
+  #page-home #metrics .mgrid{
+    grid-template-columns:1fr;
+  }
+  #page-home #metrics .mcell,
+  #page-home #metrics .mcell:nth-child(-n+2){
+    border-left:none;
+    border-top:1px solid rgba(126,164,220,.16);
+  }
+  #page-home #metrics .mcell:first-child{
+    border-top:none;
+  }
+}
+
+/* Copy rhythm: phrase-aware Chinese wrapping and cleaner short-line behavior */
+h1,h2,h3,h4,h5,p,li,.lead,.sub,.sec-head p,.market-note,.shift-note,.dtext,.ldesc,.bigl,.ml,.emp .gain{
+  text-wrap:pretty;
+  word-break:auto-phrase;
+  overflow-wrap:normal;
+}
+.sec-head p,.lead,.market-note,.shift-note,.dtext,.os-moat,.hero .sub{
+  line-break:strict;
+}
+.copy-break{
+  display:block;
+}
+@supports not (word-break:auto-phrase){
+  h1,h2,h3,h4,h5,p,li,.lead,.sub,.sec-head p,.market-note,.shift-note,.dtext,.ldesc,.bigl,.ml,.emp .gain{
+    word-break:keep-all;
+    overflow-wrap:break-word;
+  }
+}
+@media(max-width:760px){
+  .copy-break{
+    display:none;
+  }
+}
+
+/* Delivery evolution: stronger upgrade contrast and motion polish */
+#shift{
+  position:relative;
+  overflow:hidden;
+}
+#shift::before{
+  content:"";
+  position:absolute;
+  inset:8% -12% 4%;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 72% 44%,rgba(58,139,255,.2),transparent 46%),
+    linear-gradient(116deg,transparent 0 47%,rgba(80,185,255,.08) 50%,transparent 55% 100%);
+  opacity:.95;
+}
+#shift .wrap{
+  position:relative;
+  z-index:1;
+}
+#shift .sec-head{
+  max-width:1120px;
+}
+#shift .sec-head h2{
+  white-space:nowrap;
+}
+#shift .sec-head p{
+  max-width:1120px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#page-home .hero h1 .grad,
+.hero h1 .grad,
+.phero h1 .grad,
+.sec-head h2 .shift-grad,
+.shift .shift-grad,
+.title-grad{
+  background:linear-gradient(90deg,#ffffff 0%,#b8dcff 34%,#4e91ff 68%,#62f0ff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+#page-home .cta-box .hero-cta,
+.cta-box .hero-cta{
+  justify-content:center;
+  width:100%;
+}
+.shift{
+  grid-template-columns:minmax(0,.92fr) clamp(58px,7vw,86px) minmax(0,1.08fr);
+  gap:26px;
+  max-width:1120px;
+  width:100%;
+  position:relative;
+  align-items:center;
+}
+.shift .col{
+  position:relative;
+  overflow:hidden;
+  box-sizing:border-box;
+  max-width:100%;
+  min-height:360px;
+  padding:34px 36px;
+  border-radius:18px;
+  transition:
+    transform .34s cubic-bezier(.2,.7,.2,1),
+    border-color .34s ease,
+    box-shadow .34s ease,
+    opacity .34s ease;
+}
+.shift .col.old{
+  background:linear-gradient(180deg,rgba(8,15,28,.72),rgba(5,10,18,.68));
+  border-color:rgba(129,153,194,.16);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 22px 70px -62px rgba(43,95,176,.7);
+  opacity:.82;
+}
+.shift .col.old:hover{
+  opacity:1;
+  transform:translateY(-3px);
+  border-color:rgba(129,153,194,.28);
+}
+.shift .col.new{
+  background:
+    radial-gradient(circle at 88% 10%,rgba(80,221,255,.2),transparent 32%),
+    radial-gradient(circle at 20% 98%,rgba(57,117,255,.22),transparent 38%),
+    linear-gradient(145deg,rgba(15,30,62,.94),rgba(7,14,30,.86) 58%,rgba(5,10,22,.9));
+  border-color:rgba(113,203,255,.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 0 1px rgba(84,179,255,.14),
+    0 34px 110px -54px rgba(48,137,255,.95),
+    0 0 80px -42px rgba(97,235,255,.9);
+  transform:translateY(-8px);
+}
+.shift .col.new:hover{
+  transform:translateY(-12px) scale(1.01);
+  border-color:rgba(123,230,255,.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.1),
+    0 0 0 1px rgba(118,228,255,.24),
+    0 42px 120px -48px rgba(48,137,255,1),
+    0 0 96px -38px rgba(97,235,255,.95);
+}
+.shift .col.new::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent,rgba(118,228,255,.18),transparent) 0 0/100% 1px no-repeat,
+    linear-gradient(180deg,rgba(255,255,255,.055),transparent 28%);
+}
+.shift .col.new::after{
+  content:"";
+  position:absolute;
+  top:8px;
+  right:24px;
+  z-index:0;
+  pointer-events:none;
+  width:154px;
+  height:154px;
+  background:linear-gradient(135deg,rgba(98,240,255,.24),rgba(78,145,255,.1) 58%,rgba(255,255,255,.05));
+  -webkit-mask:url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M675.626667 424.384h176.96L542.997333 117.610667l-309.482666 306.773333h181.290666c0 219.072-70.784 372.48-225.472 481.984 221.013333-43.754667 442.133333-175.232 486.314667-481.984z' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M675.626667 424.384h176.96L542.997333 117.610667l-309.482666 306.773333h181.290666c0 219.072-70.784 372.48-225.472 481.984 221.013333-43.754667 442.133333-175.232 486.314667-481.984z' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity:.62;
+  filter:drop-shadow(0 0 24px rgba(98,240,255,.2));
+  transform:scaleX(1.18);
+  transform-origin:100% 0;
+}
+.shift .col > *{
+  position:relative;
+  z-index:1;
+}
+.shift .col .ctitle{
+  align-items:center;
+  gap:12px;
+  margin-bottom:26px;
+  line-height:1.25;
+}
+.shift .col .ctitle .pin{
+  flex:0 0 auto;
+  padding:6px 11px;
+  border-radius:8px;
+  background:rgba(10,24,48,.7);
+  box-shadow:inset 0 0 18px rgba(91,174,255,.08);
+}
+.shift .col.old .ctitle{
+  color:#b9c4d6;
+}
+.shift .col.new .ctitle{
+  font-size:23px;
+}
+.shift .col.new .pin{
+  color:#62f0ff;
+  border-color:rgba(98,240,255,.55);
+}
+.shift .row{
+  display:grid;
+  grid-template-columns:minmax(86px,max-content) minmax(0,1fr);
+  column-gap:16px;
+  align-items:start;
+  min-width:0;
+  padding:18px 0 18px 30px;
+  line-height:1.78;
+  transition:transform .28s ease,background .28s ease,border-color .28s ease;
+}
+.shift .row b{
+  white-space:nowrap;
+}
+.shift .col.new .row{
+  margin:0 -12px;
+  padding:17px 14px 17px 44px;
+  border-top-color:rgba(121,171,236,.14);
+  border-radius:12px;
+}
+.shift .col.new .row:hover{
+  transform:translateX(6px);
+  background:linear-gradient(90deg,rgba(75,140,255,.13),rgba(98,240,255,.055),transparent);
+}
+.shift .col.new .row::before{
+  left:18px;
+  top:28px;
+  width:9px;
+  height:9px;
+  border-radius:3px;
+  background:linear-gradient(135deg,#4e91ff,#62f0ff);
+  box-shadow:0 0 16px rgba(98,240,255,.48);
+}
+.shift .col.old .row::before{
+  top:20px;
+  color:#6f7d94;
+}
+.shift .col .foot{
+  margin-top:24px;
+  padding-top:20px;
+  font-size:17px;
+  line-height:1.45;
+}
+.shift .col.new .foot{
+  color:#dcecff;
+  font-size:20px;
+}
+.shift .col.new .foot .shift-grad{
+  background:none;
+  color:#62f0ff;
+  -webkit-text-fill-color:#62f0ff;
+}
+.shift .arrow{
+  min-height:360px;
+  position:relative;
+  gap:12px;
+}
+.shift .arrow .ar{
+  width:60px;
+  height:60px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  border:1px solid rgba(107,190,255,.32);
+  background:radial-gradient(circle,rgba(79,150,255,.2),rgba(11,23,46,.58));
+  box-shadow:0 0 30px rgba(55,139,255,.24);
+  color:#7bc8ff;
+  animation:shiftArrow 2.8s ease-in-out infinite;
+}
+.shift .arrow small{
+  color:#9caac0;
+}
+@keyframes shiftArrow{
+  0%,100%{transform:translateX(-4px)}
+  50%{transform:translateX(6px)}
+}
+.shift-note{
+  max-width:990px;
+  margin:36px auto 0;
+  padding:18px 28px;
+  border:1px solid rgba(121,171,236,.16);
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(8,15,28,.22),rgba(18,42,78,.5),rgba(8,15,28,.22));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
+  line-height:1.85;
+}
+.shift-note b{
+  background:none;
+  color:inherit;
+  -webkit-text-fill-color:currentColor;
+  font-weight:inherit;
+}
+@media(max-width:900px){
+  #shift .sec-head h2{
+    white-space:normal;
+    font-size:clamp(30px,7vw,42px);
+    line-height:1.22;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  #shift .sec-head p{
+    max-width:680px;
+    font-size:14.5px;
+  }
+  .shift{
+    grid-template-columns:1fr;
+    max-width:680px;
+  }
+  .shift .col,
+  .shift .col.new{
+    min-height:0;
+    transform:none;
+  }
+  .shift .col.new:hover{
+    transform:translateY(-4px);
+  }
+  .shift .arrow{
+    min-height:54px;
+    flex-direction:row;
+  }
+  .shift .arrow .ar{
+    animation:none;
+    transform:rotate(90deg);
+  }
+  .shift .arrow small{
+    writing-mode:horizontal-tb;
+  }
+}
+@media(max-width:560px){
+  #shift .sec-head p{
+    font-size:14px;
+    line-height:1.85;
+  }
+  .shift .col{
+    padding:28px 22px;
+  }
+  .shift .col .ctitle{
+    flex-wrap:wrap;
+  }
+  .shift .row{
+    grid-template-columns:1fr;
+    row-gap:4px;
+    padding-left:28px;
+    overflow-wrap:anywhere;
+  }
+  .shift .col.new .row{
+    margin:0;
+    padding-left:36px;
+  }
+  .shift .col.new::after{
+    width:118px;
+    height:118px;
+    right:8px;
+    top:16px;
+  }
+  .shift-note{
+    border-radius:18px;
+    padding:16px 18px;
+    text-align:left;
+  }
+}
+
 </style>
 </head>
 <body>
 <noscript>
   <style>nav{position:static}.page{display:block}.reveal{opacity:1;transform:none}.ambient,.grid-bg{display:none}</style>
-  <div class="noscript">当前浏览器未启用 JavaScript，页面将以完整长页面方式展示。</div>
+  <div class="noscript">当前浏览器未启用 JavaScript，页面将以完整长页面方式展示</div>
 </noscript>
 <div class="ambient"><div class="orb a"></div><div class="orb b"></div></div>
 <div class="grid-bg"></div>
@@ -1167,7 +2769,7 @@ footer,.metrics{
     <div class="nav-links">
       <a data-nav="home">首页</a>
       <a data-nav="agent">空间智能体</a>
-      <a data-nav="products">产品</a>
+      <a data-nav="products">产品服务</a>
       <a data-nav="solutions">解决方案</a>
       <a data-nav="tech">核心技术</a>
       <a data-nav="about">关于我们</a>
@@ -1179,11 +2781,19 @@ footer,.metrics{
 <div class="page" id="page-home">
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-light-field" aria-hidden="true">
+    <canvas class="hero-light-canvas"></canvas>
+    <span class="light-strand strand-a"></span>
+    <span class="light-strand strand-b"></span>
+    <span class="light-strand strand-c"></span>
+    <span class="light-strand strand-d"></span>
+    <span class="light-core"></span>
+  </div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow"><span class="dot"></span>空间智能体</span>
       <h1>空间智能体<br><span class="grad">物理空间的运营大脑</span></h1>
-      <p class="sub">以空间世界模型为内核，让每一座空间都拥有一个会感知、会决策、会进化的智能体——把口岸、地铁、园区等泛公共空间，从被动监控对象升级为主动管理资产。</p>
+      <p class="sub">以空间世界模型为内核，让每一座空间都拥有一个会感知、会决策、会进化的智能体——把口岸、地铁、园区等泛公共空间，从被动监控对象升级为主动管理资产</p>
       <p class="slogan">值得信赖的行业 AI 赋能专家</p>
       <div class="hero-cta">
         <button class="btn btn-primary" onclick="nav2('agent')">认识空间智能体 →</button>
@@ -1193,26 +2803,6 @@ footer,.metrics{
         <div class="s"><b data-count="3000" data-suffix="+">0</b><span>服务 / 复制空间数</span></div>
         <div class="s"><b data-count="10" data-suffix=" 类">0</b><span>泛公共空间覆盖</span></div>
         <div class="s"><b data-count="25" data-suffix="%">0</b><span>轨道公安市占率</span></div>
-      </div>
-    </div>
-    <div>
-      <div class="engine">
-        <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-        <div class="scene-floor" aria-hidden="true"></div>
-        <div class="scene-beam" aria-hidden="true"></div>
-        <div class="scene-panel left" aria-hidden="true"></div>
-        <div class="scene-panel right" aria-hidden="true"></div>
-        <div class="scene-tower a" aria-hidden="true"></div>
-        <div class="scene-tower b" aria-hidden="true"></div>
-        <div class="scene-tower c" aria-hidden="true"></div>
-        <div class="scene-tower d" aria-hidden="true"></div>
-        <div class="node n1"><div class="chip"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><small>感知</small></div>
-        <div class="node n2"><div class="chip"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 4 2 7h10c0-3 2-4 2-7a7 7 0 0 0-7-7Z"/><path d="M9 21h6"/></svg></div><small>推理</small></div>
-        <div class="node n3"><div class="chip"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><small>决策</small></div>
-        <div class="node n4"><div class="chip"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="m5 12 5 5L20 6"/></svg></div><small>执行</small></div>
-        <div class="node n5"><div class="chip"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><small>记忆</small></div>
-        <div class="node n6"><div class="chip"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v5h-5"/></svg></div><small>进化</small></div>
-        <div class="core"><b>空间智能体</b><span>运营大脑</span></div>
       </div>
     </div>
   </div>
@@ -1235,8 +2825,8 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">机会洞察</span>
-      <h2>百亿平米存量空间，正在加速 AI 化</h2>
-      <p>从“增量开发”进入“存量运营”，效率重构需求强烈——而 90% 的视频从未被真正“看过”。</p>
+      <h2>百亿平米存量空间，<span class="title-grad">正在加速 AI 化</span></h2>
+      <p>从“增量开发”进入“存量运营”，效率重构需求强烈——而 90% 的视频从未被真正“看过”</p>
     </div>
     <div class="cards-3">
       <div class="pcard reveal"><div class="num">01 / 人工巡检</div><h3>跑断腿，效率低</h3><div class="role">物理浪费</div>
@@ -1246,7 +2836,7 @@ footer,.metrics{
       <div class="pcard reveal"><div class="num">03 / 响应闭环</div><h3>反应慢，管不全</h3><div class="role">管理失效</div>
         <ul><li>信息多层传递衰减率达 40%</li><li>事后倒查耗费 10+ 人工时</li><li>发现—派单—处置链条割裂</li></ul></div>
     </div>
-    <p class="market-note reveal">三大黑洞的共同根源，是空间运营缺少一个<b>看得懂、管得动的大脑</b> —— 把这个大脑补上，正是空间智能体要解决的问题。</p>
+    <p class="market-note reveal">三大黑洞的共同根源，是空间运营缺少一个<b>看得懂、管得动的大脑</b> —— 把这个大脑补上，正是空间智能体要解决的问题</p>
   </div>
 </section>
 
@@ -1255,12 +2845,12 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">交付演进</span>
-      <h2>从交付工具，到交付运营结果</h2>
-      <p>这是行业正在发生的演进方向，也是北斗持续投入的目标。我们同时提供项目交付与智能体订阅两种形态，让能力随客户阶段平滑升级。</p>
+      <h2>从交付工具，到<span class="shift-grad">交付运营结果</span></h2>
+      <p>这是行业正在发生的演进方向，也是北斗持续投入的目标，我们同时提供项目交付与智能体订阅两种形态，让能力随客户阶段平滑升级</p>
     </div>
     <div class="shift reveal">
       <div class="col old">
-        <div class="ctitle"><span class="pin">交付工具</span>软件 / 平台 / 项目</div>
+        <div class="ctitle"><span class="pin">交付工具</span><span>软件 / 平台 / 项目</span></div>
         <div class="row"><b>交付能力</b>　提供一套系统与平台，价值兑现依赖客户自己实施与运营</div>
         <div class="row"><b>客户使用</b>　系统上线后，效果取决于组织能力与执行力</div>
         <div class="row"><b>人工闭环</b>　发现、判断、处置、复盘仍主要由人工串联</div>
@@ -1268,14 +2858,14 @@ footer,.metrics{
       </div>
         <div class="arrow"><span class="ar">→</span><small>升级</small></div>
       <div class="col new">
-        <div class="ctitle"><span class="pin">北斗方向</span>交付运营结果</div>
+        <div class="ctitle"><span class="pin">北斗方向</span><span class="shift-grad">交付运营结果</span></div>
         <div class="row"><b>持续运营</b>　把运营能力以智能体形态部署到空间里，按结果服务</div>
         <div class="row"><b>7×24 在岗</b>　持续感知、实时响应，不依赖人一直盯、一直巡、一直催</div>
         <div class="row"><b>自主闭环</b>　从发现问题到判断、派发、执行、复盘，形成闭环</div>
-        <div class="foot">交付的是“事情被搞定”</div>
+        <div class="foot">交付的是“<span class="shift-grad">事情被搞定</span>”</div>
       </div>
     </div>
-    <p class="shift-note reveal">空间智能体 = 部署在物理空间中，能持续<b>感知</b>、自主<b>推理</b>、独立<b>决策</b>、闭环<b>执行</b>，并不断<b>记忆</b>与<b>进化</b>的 AI 系统。</p>
+    <p class="shift-note reveal">空间智能体 = 部署在物理空间中，能持续<b>感知</b>、自主<b>推理</b>、独立<b>决策</b>、闭环<b>执行</b>，并不断<b>记忆</b>与<b>进化</b>的 AI 系统</p>
   </div>
 </section>
 
@@ -1284,8 +2874,8 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">产品体系</span>
-      <h2>不交付工具，交付一个会自运转的空间智能体</h2>
-      <p>一套以世界模型为内核、感知—推理—决策—执行—记忆—进化六环闭环的智能体，落地为可订阅、可复制的 AI 员工。</p>
+      <h2>不交付工具，交付一个会自运转的<span class="title-grad">空间智能体</span></h2>
+      <p>一套以世界模型为内核、感知—推理—决策—执行—记忆—进化六环闭环的智能体，<br class="copy-break">落地为可订阅、可复制的 AI 员工</p>
     </div>
     <div class="stack">
       <div class="layer reveal" onclick="openModal()"><div class="lname">AI 员工<span class="tag">应用层</span></div><div class="ldesc">智能体在不同岗位上的角色化封装，按“岗位 × 空间”订阅计费</div><div class="larrow">→</div></div>
@@ -1295,9 +2885,9 @@ footer,.metrics{
     </div>
 
     <div class="emp-grid">
-      <div class="emp reveal"><h4>AI 安全管家</h4><p>自动识别安全、秩序、品质与设备异常，主动式巡防</p><div class="emp-visual"><img src="assets/ai-employees/ai-security.png" alt="AI 安全管家"></div><div class="gain">— 主动感知，事件止于未发</div></div>
-      <div class="emp reveal"><h4>AI 设备管家</h4><p>12 类设备机房 7×24 在线监测与全生命周期管理</p><div class="emp-visual"><img src="assets/ai-employees/ai-device.png" alt="AI 设备管家"></div><div class="gain">↑ 单项目每日释放约 6 小时/人</div></div>
-      <div class="emp reveal"><h4>AI 调度员</h4><p>事件分级—自动派单—物料分拨—作业指引—评价闭环</p><div class="emp-visual"><img src="assets/ai-employees/ai-dispatcher.png" alt="AI 调度员"></div><div class="gain">— 工单全流程闭环</div></div>
+      <div class="emp reveal"><h4>AI 安全管家</h4><p>自动识别安全、秩序、品质与设备异常，<br class="copy-break">主动式巡防</p><div class="emp-visual"><img src="assets/ai-employees/ai-security.png" alt="AI 安全管家"></div><div class="gain">— 主动感知，事件止于未发</div></div>
+      <div class="emp reveal"><h4>AI 设备管家</h4><p>12 类设备机房 7×24 在线监测<br class="copy-break">与全生命周期管理</p><div class="emp-visual"><img src="assets/ai-employees/ai-device.png" alt="AI 设备管家"></div><div class="gain">↑ 单项目每日释放约 6 小时/人</div></div>
+      <div class="emp reveal"><h4>AI 调度员</h4><p>事件分级—自动派单—物料分拨<br class="copy-break">作业指引—评价闭环</p><div class="emp-visual"><img src="assets/ai-employees/ai-dispatcher.png" alt="AI 调度员"></div><div class="gain">— 工单全流程闭环</div></div>
       <div class="emp reveal"><h4>AI 节能专家</h4><p>冷站负荷预测与供需响应，制冷系统智能调优</p><div class="emp-visual"><img src="assets/ai-employees/ai-energy.png" alt="AI 节能专家"></div><div class="gain">↓ 能耗降低 10%–15%</div></div>
       <div class="emp reveal"><h4>AI 客服管家</h4><p>7×24 人机协同，知识库问答与自助办理</p><div class="emp-visual"><img src="assets/ai-employees/ai-service.png" alt="AI 客服管家"></div><div class="gain">— 全时段在岗服务</div></div>
       <div class="emp reveal"><h4>AI 项目经理</h4><p>运营数据汇总、进度跟踪、超时预警与决策辅助</p><div class="emp-visual"><img src="assets/ai-employees/ai-manager.png" alt="AI 项目经理"></div><div class="gain">— 管理决策辅助</div></div>
@@ -1310,23 +2900,23 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">关键数据</span>
-      <h2>让“硬科技”可感知</h2>
+      <h2>让“硬科技”<span class="title-grad">可感知</span></h2>
     </div>
-    <p class="mgroup-title reveal">— 规模</p>
+    <p class="mgroup-title reveal">规模</p>
     <div class="mgrid reveal">
       <div class="mcell"><div class="v" data-count="130"><span class="u">+</span></div><div class="l">已落地空间智能体（不含轨道公安）</div></div>
       <div class="mcell"><div class="v" data-count="14"><span class="u"> 城</span></div><div class="l">轨道立体安防落地城市</div></div>
       <div class="mcell"><div class="v" data-count="800"><span class="u">+</span></div><div class="l">行业算法场景</div></div>
       <div class="mcell"><div class="v" data-count="4000"><span class="u">+</span></div><div class="l">沉淀行业 SOP</div></div>
     </div>
-    <p class="mgroup-title reveal">— 成效</p>
+    <p class="mgroup-title reveal">成效</p>
     <div class="mgrid reveal">
       <div class="mcell"><div class="v" data-count="90"><span class="u">%</span></div><div class="l">跨镜追踪识别率</div></div>
       <div class="mcell"><div class="v" data-count="98"><span class="u">%</span></div><div class="l">平峰客流识别准确率</div></div>
       <div class="mcell"><div class="v" data-count="70"><span class="u">%↑</span></div><div class="l">有效告警率提升</div></div>
       <div class="mcell"><div class="v" data-count="80"><span class="u">%↓</span></div><div class="l">落地成本降低</div></div>
     </div>
-    <p class="mgroup-title reveal">— 科创</p>
+    <p class="mgroup-title reveal">科创</p>
     <div class="mgrid reveal">
       <div class="mcell"><div class="v" data-count="130"><span class="u">+</span></div><div class="l">国家专利</div></div>
       <div class="mcell"><div class="v" data-count="100"><span class="u">+</span></div><div class="l">软件著作权</div></div>
@@ -1341,14 +2931,14 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">行业解决方案</span>
-      <h2>为每个行业提供可落地的主动式 AI 服务</h2>
-      <p>四大行业，按场景对号入座。</p>
+      <h2>为每个行业提供<br class="copy-break"><span class="title-grad">可落地的主动式 AI 服务</span></h2>
+      <p>四大行业，按场景对号入座</p>
     </div>
     <div class="sol-grid">
-      <div class="sol reveal" onclick="openModal()"><div class="sname">智慧交通</div><div class="stags">轨道 / 枢纽 / 高速·低空</div><div class="sgain">多源数据实时研判，空地协同巡检，毫秒级越线预警。</div><span class="more">查看方案 →</span></div>
-      <div class="sol reveal" onclick="openModal()"><div class="sname">公共安全</div><div class="stags">轨道公安 / 边检口岸</div><div class="sgain">从被动监控到主动研判，让海量视频转化为实战战斗力。</div><span class="more">查看方案 →</span></div>
-      <div class="sol reveal" onclick="openModal()"><div class="sname">智慧园区物业</div><div class="stags">住宅 / 商业 / 写字楼 / 产业园</div><div class="sgain">用算法密度替代人力密度，AI 覆盖巡查业务 40%、提效 66%。</div><span class="more">查看方案 →</span></div>
-      <div class="sol reveal" onclick="openModal()"><div class="sname">公共服务</div><div class="stags">机关 / 医院 / 学校</div><div class="sgain">以机关大脑/场所安全防控为核心，构建多维预警防控体系。</div><span class="more">查看方案 →</span></div>
+      <div class="sol reveal" onclick="openModal()"><div class="sname">智慧交通</div><div class="stags">轨道 / 枢纽 / 高速·低空</div><div class="sgain">多源数据实时研判，空地协同巡检，毫秒级越线预警</div><span class="more">查看方案 →</span></div>
+      <div class="sol reveal" onclick="openModal()"><div class="sname">公共安全</div><div class="stags">轨道公安 / 边检口岸</div><div class="sgain">从被动监控到主动研判，让海量视频转化为实战战斗力</div><span class="more">查看方案 →</span></div>
+      <div class="sol reveal" onclick="openModal()"><div class="sname">智慧园区物业</div><div class="stags">住宅 / 商业 / 写字楼 / 产业园</div><div class="sgain">用算法密度替代人力密度，AI 覆盖巡查业务 40%、提效 66%</div><span class="more">查看方案 →</span></div>
+      <div class="sol reveal" onclick="openModal()"><div class="sname">公共服务</div><div class="stags">机关 / 医院 / 学校</div><div class="sgain">以机关大脑/场所安全防控为核心，构建多维预警防控体系</div><span class="more">查看方案 →</span></div>
     </div>
   </div>
 </section>
@@ -1358,18 +2948,18 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal" style="margin-bottom:30px">
       <span class="sec-tag">标杆成效</span>
-      <h2>真实场景，真实成效</h2>
+      <h2>真实场景，<span class="title-grad">真实成效</span></h2>
     </div>
     <div class="case-nav">
       <button class="cbtn" onclick="scrollCases(-1)">←</button>
       <button class="cbtn" onclick="scrollCases(1)">→</button>
     </div>
     <div class="case-track" id="caseTrack">
-      <div class="ccard"><div class="ind">案例 · 轨道公安</div><h4>深圳地铁公共安全智能巡防标杆</h4><div class="big">70%↑</div><div class="bigl">有效告警率提升（以打架斗殴为例）</div><p>全国首个结合大小模型的公共场所智能视频巡，秒级监测异常，主动感知止于未发。</p></div>
-      <div class="ccard"><div class="ind">案例 · 边检口岸</div><h4>国家级科研牵引的口岸双提升标杆</h4><div class="big">98%↑</div><div class="bigl">突发事件主动发现率（50 起中 49 起 AI 发现）</div><p>牵头科技部国家重点研发计划，已在深圳六大口岸部署，高峰通关效率提升 40%。</p></div>
-      <div class="ccard"><div class="ind">案例 · 智慧高速·低空</div><h4>承接广东交通集团 AI+ 三年行动计划</h4><div class="big">空地协同</div><div class="bigl">无人机巡检 + 边缘识别 + 云端研判闭环</div><p>聚焦路网管控、安全应急、低空智化，惠盐高速空地协同巡检验证落地。</p></div>
-      <div class="ccard"><div class="ind">案例 · 智慧园区物业</div><h4>赋能华润、招商局头部物企</h4><div class="big">626</div><div class="bigl">招商局视觉中台覆盖空间数（9 家二级公司）</div><p>“科研能力—工程平台—物业场景”转化闭环，AI 覆盖巡查业务 40%、提效 66%。</p></div>
-      <div class="ccard"><div class="ind">案例 · 交通枢纽</div><h4>枢纽出行服务平台</h4><div class="big">统一调度</div><div class="bigl">客流、运力与周边交通统一监测</div><p>掌握运力匹配情况，提升综合交通枢纽的客流运输效率与服务水平。</p></div>
+      <div class="ccard"><div class="ind">案例 · 轨道公安</div><h4>深圳地铁公共安全智能巡防标杆</h4><div class="big">70%↑</div><div class="bigl">有效告警率提升（以打架斗殴为例）</div><p>全国首个结合大小模型的公共场所智能视频巡，秒级监测异常，主动感知止于未发</p></div>
+      <div class="ccard"><div class="ind">案例 · 边检口岸</div><h4>国家级科研牵引的<br class="copy-break">口岸双提升标杆</h4><div class="big">98%↑</div><div class="bigl">突发事件主动发现率（50 起中 49 起 AI 发现）</div><p>牵头科技部国家重点研发计划，已在深圳六大口岸部署，高峰通关效率提升 40%</p></div>
+      <div class="ccard"><div class="ind">案例 · 智慧高速·低空</div><h4>承接广东交通集团 AI+<br class="copy-break">三年行动计划</h4><div class="big">空地协同</div><div class="bigl">无人机巡检 + 边缘识别 + 云端研判闭环</div><p>聚焦路网管控、安全应急、低空智化，惠盐高速空地协同巡检验证落地</p></div>
+      <div class="ccard"><div class="ind">案例 · 智慧园区物业</div><h4>赋能华润、招商局头部物企</h4><div class="big">626</div><div class="bigl">招商局视觉中台覆盖空间数（9 家二级公司）</div><p>“科研能力—工程平台—物业场景”转化闭环，AI 覆盖巡查业务 40%、提效 66%</p></div>
+      <div class="ccard"><div class="ind">案例 · 交通枢纽</div><h4>枢纽出行服务平台</h4><div class="big">统一调度</div><div class="bigl">客流、运力与周边交通统一监测</div><p>掌握运力匹配情况，提升综合交通枢纽的客流运输效率与服务水平</p></div>
     </div>
     <div class="partners reveal">
       <div class="label">合作伙伴</div>
@@ -1385,8 +2975,8 @@ footer,.metrics{
 <section class="cta-final" id="contact">
   <div class="wrap">
     <div class="cta-box reveal">
-      <h2>把空间运营，交给 AI 员工团队</h2>
-      <p>已服务 3000+ 空间。与我们聊聊，看看空间智能体如何在你的场景里 7×24 在岗。</p>
+      <h2>把空间运营，交给 <span class="title-grad">AI 员工团队</span></h2>
+      <p>已服务 3000+ 空间，与我们聊聊，看看空间智能体如何在你的场景里 7×24 在岗</p>
       <div class="hero-cta">
         <button class="btn btn-primary" onclick="openModal()">商务咨询 →</button>
         <button class="btn btn-ghost" onclick="openModal()">获取方案资料</button>
@@ -1403,7 +2993,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / 空间智能体</div>
     <span class="eyebrow"><span class="dot"></span>空间智能体</span>
     <h1>空间智能体<br><span class="grad">物理空间的运营大脑</span></h1>
-    <p class="lead">不是又一套管理软件的升级，也不是若干视频算法的叠加，而是面向物理空间运营的智能系统——让运营能力不再绑定于具体的人，而是沉淀进一个可感知、可认知、可决策、可执行、可持续学习的系统之中。</p>
+    <p class="lead">不是又一套管理软件的升级，也不是若干视频算法的叠加，而是面向物理空间运营的智能系统——让运营能力不再绑定于具体的人，而是沉淀进一个可感知、可认知、可决策、可执行、可持续学习的系统之中</p>
   </div>
 </section>
 
@@ -1420,20 +3010,20 @@ footer,.metrics{
   <div class="wrap">
     <div class="def-card reveal">
       <span class="dlabel">空间智能体定义</span>
-      <p class="dtext">面向物理空间运营的智能系统，能够基于视频、传感器、设备与业务系统等多源数据，完成对空间状态的<b>感知</b>、对事件风险的<b>认知</b>、对处置任务的<b>决策</b>、对执行资源的<b>调度</b>，并在持续运行中不断<b>学习优化</b>——推动空间从被动管理走向主动运营，乃至自治演化。</p>
+      <p class="dtext">面向物理空间运营的智能系统，能够基于视频、传感器、设备与业务系统等多源数据，完成对空间状态的<b>感知</b>、对事件风险的<b>认知</b>、对处置任务的<b>决策</b>、对执行资源的<b>调度</b>，并在持续运行中不断<b>学习优化</b>——推动空间从被动管理走向主动运营，乃至自治演化</p>
     </div>
     <div class="vs-row reveal">
       <div class="vs-box dim">
         <div class="vk">传统视频 AI 看到的是</div>
-        <div class="vq">“画面里有一个人。”</div>
+        <div class="vq">“画面里有一个人”</div>
       </div>
       <div class="vs-mid">对比</div>
       <div class="vs-box hot">
         <div class="vk">空间智能体知道的是</div>
-        <div class="vq">这个人在哪个区域、为什么出现、影响了什么、接下来可能引发什么风险。</div>
+        <div class="vq">这个人在哪个区域、为什么出现、影响了什么、接下来可能引发什么风险</div>
       </div>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">前者理解<b>像素</b>，后者理解<b>空间</b>——这是空间智能体区别于一切“视频 AI / 安防大模型”的分水岭。</p>
+    <p class="shift-note reveal" style="margin-top:26px">前者理解<b>像素</b>，后者理解<b>空间</b>——这是空间智能体区别于一切“视频 AI / 安防大模型”的分水岭</p>
   </div>
 </section>
 
@@ -1442,8 +3032,8 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">六环闭环</span>
-      <h2>感知 → 推理 → 决策 → 执行 → 记忆 → 进化</h2>
-      <p>空间智能体不是“看见问题”的系统，而是六环闭环的运营系统。感知与执行是行业入场券，推理、决策、记忆、进化才是真正的护城河。</p>
+      <h2>感知 → 推理 → 决策<br class="copy-break"><span class="title-grad">执行 → 记忆 → 进化</span></h2>
+      <p>空间智能体不是“看见问题”的系统，而是六环闭环的运营系统，<br class="copy-break">感知与执行是行业入场券，推理、决策、记忆、进化才是真正的护城河</p>
     </div>
     <div class="hex reveal">
       <svg class="flow" viewBox="0 0 560 560">
@@ -1475,8 +3065,8 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">空间智能体架构</span>
-      <h2>空间智能体：物理空间的操作系统</h2>
-      <p>就像 Windows 之于电脑、Android 之于手机，空间智能体把一座空间里异构的感知设备、子系统、执行终端抽象为统一的能力接口，以空间世界模型为内核，把过去彼此割裂的视频、物联、机器人、业务系统与其他 AI 智能体，重新组织进同一个可编排、可调度、可迭代的体系。</p>
+      <h2>空间智能体：<br class="copy-break"><span class="title-grad">物理空间的操作系统</span></h2>
+      <p>就像 Windows 之于电脑、Android 之于手机，空间智能体把一座空间里异构的感知设备、子系统、执行终端抽象为统一的能力接口，以空间世界模型为内核，把过去彼此割裂的视频、物联、机器人、业务系统与其他 AI 智能体，重新组织进同一个可编排、可调度、可迭代的体系</p>
     </div>
     <div class="osarch reveal">
       <div class="oslayer app">
@@ -1500,7 +3090,7 @@ footer,.metrics{
         <div class="owho">北斗</div>
       </div>
     </div>
-    <p class="os-moat reveal">护城河不在底层算力，而在其上层：<b>空间世界模型（认知内核）+ 权限、任务、工作流、资源、执行五大体系</b>。</p>
+    <p class="os-moat reveal">护城河不在底层算力，而在其上层：<b>空间世界模型（认知内核）+ 权限、任务、工作流、资源、执行五大体系</b></p>
   </div>
 </section>
 
@@ -1509,18 +3099,18 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">能力底座</span>
-      <h2>六层能力底座 + 一个飞轮</h2>
-      <p>从“看得见”到“越用越强”，六层能力支撑空间运营。</p>
+      <h2>六层能力底座 + <span class="title-grad">一个飞轮</span></h2>
+      <p>从“看得见”到“越用越强”，六层能力支撑空间运营</p>
     </div>
     <div class="cap6 reveal">
-      <div class="capcard"><div class="cn">01 · 感知</div><h4>多模态空间感知</h4><p>让空间“看得见”——把摄像头、传感器、门禁、电梯、消防、业务系统等多源数据，融合进同一个时空坐标系。<span style="color:var(--ink-dim)">（原星辰·视觉感知）</span></p></div>
-      <div class="capcard"><div class="cn">02 · 认知内核</div><h4>空间世界模型</h4><p>从“理解画面”到“理解空间”——空间的拓扑、状态、规则与目标。这是最深的技术护城河。</p></div>
-      <div class="capcard"><div class="cn">03 · 理解</div><h4>时空事件理解</h4><p>从“一帧画面”到“一条事件链”——理解事件的起因、演进与后果，而非孤立的瞬间报警。</p></div>
-      <div class="capcard"><div class="cn">04 · 知识</div><h4>空间运营知识体系</h4><p>4000+ 行业 SOP 结构化沉淀，让决策有据可依，而非黑箱臆断。</p></div>
-      <div class="capcard"><div class="cn">05 · 协同</div><h4>空间运营智能体系统</h4><p>目标驱动而非角色驱动的多智能体协同，统一管理多个 AI 员工。<span style="color:var(--ink-dim)">（原星瀚·决策智能）</span></p></div>
-      <div class="capcard"><div class="cn">06 · 执行</div><h4>执行网络</h4><p>让空间“动得了手”——联动设备、派发工单，乃至调度巡检机器人、无人机完成现场处置。</p></div>
+      <div class="capcard"><div class="cn">01 · 感知</div><h4>多模态空间感知</h4><p>让空间“看得见”——把摄像头、传感器、门禁、电梯、消防、业务系统等多源数据，融合进同一个时空坐标系<span style="color:var(--ink-dim)">（原星辰·视觉感知）</span></p></div>
+      <div class="capcard"><div class="cn">02 · 认知内核</div><h4>空间世界模型</h4><p>从“理解画面”到“理解空间”——空间的拓扑、状态、规则与目标，这是最深的技术护城河</p></div>
+      <div class="capcard"><div class="cn">03 · 理解</div><h4>时空事件理解</h4><p>从“一帧画面”到“一条事件链”——理解事件的起因、演进与后果，而非孤立的瞬间报警</p></div>
+      <div class="capcard"><div class="cn">04 · 知识</div><h4>空间运营知识体系</h4><p>4000+ 行业 SOP 结构化沉淀，<br class="copy-break">让决策有据可依，而非黑箱臆断</p></div>
+      <div class="capcard"><div class="cn">05 · 协同</div><h4>空间运营智能体系统</h4><p>目标驱动而非角色驱动的多智能体协同，统一管理多个 AI 员工<span style="color:var(--ink-dim)">（原星瀚·决策智能）</span></p></div>
+      <div class="capcard"><div class="cn">06 · 执行</div><h4>执行网络</h4><p>让空间“动得了手”——联动设备、派发工单，乃至调度巡检机器人、无人机完成现场处置</p></div>
     </div>
-    <div class="flywheel reveal">＋ <b>空间运营飞轮</b>　每一次真实处置的全过程都被沉淀回系统，反哺世界模型、事件理解与知识体系——<b>让底座越用越强</b>。</div>
+    <div class="flywheel reveal">＋ <b>空间运营飞轮</b>　每一次真实处置的全过程都被沉淀回系统，反哺世界模型、事件理解与知识体系——<b>让底座越用越强</b></div>
   </div>
 </section>
 
@@ -1529,8 +3119,8 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">执行边界</span>
-      <h2>执行边界：把“自主”讲成成熟度，而非风险</h2>
-      <p>空间智能体到底能执行什么、哪些必须人确认——按风险等级分级管理。低风险自动闭环以释放效率，高风险始终把最终决定权留给人。</p>
+      <h2>执行边界：把“自主”讲成<span class="title-grad">成熟度</span>，而非风险</h2>
+      <p>空间智能体到底能执行什么、哪些必须人确认——按风险等级分级管理，低风险自动闭环以释放效率，高风险始终把最终决定权留给人</p>
     </div>
     <table class="lv-table reveal">
       <tr><th>执行等级</th><th>动作类型</th><th>示例</th><th>是否需人确认</th></tr>
@@ -1552,7 +3142,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / 产品</div>
     <span class="eyebrow"><span class="dot"></span>产品体系</span>
     <h1>一套操作系统的 <span class="grad">四个层级</span></h1>
-    <p class="lead">从云边算力底座，到空间智能体运行实例，再到面向客户的 AI 员工——四层既是递进的能力体系，也能按需单层落地。<a data-nav="agent" style="color:var(--cyan);cursor:pointer">先了解空间智能体 →</a></p>
+    <p class="lead">从云边算力底座，到空间智能体运行实例，再到面向客户的 AI 员工——四层既是递进的能力体系，也能按需单层落地<br class="copy-break"><a data-nav="agent" style="color:var(--cyan);cursor:pointer">先了解空间智能体 →</a></p>
   </div>
 </section>
 
@@ -1570,10 +3160,10 @@ footer,.metrics{
     <div class="split">
       <div>
         <h2 class="block-title">云边协同算力底座 · 磐石</h2>
-        <p class="lead" style="margin-top:0">云边协同的高性价比国产算力底座，支撑空间智能能力可部署、可运维、可复制、低成本规模化落地。</p>
+        <p class="lead" style="margin-top:0">云边协同的高性价比国产算力底座，支撑空间智能能力可部署、可运维、可复制、低成本规模化落地</p>
         <ul class="feat-list" style="margin-top:20px">
-          <li><b>自主可控：</b>芯片、操作系统到数据库中间件全国产化，已与统信操作系统完成互认证</li>
-          <li><b>边云协同：</b>大小模型分级过滤，落地成本降低 80%、算力占用降至 67%、响应时延 ≤1 秒</li>
+            <li><b>自主可控：</b>芯片、操作系统到数据库中间件全国产化，<br class="copy-break">已与统信操作系统完成互认证</li>
+            <li><b>边云协同：</b>大小模型分级过滤，落地成本降低 80%、算力占用降至 67%，<br class="copy-break">响应时延 ≤1 秒</li>
           <li><b>弹性扩展：</b>从单点监控到区域级数据中心的弹性算力需求</li>
         </ul>
       </div>
@@ -1603,7 +3193,7 @@ footer,.metrics{
       </div>
       <div>
         <h2 class="block-title">空间感知 · 星辰</h2>
-        <p class="lead" style="margin-top:0">空间智能体的感知层，破解传统视频监控“看不全、看不懂、看不准”三大根本局限。</p>
+        <p class="lead" style="margin-top:0">空间智能体的感知层，破解传统视频监控<br class="copy-break">“看不全、看不懂、看不准”三大根本局限</p>
         <ul class="feat-list" style="margin-top:20px">
           <li><b>看不全 → 跨镜时空融合：</b>跨镜追踪识别率 90%、定位准确率 95%，ReID 多数据集排名第一</li>
           <li><b>看不准 → 客流识别：</b>平峰 98%、高峰 90%</li>
@@ -1614,7 +3204,7 @@ footer,.metrics{
     </div>
     <div class="panel" style="margin-top:30px">
       <h3>算法场景库</h3>
-      <p style="color:var(--ink-soft);font-size:15px;margin-bottom:16px">沉淀面向 10 类物理空间、56 个业务子类、800+ 行业算法场景。</p>
+      <p style="color:var(--ink-soft);font-size:15px;margin-bottom:16px">沉淀面向 10 类物理空间、56 个业务子类、800+ 行业算法场景</p>
       <div class="techcol chips" style="background:none;border:none;padding:0"><div class="chips" style="display:flex;flex-wrap:wrap;gap:8px">
         <span>车闸秩序</span><span>车场秩序</span><span>公共安全</span><span>充电安全</span><span>消防安全</span><span>维修作业</span><span>设备房巡查</span><span>行为合规</span><span>高层建筑</span>
       </div></div>
@@ -1629,7 +3219,7 @@ footer,.metrics{
     <div class="split">
       <div>
         <h2 class="block-title">空间运营智能体系统 · 星瀚</h2>
-        <p class="lead" style="margin-top:0">空间智能体的决策层，以知识库驱动、多智能体目标协同为核心，让系统从“看见事件”走向“研判风险、拆解任务、推动闭环”。</p>
+        <p class="lead" style="margin-top:0">空间智能体的决策层，以知识库驱动、多智能体目标协同为核心，让系统从“看见事件”走向“研判风险、拆解任务、推动闭环”</p>
         <ul class="feat-list" style="margin-top:20px">
           <li><b>五大能力：</b>SOP 解析 / 知识图谱 / 事件研判 / 工单分拨 / 复盘归因</li>
           <li><b>决策闭环：</b>风险判断 → 任务分拨 → 处置建议，RAG 知识库实时提供作业指引</li>
@@ -1658,7 +3248,7 @@ footer,.metrics{
   <div class="wrap">
     <span class="section-label">AI 员工（应用层）</span>
     <h2 class="block-title">同一个智能体内核，封装成不同岗位的 AI 员工</h2>
-    <p class="lead" style="margin-top:0;margin-bottom:18px">AI 员工不是六个相互独立的产品，而是<b style="color:var(--cyan)">同一套空间智能体闭环能力</b>（感知·推理·决策·执行），通过技能库与岗位配置，封装成不同岗位上的角色。一个内核，不同岗位，按“岗位 × 空间”订阅计费。</p>
+    <p class="lead" style="margin-top:0;margin-bottom:18px">AI 员工不是六个相互独立的产品，而是<b style="color:var(--cyan)">同一套空间智能体闭环能力</b>（感知·推理·决策·执行），<br class="copy-break">通过技能库与岗位配置，封装成不同岗位上的角色，一个内核，不同岗位，按“岗位 × 空间”订阅计费</p>
     <div class="panel reveal" style="margin-bottom:28px">
       <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;font-family:'Sora';font-weight:600;font-size:15px">
         <span style="color:var(--ink)">空间智能体闭环能力</span>
@@ -1689,7 +3279,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / 解决方案</div>
     <span class="eyebrow"><span class="dot"></span>行业解决方案</span>
     <h1>同一个空间智能体，<span class="grad">服务四大行业 · 十二类场景</span></h1>
-    <p class="lead">四大行业、十二个细分场景，按场景对号入座。每个方案，是空间智能体在该场景下派出的一组 AI 员工，配本行业的标杆案例与可量化成效。</p>
+    <p class="lead">四大行业、十二个细分场景，按场景对号入座，每个方案，是空间智能体在该场景下派出的一组 AI 员工，配本行业的标杆案例与可量化成效</p>
   </div>
 </section>
 <section>
@@ -1699,28 +3289,28 @@ footer,.metrics{
         <div class="sico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M4 15V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9M4 15h16M4 15l-1 4M20 15l1 4M7 19v1M17 19v1M8 8h8"/></svg></div>
         <h3>智慧交通</h3>
         <div class="stags">轨道 / 枢纽 / 高速·低空</div>
-        <p>含 3 个细分场景：轨道交通、交通枢纽、高速·低空。每个场景配对应的 AI 员工组合与标杆成效。</p>
+        <p>含 3 个细分场景：轨道交通、交通枢纽、高速·低空，每个场景配对应的 AI 员工组合与标杆成效</p>
         <span class="more">进入行业 →</span>
       </div>
       <div class="sentry" data-nav="sol-safety">
         <div class="sico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/></svg></div>
         <h3>公共安全</h3>
         <div class="stags">轨道公安 / 边检口岸</div>
-        <p>含 2 个细分场景：轨道公安、口岸边检。每个场景配对应的 AI 员工组合与标杆成效。</p>
+        <p>含 2 个细分场景：轨道公安、口岸边检，<br class="copy-break">每个场景配对应的 AI 员工组合与标杆成效</p>
         <span class="more">进入行业 →</span>
       </div>
       <div class="sentry" data-nav="sol-property">
         <div class="sico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg></div>
         <h3>智慧园区物业</h3>
         <div class="stags">住宅 / 商业 / 写字楼 / 产业园</div>
-        <p>含 4 个细分场景：住宅物业、商业物业、写字楼、产业园区。每个场景配对应的 AI 员工组合与标杆成效。</p>
+        <p>含 4 个细分场景：住宅物业、商业物业、写字楼、产业园区，每个场景配对应的 AI 员工组合与标杆成效</p>
         <span class="more">进入行业 →</span>
       </div>
       <div class="sentry" data-nav="sol-public">
         <div class="sico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M3 21h18M6 21V9l6-5 6 5v12M10 21v-6h4v6"/></svg></div>
         <h3>公共服务</h3>
         <div class="stags">机关 / 医院 / 学校</div>
-        <p>含 3 个细分场景：机关单位、医院、学校。每个场景配对应的 AI 员工组合与标杆成效。</p>
+        <p>含 3 个细分场景：机关单位、医院、学校，<br class="copy-break">每个场景配对应的 AI 员工组合与标杆成效</p>
         <span class="more">进入行业 →</span>
       </div>
     </div>
@@ -1731,14 +3321,14 @@ footer,.metrics{
     <div class="sec-head reveal">
       <span class="sec-tag">标杆客户</span>
       <h2>标杆客户</h2>
-      <p>不是案例堆砌，而是同一套能力在标杆场景中被规模化复制的证明。</p>
+      <p>不是案例堆砌，而是同一套能力在标杆场景中被规模化复制的证明</p>
     </div>
     <div class="metric-row reveal">
       <div class="mc"><div class="mv">626</div><div class="ml">招商局集团 · 空间复制落地<br>集团级空间智能中台</div></div>
       <div class="mc"><div class="mv">1536</div><div class="ml">华润万象生活 · 项目复制<br>全国首个物业管理大模型平台</div></div>
       <div class="mc"><div class="mv">14<span style="font-size:18px"> 城</span></div><div class="ml">轨道公安 · 立体安防落地<br>市占率 25%</div></div>
     </div>
-    <p class="shift-note reveal" style="margin-top:24px;font-size:14px;color:var(--ink-dim)">更多标杆客户案例可在商务沟通中按行业场景提供。</p>
+    <p class="shift-note reveal" style="margin-top:24px;font-size:14px;color:var(--ink-dim)">更多标杆客户案例可在商务沟通中按行业场景提供</p>
   </div>
 </section>
 </div>
@@ -1750,7 +3340,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / 智慧交通</div>
     <span class="eyebrow"><span class="dot"></span>智慧交通 · 轨道 / 枢纽 / 高速·低空</span>
     <h1>智慧交通<span class="grad"> · 按场景对号入座</span></h1>
-    <p class="lead">空间智能体在 智慧交通 的各个细分场景下，派出对应的 AI 员工组合。选择你的场景，查看具体方案与标杆成效。</p>
+    <p class="lead">空间智能体在 智慧交通 的各个细分场景下，派出对应的 AI 员工组合，选择你的场景，查看具体方案与标杆成效</p>
   </div>
 </section>
 <section>
@@ -1759,19 +3349,19 @@ footer,.metrics{
       <div class="sentry" data-nav="sc-rail">
         <h3>轨道交通</h3>
         <div class="stags">地铁 / 城轨 / 车站</div>
-        <p>高密度封闭客流，毫秒级越线预警。让车站从被动监控走向主动调度。</p>
+        <p>高密度封闭客流，毫秒级越线预警，让车站从被动监控走向主动调度</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-hub">
         <h3>交通枢纽</h3>
         <div class="stags">机场 / 高铁站 / 综合枢纽</div>
-        <p>多源数据分散、调度难统一。把数十个子系统汇成一幅统一空间实况。</p>
+        <p>多源数据分散、调度难统一，把数十个子系统汇成一幅统一空间实况</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-highway">
         <h3>高速·低空</h3>
         <div class="stags">高速路网 / 无人机巡检</div>
-        <p>路网跨度长、点位分散。空地协同，无人机+边缘+云端闭环。</p>
+        <p>路网跨度长、点位分散，空地协同，无人机+边缘+云端闭环</p>
         <span class="more">查看方案 →</span>
       </div>
     </div>
@@ -1786,7 +3376,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / 公共安全</div>
     <span class="eyebrow"><span class="dot"></span>公共安全 · 轨道公安 / 边检口岸</span>
     <h1>公共安全<span class="grad"> · 按场景对号入座</span></h1>
-    <p class="lead">空间智能体在 公共安全 的各个细分场景下，派出对应的 AI 员工组合。选择你的场景，查看具体方案与标杆成效。</p>
+    <p class="lead">空间智能体在 公共安全 的各个细分场景下，派出对应的 AI 员工组合，选择你的场景，查看具体方案与标杆成效</p>
   </div>
 </section>
 <section>
@@ -1795,13 +3385,13 @@ footer,.metrics{
       <div class="sentry" data-nav="sc-railpolice">
         <h3>轨道公安</h3>
         <div class="stags">地铁公安 / 立体安防</div>
-        <p>立体安防落地 14 城，市占率 25%。让海量视频转化为战斗力。</p>
+        <p>立体安防落地 14 城，市占率 25%，让海量视频转化为战斗力</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-border">
         <h3>口岸边检</h3>
         <div class="stags">口岸 / 边检 / 通关</div>
-        <p>国家级重点研发，主动发现率 98%、通关提效 40%。</p>
+        <p>国家级重点研发，主动发现率 98%、通关提效 40%</p>
         <span class="more">查看方案 →</span>
       </div>
     </div>
@@ -1816,7 +3406,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / 智慧园区物业</div>
     <span class="eyebrow"><span class="dot"></span>智慧园区物业 · 住宅 / 商业 / 写字楼 / 产业园</span>
     <h1>智慧园区物业<span class="grad"> · 按场景对号入座</span></h1>
-    <p class="lead">空间智能体在 智慧园区物业 的各个细分场景下，派出对应的 AI 员工组合。选择你的场景，查看具体方案与标杆成效。</p>
+    <p class="lead">空间智能体在 智慧园区物业 的各个细分场景下，派出对应的 AI 员工组合，选择你的场景，查看具体方案与标杆成效</p>
   </div>
 </section>
 <section>
@@ -1825,25 +3415,25 @@ footer,.metrics{
       <div class="sentry" data-nav="sc-residential">
         <h3>住宅物业</h3>
         <div class="stags">社区 / 住宅小区</div>
-        <p>用算法密度替代人力密度，让一个运营者服务更多社区。</p>
+        <p>用算法密度替代人力密度，让一个运营者服务更多社区</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-commercial">
         <h3>商业物业</h3>
         <div class="stags">购物中心 / 商业综合体</div>
-        <p>多业态、高品质要求，世界模型有人付钱、且有实效。</p>
+        <p>多业态、高品质要求，世界模型有人付钱、且有实效</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-office">
         <h3>写字楼</h3>
         <div class="stags">甲级写字楼 / 办公空间</div>
-        <p>设备机房 7×24 监测，能耗智能调优。</p>
+        <p>设备机房 7×24 监测，能耗智能调优</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-park">
         <h3>产业园区</h3>
         <div class="stags">产业园 / 园区运营</div>
-        <p>多业态跨地域，集团级中台一次共建、多空间复用。</p>
+        <p>多业态跨地域，集团级中台一次共建、多空间复用</p>
         <span class="more">查看方案 →</span>
       </div>
     </div>
@@ -1858,7 +3448,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / 公共服务</div>
     <span class="eyebrow"><span class="dot"></span>公共服务 · 机关 / 医院 / 学校</span>
     <h1>公共服务<span class="grad"> · 按场景对号入座</span></h1>
-    <p class="lead">空间智能体在 公共服务 的各个细分场景下，派出对应的 AI 员工组合。选择你的场景，查看具体方案与标杆成效。</p>
+    <p class="lead">空间智能体在 公共服务 的各个细分场景下，派出对应的 AI 员工组合，选择你的场景，查看具体方案与标杆成效</p>
   </div>
 </section>
 <section>
@@ -1867,19 +3457,19 @@ footer,.metrics{
       <div class="sentry" data-nav="sc-gov">
         <h3>机关单位</h3>
         <div class="stags">机关 / 政务大楼</div>
-        <p>有温度、善管控的智慧机关大脑。</p>
+        <p>有温度、善管控的智慧机关大脑</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-hospital">
         <h3>医院</h3>
         <div class="stags">医疗机构 / 院区</div>
-        <p>强化消防感知与安全防控，保障院区运行安全。</p>
+        <p>强化消防感知与安全防控，保障院区运行安全</p>
         <span class="more">查看方案 →</span>
       </div>
       <div class="sentry" data-nav="sc-school">
         <h3>学校</h3>
         <div class="stags">校园 / 教育机构</div>
-        <p>校园安全与秩序智能巡防，有效警情可追溯。</p>
+        <p>校园安全与秩序智能巡防，有效警情可追溯</p>
         <span class="more">查看方案 →</span>
       </div>
     </div>
@@ -1894,7 +3484,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-traffic">智慧交通</a> / 轨道交通</div>
     <span class="eyebrow"><span class="dot"></span>智慧交通 · 轨道交通 · 地铁 / 城轨 / 车站</span>
     <h1>高密度封闭空间的<span class="grad">主动安全运营</span></h1>
-    <p class="lead">地铁车站客流密集、空间封闭、风险瞬时——空间智能体在边缘毫秒级识别越线、滞留、聚集等异常，把事件止于未发。</p>
+    <p class="lead">地铁车站客流密集、空间封闭、风险瞬时——空间智能体在边缘毫秒级识别越线、滞留、聚集等异常，把事件止于未发</p>
   </div>
 </section>
 <section>
@@ -1910,7 +3500,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">70%↑</div><div class="ml">有效告警率提升</div></div><div class="mc"><div class="mv">毫秒级</div><div class="ml">边缘预警时延</div></div><div class="mc"><div class="mv">500+</div><div class="ml">单城部署地铁站</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>深圳地铁智慧车站</h4><p>结合大小模型的智能视频巡查，有效告警率提升 70%，单城部署 500+ 座地铁站。</p></div>
+      <div class="cmid"><h4>深圳地铁智慧车站</h4><p>结合大小模型的智能视频巡查，有效告警率提升 70%，单城部署 500+ 座地铁站</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-traffic')">← 返回智慧交通</button></div>
@@ -1925,7 +3515,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-traffic">智慧交通</a> / 交通枢纽</div>
     <span class="eyebrow"><span class="dot"></span>智慧交通 · 交通枢纽 · 机场 / 高铁站 / 综合枢纽</span>
     <h1>多源数据<span class="grad">统一态势感知</span></h1>
-    <p class="lead">枢纽接入数十个子系统、数万设备终端，数据各说各话——空间智能体把它们融合进同一个时空坐标系，形成统一运营实况。</p>
+    <p class="lead">枢纽接入数十个子系统、数万设备终端，数据各说各话——空间智能体把它们融合进同一个时空坐标系，形成统一运营实况</p>
   </div>
 </section>
 <section>
@@ -1941,7 +3531,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">57</div><div class="ml">子系统统一接入（标杆口径）</div></div><div class="mc"><div class="mv">6万+</div><div class="ml">设备终端纳管</div></div><div class="mc"><div class="mv">统一态势</div><div class="ml">跨子系统</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>大型综合枢纽 · 全量接入</h4><p>覆盖多类工程、数十个子系统、数万台设备终端，形成统一空间运营实况。</p></div>
+      <div class="cmid"><h4>大型综合枢纽 · 全量接入</h4><p>覆盖多类工程、数十个子系统、数万台设备终端，形成统一空间运营实况</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-traffic')">← 返回智慧交通</button></div>
@@ -1956,7 +3546,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-traffic">智慧交通</a> / 高速·低空</div>
     <span class="eyebrow"><span class="dot"></span>智慧交通 · 高速·低空 · 高速路网 / 无人机巡检</span>
     <h1>长跨度路网的<span class="grad">空地协同巡检</span></h1>
-    <p class="lead">高速路网跨度长、点位分散，传统巡检与无人机缺少协同——空间智能体把无人机巡检、边缘识别与云端研判连成一条闭环。</p>
+    <p class="lead">高速路网跨度长、点位分散，传统巡检与无人机缺少协同——空间智能体把无人机巡检、边缘识别与云端研判连成一条闭环</p>
   </div>
 </section>
 <section>
@@ -1972,7 +3562,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">空地协同</div><div class="ml">无人机+边缘+云端</div></div><div class="mc"><div class="mv">AI+</div><div class="ml">广东交通集团三年行动</div></div><div class="mc"><div class="mv">惠盐高速</div><div class="ml">落地场景</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>广东交通集团 AI+ / 惠盐高速</h4><p>承接广东交通集团 AI+ 三年行动计划，惠盐高速空地协同巡检落地。</p></div>
+      <div class="cmid"><h4>广东交通集团 AI+ / 惠盐高速</h4><p>承接广东交通集团 AI+ 三年行动计划，惠盐高速空地协同巡检落地</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-traffic')">← 返回智慧交通</button></div>
@@ -1987,7 +3577,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-safety">公共安全</a> / 轨道公安</div>
     <span class="eyebrow"><span class="dot"></span>公共安全 · 轨道公安 · 地铁公安 / 立体安防</span>
     <h1>从被动监控到<span class="grad">主动研判处置</span></h1>
-    <p class="lead">超大客流、多站点、突发性强——空间智能体主动感知，事件止于未发，算法包+SOP 跨场景可复制，已在全国 14 城落地。</p>
+    <p class="lead">超大客流、多站点、突发性强——空间智能体主动感知，事件止于未发，算法包+SOP 跨场景可复制，已在全国 14 城落地</p>
   </div>
 </section>
 <section>
@@ -2003,7 +3593,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">14 城</div><div class="ml">立体安防落地</div></div><div class="mc"><div class="mv">25%</div><div class="ml">市占率</div></div><div class="mc"><div class="mv">93%</div><div class="ml">新任务提效</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>地铁公安立体安防平台</h4><p>立体安防防控平台落地全国 14 城，市占率约 25%，单城部署地铁站 500+ 座。</p></div>
+      <div class="cmid"><h4>地铁公安立体安防平台</h4><p>立体安防防控平台落地全国 14 城，市占率约 25%，单城部署地铁站 500+ 座</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-safety')">← 返回公共安全</button></div>
@@ -2018,7 +3608,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-safety">公共安全</a> / 口岸边检</div>
     <span class="eyebrow"><span class="dot"></span>公共安全 · 口岸边检 · 口岸 / 边检 / 通关</span>
     <h1>高安全场景的<span class="grad">主动发现与提效</span></h1>
-    <p class="lead">口岸安全责任刚性、通关效率要求高——空间智能体牵头国家级重点研发计划，突发事件主动发现率提升 98%、高峰通关效率提升 40%。</p>
+    <p class="lead">口岸安全责任刚性、通关效率要求高——空间智能体牵头国家级重点研发计划，突发事件主动发现率提升 98%、高峰通关效率提升 40%</p>
   </div>
 </section>
 <section>
@@ -2034,7 +3624,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">98%↑</div><div class="ml">突发事件主动发现率</div></div><div class="mc"><div class="mv">40%↑</div><div class="ml">高峰通关效率(25→10min)</div></div><div class="mc"><div class="mv">国家级</div><div class="ml">重点研发计划</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>深圳口岸 · 国家重点研发计划</h4><p>牵头科技部国家重点研发计划，突发事件主动发现率提升 98%、高峰通关效率提升 40%。</p></div>
+      <div class="cmid"><h4>深圳口岸 · 国家重点研发计划</h4><p>牵头科技部国家重点研发计划，突发事件主动发现率提升 98%、高峰通关效率提升 40%</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-safety')">← 返回公共安全</button></div>
@@ -2049,7 +3639,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-property">智慧园区物业</a> / 住宅物业</div>
     <span class="eyebrow"><span class="dot"></span>智慧园区物业 · 住宅物业 · 社区 / 住宅小区</span>
     <h1>社区运营的<span class="grad">算法密度替代</span></h1>
-    <p class="lead">住宅物业人力占比高、巡查重复——空间智能体把巡检、安全、设备等低价值劳动交给 AI 员工，让运营者聚焦高价值服务。</p>
+    <p class="lead">住宅物业人力占比高、巡查重复——空间智能体把巡检、安全、设备等低价值劳动交给 AI 员工，让运营者聚焦高价值服务</p>
   </div>
 </section>
 <section>
@@ -2065,7 +3655,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">40%</div><div class="ml">AI 覆盖巡查业务</div></div><div class="mc"><div class="mv">66%</div><div class="ml">巡查提效</div></div><div class="mc"><div class="mv">可复制</div><div class="ml">多社区推广</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>华润万象生活 · 社区场景</h4><p>全国首个物业管理大模型平台在住宅社区落地，AI 覆盖巡查 40%、提效 66%。</p></div>
+      <div class="cmid"><h4>华润万象生活 · 社区场景</h4><p>全国首个物业管理大模型平台在住宅社区落地，AI 覆盖巡查 40%、提效 66%</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-property')">← 返回智慧园区物业</button></div>
@@ -2080,7 +3670,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-property">智慧园区物业</a> / 商业物业</div>
     <span class="eyebrow"><span class="dot"></span>智慧园区物业 · 商业物业 · 购物中心 / 商业综合体</span>
     <h1>高端商业空间的<span class="grad">标准化智能运营</span></h1>
-    <p class="lead">商业综合体业态多、品质要求严——空间智能体把巡查、安全、运营标准化，沉淀为可跨项目复制的能力平台。</p>
+    <p class="lead">商业综合体业态多、品质要求严——空间智能体把巡查、安全、运营标准化，沉淀为可跨项目复制的能力平台</p>
   </div>
 </section>
 <section>
@@ -2096,7 +3686,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">1536</div><div class="ml">项目规模化复制</div></div><div class="mc"><div class="mv">66%</div><div class="ml">巡查提效</div></div><div class="mc"><div class="mv">首个</div><div class="ml">物业管理大模型平台</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>华润万象生活 · 商业物业</h4><p>全国首个物业管理大模型平台，1536 个项目规模化复制，证明它不是定制项目而是平台产品。</p></div>
+      <div class="cmid"><h4>华润万象生活 · 商业物业</h4><p>全国首个物业管理大模型平台，1536 个项目规模化复制，证明它不是定制项目而是平台产品</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-property')">← 返回智慧园区物业</button></div>
@@ -2111,7 +3701,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-property">智慧园区物业</a> / 写字楼</div>
     <span class="eyebrow"><span class="dot"></span>智慧园区物业 · 写字楼 · 甲级写字楼 / 办公空间</span>
     <h1>办公空间的<span class="grad">设备与能效优化</span></h1>
-    <p class="lead">写字楼设备机房多、能耗占比高——空间智能体提供设备全生命周期监测与冷站智能调优，让运营更省、更稳。</p>
+    <p class="lead">写字楼设备机房多、能耗占比高——空间智能体提供设备全生命周期监测与冷站智能调优，让运营更省、更稳</p>
   </div>
 </section>
 <section>
@@ -2127,7 +3717,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">10%–15%</div><div class="ml">能耗降低</div></div><div class="mc"><div class="mv">6h/人</div><div class="ml">单项目每日释放</div></div><div class="mc"><div class="mv">7×24</div><div class="ml">设备在线监测</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>甲级写字楼 · 设备与能效</h4><p>12 类设备机房 7×24 监测与全生命周期管理，能耗降低 10%–15%。</p></div>
+      <div class="cmid"><h4>甲级写字楼 · 设备与能效</h4><p>12 类设备机房 7×24 监测与全生命周期管理，能耗降低 10%–15%</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-property')">← 返回智慧园区物业</button></div>
@@ -2142,7 +3732,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-property">智慧园区物业</a> / 产业园区</div>
     <span class="eyebrow"><span class="dot"></span>智慧园区物业 · 产业园区 · 产业园 / 园区运营</span>
     <h1>集团级园区的<span class="grad">中台化复用</span></h1>
-    <p class="lead">产业园区多业态、跨地域、资产分散——空间智能体以集团级中台沉淀分散能力，一次共建、多空间复用。</p>
+    <p class="lead">产业园区多业态、跨地域、资产分散——空间智能体以集团级中台沉淀分散能力，一次共建、多空间复用</p>
   </div>
 </section>
 <section>
@@ -2158,7 +3748,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">626</div><div class="ml">空间复制落地</div></div><div class="mc"><div class="mv">集团级</div><div class="ml">空间智能中台</div></div><div class="mc"><div class="mv">9</div><div class="ml">二级公司覆盖</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>招商局集团 · 集团级中台</h4><p>集团级空间智能中台覆盖 626 空间、9 家二级公司，一次共建、多空间复用。</p></div>
+      <div class="cmid"><h4>招商局集团 · 集团级中台</h4><p>集团级空间智能中台覆盖 626 空间、9 家二级公司，一次共建、多空间复用</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-property')">← 返回智慧园区物业</button></div>
@@ -2173,7 +3763,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-public">公共服务</a> / 机关单位</div>
     <span class="eyebrow"><span class="dot"></span>公共服务 · 机关单位 · 机关 / 政务大楼</span>
     <h1>政务空间的<span class="grad">智慧机关大脑</span></h1>
-    <p class="lead">机关单位多环节资源需统筹——空间智能体提供有温度、善管控的智慧治理，统筹安全、设备与服务多环节。</p>
+    <p class="lead">机关单位多环节资源需统筹——空间智能体提供有温度、善管控的智慧治理，统筹安全、设备与服务多环节</p>
   </div>
 </section>
 <section>
@@ -2189,7 +3779,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">机关大脑</div><div class="ml">统一运营</div></div><div class="mc"><div class="mv">多环节</div><div class="ml">资源统筹</div></div><div class="mc"><div class="mv">善管控</div><div class="ml">智慧治理</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>深圳市机关事务管理局</h4><p>机关大脑统一运营平台，统筹安全、设备与服务多环节。</p></div>
+      <div class="cmid"><h4>深圳市机关事务管理局</h4><p>机关大脑统一运营平台，统筹安全、设备与服务多环节</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-public')">← 返回公共服务</button></div>
@@ -2204,7 +3794,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-public">公共服务</a> / 医院</div>
     <span class="eyebrow"><span class="dot"></span>公共服务 · 医院 · 医疗机构 / 院区</span>
     <h1>医疗院区的<span class="grad">安全防控体系</span></h1>
-    <p class="lead">医院消防与安全防控压力大、人员密集——空间智能体构建多维预警防控体系，保障院区运行安全。</p>
+    <p class="lead">医院消防与安全防控压力大、人员密集——空间智能体构建多维预警防控体系，保障院区运行安全</p>
   </div>
 </section>
 <section>
@@ -2220,7 +3810,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">多维防控</div><div class="ml">预警体系</div></div><div class="mc"><div class="mv">7×24</div><div class="ml">重点区域监测</div></div><div class="mc"><div class="mv">运行安全</div><div class="ml">主动保障</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>医院 · 多维预警防控</h4><p>医院多维预警防控体系，强化消防感知与安全防控，保障院区运行安全。</p></div>
+      <div class="cmid"><h4>医院 · 多维预警防控</h4><p>医院多维预警防控体系，强化消防感知与安全防控，保障院区运行安全</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-public')">← 返回公共服务</button></div>
@@ -2235,7 +3825,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="solutions">解决方案</a> / <a data-nav="sol-public">公共服务</a> / 学校</div>
     <span class="eyebrow"><span class="dot"></span>公共服务 · 学校 · 校园 / 教育机构</span>
     <h1>校园空间的<span class="grad">安全秩序巡防</span></h1>
-    <p class="lead">学校人员密集、安全与秩序管理要求高——空间智能体提供校园安全与秩序智能巡防，主动发现、闭环处置。</p>
+    <p class="lead">学校人员密集、安全与秩序管理要求高——空间智能体提供校园安全与秩序智能巡防，主动发现、闭环处置</p>
   </div>
 </section>
 <section>
@@ -2251,7 +3841,7 @@ footer,.metrics{
     <div class="metric-row" style="margin-top:30px"><div class="mc"><div class="mv">1275</div><div class="ml">有效警情(标杆)</div></div><div class="mc"><div class="mv">92%</div><div class="ml">准确率</div></div><div class="mc"><div class="mv">70%↓</div><div class="ml">响应时间缩短</div></div></div>
     <div class="case-inline" style="margin-top:30px">
       <div class="cbig">标杆</div>
-      <div class="cmid"><h4>校园安全 · 智能巡防</h4><p>校园安全与秩序智能巡防，有效警情 1275 起，准确率 92%，响应时间缩短 70%。</p></div>
+      <div class="cmid"><h4>校园安全 · 智能巡防</h4><p>校园安全与秩序智能巡防，有效警情 1275 起，准确率 92%，响应时间缩短 70%</p></div>
       <button class="btn btn-ghost" onclick="openModal()">商务咨询 →</button>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="nav2('sol-public')">← 返回公共服务</button></div>
@@ -2266,7 +3856,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / 核心技术</div>
     <span class="eyebrow"><span class="dot"></span>核心技术与科创实力</span>
     <h1>支撑规模化复制的<span class="grad">六层能力底座</span></h1>
-    <p class="lead">从“看得见”到“越用越强”，六层能力在技术上支撑空间运营。感知与执行是行业入场券，世界模型、事件理解、知识体系、智能体系统是真正的护城河。<a data-nav="agent" style="color:var(--cyan);cursor:pointer">回到空间智能体总览 →</a></p>
+    <p class="lead">从“看得见”到“越用越强”，六层能力在技术上支撑空间运营，<br class="copy-break">感知与执行是行业入场券，世界模型、事件理解、知识体系、智能体系统是真正的护城河<br class="copy-break"><a data-nav="agent" style="color:var(--cyan);cursor:pointer">回到空间智能体总览 →</a></p>
   </div>
 </section>
 
@@ -2282,43 +3872,43 @@ footer,.metrics{
     <div class="sec-head reveal">
       <span class="sec-tag">能力底座</span>
       <h2>六层能力底座 · 点击展开每一层</h2>
-      <p>每一层都对应一项可展开的核心技术。它们不是孤立能力，而是“感知—理解—决策—执行”的连续壁垒。</p>
+      <p>每一层都对应一项可展开的核心技术，它们不是孤立能力，而是“感知—理解—决策—执行”的连续壁垒</p>
     </div>
     <div class="sol-entry reveal">
       <div class="sentry" data-nav="t-perception">
         <div class="stags">底座 01 · 感知</div>
         <h3>多模态空间感知</h3>
-        <p>把摄像头、传感器、门禁、电梯、消防、业务系统等多源数据，融合进同一个时空坐标系。</p>
+      <p>把摄像头、传感器、门禁、电梯、消防、业务系统等多源数据，<br class="copy-break">融合进同一个时空坐标系</p>
         <span class="more">展开技术 →</span>
       </div>
       <div class="sentry" data-nav="t-worldmodel">
         <div class="stags">底座 02 · 空间世界模型 · 护城河</div>
         <h3>空间世界模型</h3>
-        <p>空间智能体对其所运营空间的动态、结构化内在表征——拓扑、状态、规则、目标。这是最深的技术护城河。</p>
+        <p>空间智能体对其所运营空间的动态、结构化内在表征——拓扑、状态、规则、目标，这是最深的技术护城河</p>
         <span class="more">展开技术 →</span>
       </div>
       <div class="sentry" data-nav="t-event">
         <div class="stags">底座 03 · 事件理解 · 护城河</div>
         <h3>时空事件理解</h3>
-        <p>把连续的时空数据读成一条有因果、有前后的事件链，理解事件的起因、演进与后果。</p>
+      <p>把连续的时空数据读成一条有因果、有前后的事件链，<br class="copy-break">理解事件的起因、演进与后果</p>
         <span class="more">展开技术 →</span>
       </div>
       <div class="sentry" data-nav="t-knowledge">
         <div class="stags">底座 04 · 知识体系 · 护城河</div>
         <h3>空间运营知识体系</h3>
-        <p>标准作业流程、管理规则、历史案例、专家经验、行业标准，共同沉淀为空间“懂得如何运营”的知识底座。</p>
+        <p>标准作业流程、管理规则、历史案例、专家经验、行业标准，共同沉淀为空间“懂得如何运营”的知识底座</p>
         <span class="more">展开技术 →</span>
       </div>
       <div class="sentry" data-nav="t-agentsys">
         <div class="stags">底座 05 · 智能体系统 · 护城河</div>
         <h3>空间运营智能体系统</h3>
-        <p>不是“单一智能体”，而是面向空间运营目标的智能体系统——目标驱动而非角色驱动。</p>
+      <p>不是“单一智能体”，而是面向空间运营目标的智能体系统——<br class="copy-break">目标驱动而非角色驱动</p>
         <span class="more">展开技术 →</span>
       </div>
       <div class="sentry" data-nav="t-execution">
         <div class="stags">底座 06 · 执行网络</div>
         <h3>执行网络</h3>
-        <p>空间智能体伸向物理世界的“手脚”——把决策转化为真实动作，统合设备、机器人、无人机。</p>
+      <p>空间智能体伸向物理世界的“手脚”——把决策转化为真实动作，<br class="copy-break">统合设备、机器人、无人机</p>
         <span class="more">展开技术 →</span>
       </div>
     </div>
@@ -2329,8 +3919,8 @@ footer,.metrics{
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">数据飞轮</span>
-      <h2>＋ 空间运营飞轮：让底座越用越强</h2>
-      <p>运营的空间越多，捕捉的事件越多；事件越多，知识越厚；知识越厚，智能体越聪明。</p>
+    <h2>＋ 空间运营飞轮：<br class="copy-break">让底座越用越强</h2>
+      <p>运营的空间越多，捕捉的事件越多；事件越多，知识越厚；知识越厚，智能体越聪明</p>
     </div>
     <div class="panel reveal">
       <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;font-family:'Sora';font-weight:600;font-size:15px">
@@ -2341,7 +3931,7 @@ footer,.metrics{
         <span style="color:var(--blue-2)">运营更好 · 接入更多空间</span>
       </div>
     </div>
-    <p class="shift-note reveal" style="margin-top:20px">每一次真实处置的全过程——感知数据、事件判定、决策依据、执行结果、人工校正——都被沉淀回系统，<b>让整个底座越用越强</b>。</p>
+    <p class="shift-note reveal" style="margin-top:20px">每一次真实处置的全过程——感知数据、事件判定、决策依据、执行结果、人工校正——都被沉淀回系统，<b>让整个底座越用越强</b></p>
   </div>
 </section>
 
@@ -2387,7 +3977,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="tech">核心技术</a> / 多模态空间感知</div>
     <span class="eyebrow"><span class="dot"></span>能力底座 01 · 感知</span>
     <h1>多模态空间感知<br><span class="grad">让空间“看得见”</span></h1>
-    <p class="lead">一切始于感知。空间智能体的第一层能力，是把一座空间的真实状态转化为机器可处理的数据。传统安防是“点”的感知——一个摄像头看一个画面；空间智能体要的是“场”的感知——多源数据融合进同一个时空坐标系，共同描绘整座空间此刻正在发生什么。</p>
+    <p class="lead">一切始于感知，空间智能体的第一层能力，是把一座空间的真实状态转化为机器可处理的数据，传统安防是“点”的感知——一个摄像头看一个画面；空间智能体要的是“场”的感知——多源数据融合进同一个时空坐标系，共同描绘整座空间此刻正在发生什么</p>
   </div>
 </section>
 <section>
@@ -2397,7 +3987,7 @@ footer,.metrics{
       <h3>技术要点</h3>
       <ul class="feat-list" style="margin-top:8px"><li><b>多源异构融合：</b>摄像头、传感器、门禁、电梯、空调、消防、业务系统融合进统一时空坐标系</li><li><b>跨镜时空 ReID：</b>跨镜追踪识别率 90%、定位准确率 95%，公开数据集排名第一</li><li><b>复杂场景识别：</b>面向开放、动态、充满例外的真实空间，高精度高鲁棒</li><li><b>结构化输出：</b>把原始视频/传感数据，转化为结构化的空间实况</li></ul>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">感知是底座的底座——它的密度与质量，决定了上层一切认知与决策的天花板。</p>
+    <p class="shift-note reveal" style="margin-top:26px">感知是底座的底座——它的密度与质量，决定了上层一切认知与决策的天花板</p>
     <div style="text-align:center;margin-top:30px">
       <button class="btn btn-ghost" onclick="nav2('tech')">← 返回核心技术</button>
       <button class="btn btn-primary" onclick="nav2('agent')" style="margin-left:12px">看它在空间智能体中的位置 →</button>
@@ -2413,7 +4003,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="tech">核心技术</a> / 空间世界模型</div>
     <span class="eyebrow"><span class="dot"></span>能力底座 02 · 空间世界模型</span>
     <h1>空间世界模型<br><span class="grad">从“理解画面”到“理解空间”</span></h1>
-    <p class="lead">这是能力底座中最具区分度的一层。视频 AI 看到的是“画面里有一个人”；具备空间世界模型的系统知道——这个人在哪个区域、为什么出现、影响了什么、接下来可能引发什么风险。前者理解像素，后者理解空间。</p>
+    <p class="lead">这是能力底座中最具区分度的一层，视频 AI 看到的是“画面里有一个人”；具备空间世界模型的系统知道——这个人在哪个区域、为什么出现、影响了什么、接下来可能引发什么风险，前者理解像素，后者理解空间</p>
   </div>
 </section>
 <section>
@@ -2423,7 +4013,7 @@ footer,.metrics{
       <h3>技术要点</h3>
       <ul class="feat-list" style="margin-top:8px"><li><b>空间拓扑：</b>道路、楼层、区域、出入口及其连接关系——知道“这里是哪、通向何方”</li><li><b>空间状态：</b>各区域当前拥堵还是空闲、正常还是异常——知道“此刻怎么样”</li><li><b>空间规则：</b>消防规则、作业规范、安全红线——知道“什么可以、什么不可以”</li><li><b>空间目标：</b>安全、效率、节能、体验——知道“为何而运营”</li></ul>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">一条孤立的感知信息，只有被放回空间世界模型的全局中，才从“现象”变为“后果”，从“看见”变为“看懂”。</p>
+    <p class="shift-note reveal" style="margin-top:26px">一条孤立的感知信息，只有被放回空间世界模型的全局中，才从“现象”变为“后果”，从“看见”变为“看懂”</p>
     <div style="text-align:center;margin-top:30px">
       <button class="btn btn-ghost" onclick="nav2('tech')">← 返回核心技术</button>
       <button class="btn btn-primary" onclick="nav2('agent')" style="margin-left:12px">看它在空间智能体中的位置 →</button>
@@ -2439,7 +4029,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="tech">核心技术</a> / 时空事件理解</div>
     <span class="eyebrow"><span class="dot"></span>能力底座 03 · 事件理解</span>
     <h1>时空事件理解<br><span class="grad">从“一帧画面”到“一条事件链”</span></h1>
-    <p class="lead">有了空间世界模型作底，认知能力才得以展开。传统视频分析是“切片式”的——发现烟雾报警、发现徘徊报警，处理一个个孤立瞬间。时空事件理解是“链条式”的——把“进入受限区域—违规作业—出现烟雾—设备报警—人员疏散”识别为同一条完整事件链。</p>
+    <p class="lead">有了空间世界模型作底，认知能力才得以展开，传统视频分析是“切片式”的——发现烟雾报警、发现徘徊报警，处理一个个孤立瞬间，时空事件理解是“链条式”的——把“进入受限区域—违规作业—出现烟雾—设备报警—人员疏散”识别为同一条完整事件链</p>
   </div>
 </section>
 <section>
@@ -2449,7 +4039,7 @@ footer,.metrics{
       <h3>技术要点</h3>
       <ul class="feat-list" style="margin-top:8px"><li><b>事件链建模：</b>把孤立瞬间串成有因果、有前后的完整事件</li><li><b>长时序因果：</b>理解事件的起因、演进与后果，而非单帧识别</li><li><b>事前预警：</b>从“此刻有什么”到“接下来会怎样”</li><li><b>多模态标签：</b>29 万条多模态事件标签沉淀</li></ul>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">它让空间智能体不再是被动的报警器，而成为能读懂空间叙事的理解者——这是后续一切决策的前提。</p>
+    <p class="shift-note reveal" style="margin-top:26px">它让空间智能体不再是被动的报警器，而成为能读懂空间叙事的理解者——这是后续一切决策的前提</p>
     <div style="text-align:center;margin-top:30px">
       <button class="btn btn-ghost" onclick="nav2('tech')">← 返回核心技术</button>
       <button class="btn btn-primary" onclick="nav2('agent')" style="margin-left:12px">看它在空间智能体中的位置 →</button>
@@ -2465,7 +4055,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="tech">核心技术</a> / 空间运营知识体系</div>
     <span class="eyebrow"><span class="dot"></span>能力底座 04 · 知识体系</span>
     <h1>空间运营知识体系<br><span class="grad">让决策有据可依</span></h1>
-    <p class="lead">理解了“发生了什么”，还要回答“该怎么办”。决策不能凭空产生，它需要一套可依据的知识。当一条事件链被识别，系统在知识网络中检索匹配的处置规则与历史经验，决策便有据可依，而非黑箱臆断。</p>
+    <p class="lead">理解了“发生了什么”，还要回答“该怎么办”，决策不能凭空产生，它需要一套可依据的知识，当一条事件链被识别，系统在知识网络中检索匹配的处置规则与历史经验，决策便有据可依，而非黑箱臆断</p>
   </div>
 </section>
 <section>
@@ -2475,7 +4065,7 @@ footer,.metrics{
       <h3>技术要点</h3>
       <ul class="feat-list" style="margin-top:8px"><li><b>SOP 知识资产：</b>4000+ 行业 SOP 结构化沉淀</li><li><b>实战数据资产：</b>8 万条有效工单</li><li><b>规则与案例：</b>管理规则、历史案例、规章制度、专家经验、行业标准</li><li><b>难以复制：</b>时间与场景的函数，算法可开源、算力可购买，知识无法速成</li></ul>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">这层知识体系，恰恰是空间智能体最难被复制的资产之一——它与数据飞轮、与真护城河，是同一件事的不同侧面。</p>
+    <p class="shift-note reveal" style="margin-top:26px">这层知识体系，恰恰是空间智能体最难被复制的资产之一——它与数据飞轮、与真护城河，是同一件事的不同侧面</p>
     <div style="text-align:center;margin-top:30px">
       <button class="btn btn-ghost" onclick="nav2('tech')">← 返回核心技术</button>
       <button class="btn btn-primary" onclick="nav2('agent')" style="margin-left:12px">看它在空间智能体中的位置 →</button>
@@ -2491,7 +4081,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="tech">核心技术</a> / 空间运营智能体系统</div>
     <span class="eyebrow"><span class="dot"></span>能力底座 05 · 智能体系统</span>
     <h1>空间运营智能体系统<br><span class="grad">目标驱动的多智能体协同</span></h1>
-    <p class="lead">感知、世界模型、事件理解、知识体系，最终要由“智能体”把它们调动起来，完成从理解到决策的闭环。但要破除一个浅层理解：空间智能体不是“单一智能体”，而是一个面向空间运营目标的智能体系统。</p>
+    <p class="lead">感知、世界模型、事件理解、知识体系，最终要由“智能体”把它们调动起来，完成从理解到决策的闭环，但要破除一个浅层理解：空间智能体不是“单一智能体”，而是一个面向空间运营目标的智能体系统</p>
   </div>
 </section>
 <section>
@@ -2501,7 +4091,7 @@ footer,.metrics{
       <h3>技术要点</h3>
       <ul class="feat-list" style="margin-top:8px"><li><b>目标驱动：</b>AI 员工们共同服务于同一组运营目标（安全/效率/低碳/体验），而非各管一摊</li><li><b>动态协同：</b>围绕目标动态协同、相互调度，而非角色驱动的简单分工</li><li><b>多目标权衡：</b>在彼此牵制的目标间做动态博弈与权衡</li><li><b>统一管理：</b>统一管理多个 AI 员工的运营系统</li></ul>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">角色是表象，目标是内核；让一群智能体围绕统一目标协同运转的那套机制，才是这一层的本质。</p>
+    <p class="shift-note reveal" style="margin-top:26px">角色是表象，目标是内核；让一群智能体围绕统一目标协同运转的那套机制，才是这一层的本质</p>
     <div style="text-align:center;margin-top:30px">
       <button class="btn btn-ghost" onclick="nav2('tech')">← 返回核心技术</button>
       <button class="btn btn-primary" onclick="nav2('agent')" style="margin-left:12px">看它在空间智能体中的位置 →</button>
@@ -2517,7 +4107,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / <a data-nav="tech">核心技术</a> / 执行网络</div>
     <span class="eyebrow"><span class="dot"></span>能力底座 06 · 执行网络</span>
     <h1>执行网络<br><span class="grad">让空间“动得了手”</span></h1>
-    <p class="lead">看见、看懂、想明白仍属于数字世界。让空间真正“动得了手”，靠的是执行网络——联动门禁、调节空调照明、控制电梯广播、派发追踪工单，乃至调度巡检机器人、无人机完成现场处置。机器人是“身体”，空间智能体是“大脑”。</p>
+    <p class="lead">看见、看懂、想明白仍属于数字世界，让空间真正“动得了手”，靠的是执行网络——联动门禁、调节空调照明、控制电梯广播、派发追踪工单，乃至调度巡检机器人、无人机完成现场处置，机器人是“身体”，空间智能体是“大脑”</p>
   </div>
 </section>
 <section>
@@ -2527,7 +4117,7 @@ footer,.metrics{
       <h3>技术要点</h3>
       <ul class="feat-list" style="margin-top:8px"><li><b>设备联动：</b>门禁、空调、照明、电梯、广播、消防辅助</li><li><b>工单闭环：</b>派发并追踪工单，处置在物理空间真实发生</li><li><b>机器人调度：</b>统合巡检机器人、无人机、机械臂等执行端</li><li><b>权限分级：</b>L1–L5 风险分级：低风险自动闭环，高风险人确认</li></ul>
     </div>
-    <p class="shift-note reveal" style="margin-top:26px">空间智能体不与机器人争夺“身体”，而是承担指挥各类执行端的“大脑”。执行边界按 L1–L5 分级，高风险始终人确认。</p>
+    <p class="shift-note reveal" style="margin-top:26px">空间智能体不与机器人争夺“身体”，而是承担指挥各类执行端的“大脑”，执行边界按 L1–L5 分级，高风险始终人确认</p>
     <div style="text-align:center;margin-top:30px">
       <button class="btn btn-ghost" onclick="nav2('tech')">← 返回核心技术</button>
       <button class="btn btn-primary" onclick="nav2('agent')" style="margin-left:12px">看它在空间智能体中的位置 →</button>
@@ -2542,7 +4132,7 @@ footer,.metrics{
     <div class="breadcrumb"><a data-nav="home">首页</a> / 关于我们</div>
     <span class="eyebrow"><span class="dot"></span>关于北斗</span>
     <h1>源自中科院先进院的<span class="grad">空间智能体</span>团队</h1>
-    <p class="lead">十二年聚焦空间智能服务（2014 起），致力于打造物理空间可感知、可决策、可执行的 AI 生产力。</p>
+    <p class="lead">十二年聚焦空间智能服务（2014 起），<br class="copy-break">致力于打造物理空间可感知、可决策、可执行的 AI 生产力</p>
   </div>
 </section>
 
@@ -2561,8 +4151,8 @@ footer,.metrics{
     <div class="split">
       <div>
         <h2 class="block-title">关于北斗</h2>
-        <p class="lead" style="margin-top:0">北斗院（深圳北斗应用技术研究院）是中科院深圳先进技术研究院于 2014 年创立的新型研发机构，是先进院数字化技术的应用创新与成果转化载体。</p>
-        <p class="lead">北斗智能（深圳市北斗智能科技有限公司）成立于 2017 年，作为工程化与产业化的承接主体。两者关系是：研究院是技术源头，北斗智能把科研成果工程化、产品化落地。</p>
+        <p class="lead" style="margin-top:0">北斗院（深圳北斗应用技术研究院）是中科院深圳先进技术研究院于 2014 年创立的新型研发机构，是先进院数字化技术的应用创新与成果转化载体</p>
+        <p class="lead">北斗智能（深圳市北斗智能科技有限公司）成立于 2017 年，作为工程化与产业化的承接主体，两者关系是：研究院是技术源头，北斗智能把科研成果工程化、产品化落地</p>
       </div>
       <div class="asset4" style="grid-template-columns:1fr 1fr">
         <div class="acard"><div class="av">2014</div><div class="al">北斗院成立</div></div>
@@ -2579,10 +4169,10 @@ footer,.metrics{
     <span class="section-label">发展历程</span>
     <h2 class="block-title">发展历程</h2>
     <div class="timeline">
-      <div class="tline"><div class="ty">2014–2017</div><div class="tc"><span class="tphase">阶段一 · 建立时空数据底座</span><h4>北斗应用成立，构筑全国首个城市综合交通大数据平台</h4><p>获中国智能交通协会科技一等奖；交通大数据平台评为广东省大数据应用示范项目。</p></div></div>
-      <div class="tline"><div class="ty">2017</div><div class="tc"><h4>北斗智能成立</h4><p>国家高新技术企业、广东省新型研发机构；全国首个城市大脑“智慧宝安中控平台”上线。</p></div></div>
-      <div class="tline"><div class="ty">2018–2022</div><div class="tc"><span class="tphase">阶段二 · 构筑业务决策闭环</span><h4>北斗·星瀚 / 星辰发布，公共交通立体防控平台全国推广</h4><p>两大系统斩获德国红点奖；获深圳市科技进步一等奖、广东省技术发明奖二等奖。</p></div></div>
-      <div class="tline"><div class="ty">2023–至今</div><div class="tc"><span class="tphase">阶段三 · 打造自主空间智能体</span><h4>行业多模态大模型与 AI 安全员上线</h4><p>入选 2024 大湾区 AI 应用示范 TOP100、2025 REAL100 创新家；联合深理工共建空间智能实验室。</p></div></div>
+      <div class="tline"><div class="ty">2014–2017</div><div class="tc"><span class="tphase">阶段一 · 建立时空数据底座</span><h4>北斗应用成立，构筑全国首个城市综合交通大数据平台</h4><p>获中国智能交通协会科技一等奖；交通大数据平台评为广东省大数据应用示范项目</p></div></div>
+      <div class="tline"><div class="ty">2017</div><div class="tc"><h4>北斗智能成立</h4><p>国家高新技术企业、广东省新型研发机构；全国首个城市大脑“智慧宝安中控平台”上线</p></div></div>
+      <div class="tline"><div class="ty">2018–2022</div><div class="tc"><span class="tphase">阶段二 · 构筑业务决策闭环</span><h4>北斗·星瀚 / 星辰发布，公共交通立体防控平台全国推广</h4><p>两大系统斩获德国红点奖；获深圳市科技进步一等奖、广东省技术发明奖二等奖</p></div></div>
+      <div class="tline"><div class="ty">2023–至今</div><div class="tc"><span class="tphase">阶段三 · 打造自主空间智能体</span><h4>行业多模态大模型与 AI 安全员上线</h4><p>入选 2024 大湾区 AI 应用示范 TOP100、2025 REAL100 创新家；联合深理工共建空间智能实验室</p></div></div>
     </div>
   </div>
 </section>
@@ -2594,7 +4184,7 @@ footer,.metrics{
     <div class="contact-grid">
       <div class="cc"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div><h4>咨询热线</h4><p>0755-86539692</p></div>
       <div class="cc"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><h4>企业邮箱</h4><p>info@szbit.cn</p></div>
-      <div class="cc"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h4>公司地址</h4><p>深圳市南山区创科路深圳国际创新谷 1 期 2 栋 A 座 22 楼</p></div>
+      <div class="cc"><div class="ico"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h4>公司地址</h4><p>深圳市南山区创科路深圳国际创新谷<br class="copy-break">1 期 2 栋 A 座 22 楼</p></div>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="openModal()">商务咨询 →</button></div>
   </div>
@@ -2607,7 +4197,7 @@ footer,.metrics{
     <div class="foot-grid">
       <div>
         <div class="logo" style="margin-bottom:16px"><img class="logo-img" src="logo.svg" alt="深圳市北斗智能科技有限公司"></div>
-        <p style="max-width:280px">源自中国科学院深圳先进技术研究院，值得信赖的行业 AI 赋能专家。</p>
+        <p style="max-width:280px">源自中国科学院深圳先进技术研究院，值得信赖的行业 AI 赋能专家</p>
       </div>
       <div><h5>产品</h5><a data-nav="agent">空间智能体（定义）</a><a data-nav="products">云边算力底座</a><a data-nav="products">空间感知（星辰）</a><a data-nav="products">智能体系统（星瀚）</a><a data-nav="products">AI 员工</a></div>
       <div><h5>解决方案</h5><a data-nav="sol-traffic">智慧交通</a><a data-nav="sol-safety">公共安全</a><a data-nav="sol-property">智慧园区物业</a><a data-nav="sol-public">公共服务</a></div>
@@ -2622,15 +4212,15 @@ footer,.metrics{
   <div class="modal-card">
     <button class="modal-close" onclick="closeModal()" aria-label="关闭咨询窗口">✕</button>
     <div id="formView">
-      <h3>商务咨询</h3><p class="msub">留下信息后将打开邮件窗口，发送后我们将在 1–2 个工作日联系你。</p>
+      <h3>商务咨询</h3><p class="msub">留下信息后将打开邮件窗口，发送后我们将在 1–2 个工作日联系你</p>
       <div class="field"><label>姓名</label><input id="f_name" autocomplete="name" placeholder="你的称呼"></div>
       <div class="field"><label>单位</label><input id="f_org" autocomplete="organization" placeholder="所在单位/公司"></div>
       <div class="field"><label>电话</label><input id="f_tel" inputmode="tel" autocomplete="tel" placeholder="联系电话"></div>
       <div class="field"><label>需求场景</label><select id="f_scene"><option>智慧交通（轨道/枢纽/高速·低空）</option><option>公共安全（轨道公安/口岸）</option><option>智慧园区物业</option><option>公共服务（机关/医院/学校）</option><option>其他</option></select></div>
       <button class="btn btn-primary" onclick="submitForm()">提交预约 →</button>
-      <p class="privacy">信息将发送至 info@szbit.cn，仅用于商务联系。</p>
+      <p class="privacy">信息将发送至 info@szbit.cn，仅用于商务联系</p>
     </div>
-    <div id="successView" style="display:none"><div class="success"><div class="ok"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path d="m5 12 5 5L20 6"/></svg></div><h3>邮件窗口已打开</h3><p class="msub" style="margin-top:8px">请在邮件客户端中确认发送；若未弹出，可直接发送至 info@szbit.cn。</p><button class="btn btn-ghost" style="margin-top:8px" onclick="closeModal()">关闭</button></div></div>
+    <div id="successView" style="display:none"><div class="success"><div class="ok"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path d="m5 12 5 5L20 6"/></svg></div><h3>邮件窗口已打开</h3><p class="msub" style="margin-top:8px">请在邮件客户端中确认发送；若未弹出，可直接发送至 info@szbit.cn</p><button class="btn btn-ghost" style="margin-top:8px" onclick="closeModal()">关闭</button></div></div>
   </div>
 </div>
 <div class="demo-banner" aria-hidden="true"></div>
@@ -2661,8 +4251,11 @@ function showPage(id,scrollTo){
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.nav===navKey));
   // reset reveals in newly shown page then observe
   const cur=document.getElementById('page-'+id);
+  applyRevealStagger(cur);
   cur.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('in');io.observe(el)});
   cur.querySelectorAll('[data-count]').forEach(el=>{co.observe(el)});
+  if(id==='home')setTimeout(initHeroLight,80);
+  if(id==='home'||id==='products')setTimeout(()=>document.querySelectorAll('.emp-grid').forEach(t=>t._empUpdate?.()),100);
   if(scrollTo){const t=document.getElementById(scrollTo);if(t){setTimeout(()=>t.scrollIntoView({behavior:'smooth'}),60);return;}}
   window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
 }
@@ -2691,17 +4284,296 @@ function animateCount(el){
 }
 const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);co.unobserve(e.target)}})},{threshold:.5});
 
-function scrollCases(dir){const t=document.getElementById('caseTrack');if(t)t.scrollBy({left:dir*380,behavior:'smooth'});}
-document.querySelectorAll('.emp-grid').forEach(track=>{
-  let dragging=false,startX=0,startLeft=0;
-  track.addEventListener('pointerdown',e=>{
-    dragging=true;startX=e.clientX;startLeft=track.scrollLeft;track.classList.add('dragging');track.setPointerCapture(e.pointerId);
+function applyRevealStagger(root=document){
+  root.querySelectorAll('.cards-3,.emp-grid,.mgrid,.sol-grid,.cap6,.tech3,.asset4,.contact-grid,.sol-entry,.metric-row').forEach(group=>{
+    Array.from(group.children).forEach((el,i)=>el.style.setProperty('--stagger',`${Math.min(i*70,420)}ms`));
   });
-  track.addEventListener('pointermove',e=>{if(dragging)track.scrollLeft=startLeft-(e.clientX-startX);});
-  ['pointerup','pointercancel','pointerleave'].forEach(type=>track.addEventListener(type,()=>{
-    dragging=false;track.classList.remove('dragging');
-  }));
-});
+}
+
+function initSpotlightCards(root=document){
+  const selector='#page-home .pcard,#page-home .layer,#page-home .emp,#page-home .mcell,#page-home .sol,#page-home .ccard';
+  root.querySelectorAll(selector).forEach(card=>{
+    if(card.dataset.spotlightReady)return;
+    card.dataset.spotlightReady='true';
+    card.classList.add('spotlight-card');
+    card.addEventListener('pointerenter',()=>card.classList.add('is-lit'));
+    card.addEventListener('pointerleave',()=>{
+      card.classList.remove('is-lit');
+      card.style.setProperty('--mx','50%');
+      card.style.setProperty('--my','50%');
+    });
+    card.addEventListener('pointermove',e=>{
+      const rect=card.getBoundingClientRect();
+      card.style.setProperty('--mx',`${e.clientX-rect.left}px`);
+      card.style.setProperty('--my',`${e.clientY-rect.top}px`);
+    });
+  });
+}
+
+function initHeroLight(){
+  const hero=document.querySelector('#page-home .hero');
+  if(!hero)return;
+  if(hero.dataset.lightReady){hero._resizeLight?.();return;}
+  hero.dataset.lightReady='true';
+  const canvas=hero.querySelector('.hero-light-canvas');
+  const ctx=canvas ? canvas.getContext('2d',{alpha:true}) : null;
+  const pointer={x:.78,y:.24};
+  const target={x:.78,y:.24};
+  const setLight=(x=.78,y=.24)=>{
+    hero.style.setProperty('--hx',`${Math.round(x*100)}%`);
+    hero.style.setProperty('--hy',`${Math.round(y*100)}%`);
+    hero.style.setProperty('--light-push-x',`${(x-.78)*46}px`);
+    hero.style.setProperty('--light-push-y',`${(y-.24)*46}px`);
+    target.x=x;target.y=y;
+  };
+  hero.addEventListener('pointermove',e=>{
+    const rect=hero.getBoundingClientRect();
+    const x=Math.min(Math.max((e.clientX-rect.left)/rect.width,.08),.92);
+    const y=Math.min(Math.max((e.clientY-rect.top)/rect.height,.08),.82);
+    setLight(x,y);
+  });
+  hero.addEventListener('pointerleave',()=>setLight());
+  setLight();
+  if(!ctx)return;
+  let w=0,h=0,dpr=1,raf=0;
+  const resize=()=>{
+    const rect=canvas.getBoundingClientRect();
+    dpr=Math.min(window.devicePixelRatio||1,1.5);
+    w=Math.max(1,Math.floor(rect.width*dpr));
+    h=Math.max(1,Math.floor(rect.height*dpr));
+    canvas.width=w;canvas.height=h;
+  };
+  hero._resizeLight=resize;
+  const drawCurve=(points,color,width,blur,alpha)=>{
+    ctx.save();
+    ctx.globalCompositeOperation='lighter';
+    ctx.globalAlpha=alpha;
+    ctx.shadowColor=color;
+    ctx.shadowBlur=blur*dpr;
+    ctx.strokeStyle=color;
+    ctx.lineWidth=width*dpr;
+    ctx.lineCap='round';
+    ctx.beginPath();
+    ctx.moveTo(points[0].x*w,points[0].y*h);
+    ctx.bezierCurveTo(points[1].x*w,points[1].y*h,points[2].x*w,points[2].y*h,points[3].x*w,points[3].y*h);
+    ctx.stroke();
+    ctx.restore();
+  };
+  const drawRibbon=(points,energy=1)=>{
+    drawCurve(points,'rgba(15,60,180,.18)',62*energy,58,.50);
+    drawCurve(points,'rgba(18,90,255,.28)',34*energy,44,.58);
+    drawCurve(points,'rgba(32,118,255,.40)',18*energy,30,.62);
+    drawCurve(points,'rgba(77,238,255,.66)',5.5*energy,18,.50);
+    drawCurve(points,'rgba(238,255,255,.58)',1.25*energy,7,.34);
+  };
+  const drawGlow=(x,y,r,color,alpha)=>{
+    const gx=x*w,gy=y*h,gr=r*Math.min(w,h);
+    const g=ctx.createRadialGradient(gx,gy,0,gx,gy,gr);
+    g.addColorStop(0,color.replace('ALPHA',alpha));
+    g.addColorStop(.18,color.replace('ALPHA',alpha*.72));
+    g.addColorStop(.45,color.replace('ALPHA',alpha*.22));
+    g.addColorStop(1,color.replace('ALPHA',0));
+    ctx.fillStyle=g;
+    ctx.fillRect(gx-gr,gy-gr,gr*2,gr*2);
+  };
+  const render=(time)=>{
+    const t=time*.001;
+    pointer.x+=(target.x-pointer.x)*.045;
+    pointer.y+=(target.y-pointer.y)*.045;
+    ctx.clearRect(0,0,w,h);
+    ctx.globalCompositeOperation='source-over';
+    const base=ctx.createLinearGradient(0,0,w,h);
+    base.addColorStop(0,'rgba(6,12,24,0)');
+    base.addColorStop(.45,'rgba(20,60,160,.08)');
+    base.addColorStop(1,'rgba(4,10,20,0)');
+    ctx.fillStyle=base;
+    ctx.fillRect(0,0,w,h);
+    const px=pointer.x,py=pointer.y;
+    drawGlow(px,py,.42,'rgba(45,118,255,ALPHA)',.34);
+    drawGlow(px+.06*Math.sin(t*.7),py+.04*Math.cos(t*.8),.24,'rgba(90,248,255,ALPHA)',.28);
+    drawGlow(.92+.018*Math.sin(t*.45),.78,.28,'rgba(22,94,255,ALPHA)',.20);
+    drawGlow(.58,.64+.04*Math.cos(t*.5),.24,'rgba(20,90,255,ALPHA)',.13);
+    const wave=Math.sin(t*.65);
+    const pulse=.5+.5*Math.sin(t*.9);
+    const curves=[
+      [{x:.02,y:1.02},{x:.24,y:.78+.05*wave},{x:.54,y:.46-.07*pulse},{x:1.08,y:.24+.04*Math.sin(t)}],
+      [{x:.40,y:-.12},{x:.55,y:.12+.06*Math.sin(t*.7)},{x:.75,y:.42+.05*Math.cos(t*.8)},{x:1.10,y:.11}],
+      [{x:.60,y:.04},{x:.78,y:.18},{x:.92,y:.35+.08*Math.sin(t*.55)},{x:.94,y:1.08}],
+      [{x:.27,y:.72},{x:.48,y:.62+.04*Math.cos(t*.8)},{x:.73,y:.56},{x:1.04,y:.43}],
+      [{x:.74,y:-.03},{x:.85,y:.18},{x:.94,y:.43+.04*Math.sin(t*.9)},{x:.86,y:1.08}],
+      [{x:.52,y:.18},{x:.64,y:.36+.05*Math.sin(t*.6)},{x:.80,y:.48},{x:1.07,y:.33}],
+      [{x:.05,y:.28},{x:.38,y:.15+.04*Math.cos(t*.5)},{x:.62,y:.27},{x:1.02,y:.08}]
+    ];
+    curves.forEach((c,i)=>{
+      const influenced=c.map((p,j)=>({
+        x:p.x+(px-.78)*((j===1 || j===2) ? 0.12 : 0.04),
+        y:p.y+(py-.24)*((j===1 || j===2) ? 0.12 : 0.04)
+      }));
+      drawRibbon(influenced,i===2 || i===4 ? 1.08 : i===0 ? .92 : .72);
+    });
+    const sparks=[
+      {x:px,y:py,r:.020,a:.75},
+      {x:.82+.018*Math.sin(t*.8),y:.36+.03*Math.cos(t*.7),r:.015,a:.58},
+      {x:.90+.014*Math.cos(t*.9),y:.77+.02*Math.sin(t*.6),r:.012,a:.40},
+      {x:.55+.025*Math.sin(t*.55),y:.22+.018*Math.cos(t*.75),r:.010,a:.34}
+    ];
+    sparks.forEach(s=>drawGlow(s.x,s.y,s.r,'rgba(170,255,250,ALPHA)',s.a));
+    raf=requestAnimationFrame(render);
+  };
+  resize();
+  addEventListener('resize',resize,{passive:true});
+  raf=requestAnimationFrame(render);
+}
+
+function scrollCases(dir){const t=document.getElementById('caseTrack');if(t)t.scrollBy({left:dir*380,behavior:'smooth'});}
+function initEmployeeCarousels(root=document){
+  const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.querySelectorAll('.emp-grid').forEach(track=>{
+    if(track.dataset.carouselReady)return;
+    track.dataset.carouselReady='true';
+    const cards=[...track.querySelectorAll('.emp')];
+    if(cards.length<2)return;
+    track.classList.add('is-looping');
+    cards.forEach((card,i)=>{
+      const clone=card.cloneNode(true);
+      clone.classList.add('emp-clone');
+      clone.classList.remove('reveal');
+      clone.classList.add('in');
+      clone.setAttribute('aria-hidden','true');
+      clone.dataset.cloneOf=String(i);
+      track.appendChild(clone);
+    });
+    let allCards=[...track.querySelectorAll('.emp')];
+    const dots=document.createElement('div');
+    dots.className='emp-carousel-dots';
+    dots.setAttribute('aria-label','AI 员工轮播页码');
+    track.insertAdjacentElement('afterend',dots);
+    let active=0,visible=false,dragging=false,startX=0,startLeft=0,timer=0,resumeTimer=0,introTimer=0,scrollFrame=0,enteredOnce=false;
+    const attachCardLight=card=>{
+      card.addEventListener('pointermove',e=>{
+        const rect=card.getBoundingClientRect();
+        card.style.setProperty('--mx',`${e.clientX-rect.left}px`);
+        card.style.setProperty('--my',`${e.clientY-rect.top}px`);
+      });
+      card.addEventListener('pointerleave',()=>{
+        card.style.setProperty('--mx','50%');
+        card.style.setProperty('--my','42%');
+      });
+    };
+    allCards.forEach(attachCardLight);
+    const dotBtns=cards.map((card,i)=>{
+      const btn=document.createElement('button');
+      btn.type='button';
+      btn.className='emp-dot';
+      btn.setAttribute('aria-label',`切换到第 ${i+1} 个 AI 员工`);
+      btn.addEventListener('click',()=>{enteredOnce=true;pause(3600);scrollToIndex(i,'auto');});
+      dots.appendChild(btn);
+      return btn;
+    });
+    const maxScroll=()=>Math.max(0,track.scrollWidth-track.clientWidth);
+    const rawLeft=card=>card.offsetLeft-track.offsetLeft;
+    const loopStart=()=>rawLeft(allCards[cards.length]);
+    const cardLeft=i=>Math.min(rawLeft(cards[i]),maxScroll());
+    const normalizeLoop=()=>{
+      const start=loopStart();
+      if(start>0&&track.scrollLeft>=start-1){
+        track.scrollLeft=rawLeft(cards[0])+(track.scrollLeft-start);
+      }
+    };
+    const nearestIndex=()=>{
+      const x=track.scrollLeft;
+      let best=0,dist=Infinity;
+      allCards.forEach((card,i)=>{
+        const d=Math.abs((card.offsetLeft-track.offsetLeft)-x);
+        if(d<dist){dist=d;best=i%cards.length;}
+      });
+      return best;
+    };
+    const setActiveDot=()=>{
+      dotBtns.forEach((btn,i)=>{
+        btn.classList.toggle('active',i===active);
+        btn.setAttribute('aria-current',i===active?'true':'false');
+      });
+    };
+    const update=()=>{
+      active=nearestIndex();
+      setActiveDot();
+    };
+    const scrollToIndex=(i,behavior='smooth')=>{
+      const next=(i+cards.length)%cards.length;
+      const useForwardClone=active===cards.length-1&&next===0&&allCards[cards.length];
+      active=next;
+      setActiveDot();
+      const left=useForwardClone?Math.min(rawLeft(allCards[cards.length]),maxScroll()):cardLeft(active);
+      track.scrollTo({left,behavior});
+      if(useForwardClone){
+        setTimeout(()=>normalizeLoop(),behavior==='auto'?0:520);
+      }
+    };
+    const stop=()=>{clearInterval(timer);timer=0;};
+    const start=()=>{
+      if(reduceMotion||!visible||dragging||timer)return;
+      timer=setInterval(()=>scrollToIndex(active+1),3000);
+    };
+    const pause=(delay=1800)=>{
+      stop();
+      clearTimeout(resumeTimer);
+      clearTimeout(introTimer);
+      if(delay)resumeTimer=setTimeout(start,delay);
+    };
+    track._empUpdate=update;
+    track.addEventListener('scroll',()=>{
+      if(scrollFrame)return;
+      scrollFrame=requestAnimationFrame(()=>{scrollFrame=0;if(!dragging)normalizeLoop();update();});
+    },{passive:true});
+    track.addEventListener('pointerdown',e=>{
+      enteredOnce=true;
+      dragging=true;
+      startX=e.clientX;
+      startLeft=track.scrollLeft;
+      track.classList.add('dragging');
+      pause(0);
+      track.setPointerCapture?.(e.pointerId);
+    });
+    track.addEventListener('pointermove',e=>{
+      if(dragging)track.scrollLeft=startLeft-(e.clientX-startX);
+    });
+    ['pointerup','pointercancel'].forEach(type=>track.addEventListener(type,()=>{
+      dragging=false;
+      track.classList.remove('dragging');
+      update();
+      pause(2600);
+    }));
+    track.addEventListener('pointerenter',()=>pause(0));
+    track.addEventListener('pointerleave',()=>{
+      if(dragging){dragging=false;track.classList.remove('dragging');}
+      pause(1600);
+    });
+    track.addEventListener('wheel',()=>pause(2600),{passive:true});
+    track.addEventListener('touchstart',()=>pause(2600),{passive:true});
+    track.addEventListener('focusin',()=>pause(0));
+    track.addEventListener('focusout',()=>pause(1800));
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        visible=entry.isIntersecting;
+        if(visible){
+          update();
+          if(!enteredOnce&&!reduceMotion){
+            enteredOnce=true;
+            introTimer=setTimeout(()=>{if(visible&&!dragging)scrollToIndex(active+1);},650);
+          }
+          start();
+        }else{
+          stop();
+          clearTimeout(introTimer);
+        }
+      });
+    },{threshold:.34});
+    observer.observe(track);
+    addEventListener('resize',()=>{allCards=[...track.querySelectorAll('.emp')];update();scrollToIndex(active,'auto');},{passive:true});
+    update();
+  });
+}
 function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';
   setTimeout(()=>{document.getElementById('formView').style.display='block';document.getElementById('successView').style.display='none';},200);}
@@ -2729,8 +4601,15 @@ function submitForm(){
 addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 // init
+initSpotlightCards();
+initEmployeeCarousels();
 showPage(location.hash.slice(1)||'home');
 
 </script>
 </body>
 </html>
+
+
+
+
+
