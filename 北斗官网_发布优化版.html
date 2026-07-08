@@ -11,6 +11,9 @@
 <meta property="og:description" content="面向物理空间运营的 AI 生产力：感知、推理、决策、执行与持续进化">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#070b16;
@@ -34,13 +37,13 @@ html{scroll-behavior:smooth}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Noto Sans SC",Arial,sans-serif;
+  font-family:'Noto Sans SC',sans-serif;
   line-height:1.6;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,.display{font-family:"Segoe UI","Microsoft YaHei","PingFang SC",Arial,sans-serif;}
-.mono{font-family:"Cascadia Mono","Consolas","SFMono-Regular",monospace;}
+h1,h2,h3,.display{font-family:'Sora','Noto Sans SC',sans-serif;}
+.mono{font-family:'JetBrains Mono',monospace;}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
 
@@ -120,7 +123,7 @@ nav.scrolled{background:rgba(7,11,22,.82);backdrop-filter:blur(16px);border-bott
 .node.n6{top:24%;left:-26px}
 
 /* sections */
-section{padding:92px 0;position:relative;content-visibility:auto;contain-intrinsic-size:1px 900px}
+section{padding:92px 0;position:relative}
 .sec-head{text-align:center;max-width:720px;margin:0 auto 56px}
 .sec-tag{font-family:'JetBrains Mono';font-size:13px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:16px;display:block}
 .sec-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.5px;line-height:1.2}
@@ -1693,14 +1696,17 @@ section{padding:104px 0}
 .reveal{
   opacity:0;
   transform:translateY(34px);
+  filter:blur(8px);
   transition:
     opacity .82s cubic-bezier(.2,.7,.2,1),
-    transform .82s cubic-bezier(.2,.7,.2,1);
+    transform .82s cubic-bezier(.2,.7,.2,1),
+    filter .82s cubic-bezier(.2,.7,.2,1);
   transition-delay:var(--stagger,0ms);
 }
 .reveal.in{
   opacity:1;
   transform:none;
+  filter:none;
 }
 .subnav{
   background:rgba(8,13,22,.84);
@@ -1869,7 +1875,7 @@ footer{
     radial-gradient(circle at var(--hx) var(--hy),rgba(97,238,255,.20),rgba(28,112,255,.18) 7%,rgba(17,60,164,.10) 20%,transparent 42%),
     radial-gradient(ellipse at 52% 44%,rgba(30,78,190,.13),transparent 46%);
   filter:saturate(118%);
-  animation:none;
+  animation:fieldBreath 12s ease-in-out infinite alternate;
 }
 .hero-light-canvas{
   position:absolute;
@@ -1879,10 +1885,6 @@ footer{
   opacity:1;
   mix-blend-mode:screen;
   filter:saturate(128%) contrast(108%);
-}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
 .hero-light-field::before,
 .hero-light-field::after,
@@ -1965,11 +1967,6 @@ footer{
   transform:translate(calc(var(--light-push-x) * -.45),calc(var(--light-push-y) * -.4)) rotate(19deg) scaleY(1.5);
   opacity:.62;
   animation:strandFlowC 12s ease-in-out infinite alternate;
-}
-.hero-light-field::before,
-.hero-light-field::after,
-.hero-light-field .light-strand{
-  animation:none!important;
 }
 .hero-light-field .strand-d{
   width:30vw;
@@ -2291,7 +2288,7 @@ footer{
   justify-content:center;
   margin:22px 0 0;
   color:#dfeeff;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Noto Sans SC",Arial,sans-serif;
+  font-family:'Noto Sans SC',sans-serif;
   font-size:18px;
   font-weight:800;
   letter-spacing:0!important;
@@ -2767,7 +2764,7 @@ h1,h2,h3,h4,h5,p,li,.lead,.sub,.sec-head p,.market-note,.shift-note,.dtext,.ldes
 <nav id="nav">
   <div class="wrap nav-in">
     <div class="logo" data-nav="home" style="cursor:pointer">
-      <img class="logo-img" src="logo.svg" alt="深圳市北斗智能科技有限公司" fetchpriority="high" decoding="async">
+      <img class="logo-img" src="logo.svg" alt="深圳市北斗智能科技有限公司">
     </div>
     <div class="nav-links">
       <a data-nav="home">首页</a>
@@ -3262,12 +3259,12 @@ h1,h2,h3,h4,h5,p,li,.lead,.sub,.sec-head p,.market-note,.shift-note,.dtext,.ldes
       </div>
     </div>
     <div class="emp-grid">
-      <div class="emp"><h4>AI 安全管家</h4><p>风险发现、事件预警与安全闭环</p><div class="emp-visual"><img src="assets/ai-employees/ai-security.png" alt="AI 安全管家" loading="lazy" decoding="async"></div><div class="gain">— 已商用</div></div>
-      <div class="emp"><h4>AI 设备管家</h4><p>设备巡检、故障发现与工单联动</p><div class="emp-visual"><img src="assets/ai-employees/ai-device.png" alt="AI 设备管家" loading="lazy" decoding="async"></div><div class="gain">— 已商用</div></div>
-      <div class="emp"><h4>AI 调度员</h4><p>任务分派、资源调度与处置协同</p><div class="emp-visual"><img src="assets/ai-employees/ai-dispatcher.png" alt="AI 调度员" loading="lazy" decoding="async"></div><div class="gain">— 已商用</div></div>
-      <div class="emp"><h4>AI 节能专家</h4><p>能耗分析、策略优化与节能执行</p><div class="emp-visual"><img src="assets/ai-employees/ai-energy.png" alt="AI 节能专家" loading="lazy" decoding="async"></div><div class="gain">— 已商用</div></div>
-      <div class="emp"><h4>AI 项目经理</h4><p>项目运行洞察、计划跟踪与复盘优化</p><div class="emp-visual"><img src="assets/ai-employees/ai-manager.png" alt="AI 项目经理" loading="lazy" decoding="async"></div><div class="gain">— 已商用</div></div>
-      <div class="emp"><h4>AI 客服管家</h4><p>服务响应、咨询分流与体验提升</p><div class="emp-visual"><img src="assets/ai-employees/ai-service.png" alt="AI 客服管家" loading="lazy" decoding="async"></div><div class="gain" style="color:var(--ink-dim)">— 开发中</div></div>
+      <div class="emp"><h4>AI 安全管家</h4><p>风险发现、事件预警与安全闭环</p><div class="emp-visual"><img src="assets/ai-employees/ai-security.png" alt="AI 安全管家"></div><div class="gain">— 已商用</div></div>
+      <div class="emp"><h4>AI 设备管家</h4><p>设备巡检、故障发现与工单联动</p><div class="emp-visual"><img src="assets/ai-employees/ai-device.png" alt="AI 设备管家"></div><div class="gain">— 已商用</div></div>
+      <div class="emp"><h4>AI 调度员</h4><p>任务分派、资源调度与处置协同</p><div class="emp-visual"><img src="assets/ai-employees/ai-dispatcher.png" alt="AI 调度员"></div><div class="gain">— 已商用</div></div>
+      <div class="emp"><h4>AI 节能专家</h4><p>能耗分析、策略优化与节能执行</p><div class="emp-visual"><img src="assets/ai-employees/ai-energy.png" alt="AI 节能专家"></div><div class="gain">— 已商用</div></div>
+      <div class="emp"><h4>AI 项目经理</h4><p>项目运行洞察、计划跟踪与复盘优化</p><div class="emp-visual"><img src="assets/ai-employees/ai-manager.png" alt="AI 项目经理"></div><div class="gain">— 已商用</div></div>
+      <div class="emp"><h4>AI 客服管家</h4><p>服务响应、咨询分流与体验提升</p><div class="emp-visual"><img src="assets/ai-employees/ai-service.png" alt="AI 客服管家"></div><div class="gain" style="color:var(--ink-dim)">— 开发中</div></div>
     </div>
     <div style="text-align:center;margin-top:36px"><button class="btn btn-primary" onclick="openModal()">商务咨询 →</button></div>
   </div>
@@ -4199,7 +4196,7 @@ h1,h2,h3,h4,h5,p,li,.lead,.sub,.sec-head p,.market-note,.shift-note,.dtext,.ldes
   <div class="wrap">
     <div class="foot-grid">
       <div>
-      <div class="logo" style="margin-bottom:16px"><img class="logo-img" src="logo.svg" alt="深圳市北斗智能科技有限公司" loading="lazy" decoding="async"></div>
+        <div class="logo" style="margin-bottom:16px"><img class="logo-img" src="logo.svg" alt="深圳市北斗智能科技有限公司"></div>
         <p style="max-width:280px">源自中国科学院深圳先进技术研究院，值得信赖的行业 AI 赋能专家</p>
       </div>
       <div><h5>产品</h5><a data-nav="agent">空间智能体（定义）</a><a data-nav="products">云边算力底座</a><a data-nav="products">空间感知（星辰）</a><a data-nav="products">智能体系统（星瀚）</a><a data-nav="products">AI 员工</a></div>
@@ -4421,10 +4418,11 @@ function initHeroLight(){
       {x:.55+.025*Math.sin(t*.55),y:.22+.018*Math.cos(t*.75),r:.010,a:.34}
     ];
     sparks.forEach(s=>drawGlow(s.x,s.y,s.r,'rgba(170,255,250,ALPHA)',s.a));
+    raf=requestAnimationFrame(render);
   };
   resize();
   addEventListener('resize',resize,{passive:true});
-  render(performance.now());
+  raf=requestAnimationFrame(render);
 }
 
 function scrollCases(dir){const t=document.getElementById('caseTrack');if(t)t.scrollBy({left:dir*380,behavior:'smooth'});}
