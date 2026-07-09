@@ -213,10 +213,91 @@ section{padding:92px 0;position:relative}
 .case-nav{display:flex;gap:10px;justify-content:flex-end;margin-bottom:18px}
 .cbtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);background:var(--panel);color:var(--ink);cursor:pointer;font-size:18px;transition:.25s}
 .cbtn:hover{border-color:var(--cyan);color:var(--cyan)}
-.partners{margin-top:46px;text-align:center}
-.partners .label{font-family:'JetBrains Mono';font-size:12px;color:var(--ink-dim);letter-spacing:1px;margin-bottom:18px}
-.plogos{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.plogo{font-size:13.5px;color:var(--ink-soft);padding:9px 18px;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,.02)}
+.partners{
+  position:relative;
+  margin-top:64px;
+  padding:64px clamp(22px,5vw,72px) 58px;
+  text-align:center;
+  overflow:hidden;
+  border-top:1px solid rgba(110,155,240,.16);
+  border-bottom:1px solid rgba(110,155,240,.12);
+  background:
+    radial-gradient(ellipse at 92% 50%,rgba(60,128,255,.30),rgba(33,91,210,.14) 22%,transparent 48%),
+    linear-gradient(180deg,rgba(6,12,24,.22),rgba(6,12,24,.54));
+}
+.partners::before{
+  content:"";
+  position:absolute;
+  inset:-20% auto -26% 70%;
+  width:44%;
+  min-width:360px;
+  border-radius:50%;
+  background:radial-gradient(circle at 18% 50%,rgba(110,179,255,.56),rgba(54,119,248,.36) 28%,rgba(26,61,154,.16) 52%,transparent 70%);
+  filter:blur(1px);
+  opacity:.78;
+  pointer-events:none;
+}
+.partners::after{
+  content:"";
+  position:absolute;
+  left:6%;
+  right:6%;
+  top:50%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(151,190,255,.12),transparent);
+  box-shadow:0 -76px 0 rgba(151,190,255,.08),0 76px 0 rgba(151,190,255,.08);
+  pointer-events:none;
+}
+.partners .label{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:28px;
+  margin-bottom:10px;
+  color:#f3f8ff;
+  font-size:30px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:0!important;
+}
+.partners .label::before,
+.partners .label::after{
+  content:"";
+  width:120px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(97,158,255,.88),transparent);
+  box-shadow:0 0 18px rgba(97,158,255,.55);
+}
+.partners .sub{
+  position:relative;
+  margin:0 0 44px;
+  color:rgba(190,205,230,.66);
+  font-size:14px;
+}
+.partner-frame-wrap{
+  position:relative;
+  max-width:1040px;
+  margin:0 auto;
+  padding:8px 0;
+  z-index:1;
+}
+.partner-frame{
+  display:block;
+  width:min(100%,980px);
+  margin:0 auto;
+  opacity:.90;
+  filter:grayscale(1) brightness(0) invert(1) drop-shadow(0 0 12px rgba(124,180,255,.18));
+  mix-blend-mode:screen;
+}
+@media(max-width:760px){
+  .partners{margin-top:42px;padding:48px 18px 44px}
+  .partners::before{left:58%;width:78%;min-width:260px;opacity:.58}
+  .partners .label{font-size:24px;gap:16px}
+  .partners .label::before,
+  .partners .label::after{width:54px}
+  .partners .sub{margin-bottom:28px}
+  .partner-frame{width:120%;max-width:none;margin-left:-10%}
+}
 
 /* CTA */
 .cta-final{position:relative;overflow:hidden}
@@ -2963,9 +3044,9 @@ h1,h2,h3,h4,h5,p,li,.lead,.sub,.sec-head p,.market-note,.shift-note,.dtext,.ldes
     </div>
     <div class="partners reveal">
       <div class="label">合作伙伴</div>
-      <div class="plogos">
-        <span class="plogo">中科院深圳先进院</span><span class="plogo">清华大学</span><span class="plogo">华中科技大学</span>
-        <span class="plogo">公安部第一研究所</span><span class="plogo">华润万象生活</span><span class="plogo">招商局集团</span><span class="plogo">广东省交通集团</span>
+      <p class="sub">推动人工智能原创成果转化</p>
+      <div class="partner-frame-wrap">
+        <img class="partner-frame" src="assets/partners/partners-frame.svg" alt="合作伙伴" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
