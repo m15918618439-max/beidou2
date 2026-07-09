@@ -52,6 +52,13 @@
     <span class="light-strand strand-d"></span>
     <span class="light-core"></span>
   </div>
+  <div class="hero-left-rails" aria-hidden="true">
+    <span class="rail rail-arc rail-arc-a"></span>
+    <span class="rail rail-arc rail-arc-b"></span>
+    <span class="rail rail-line rail-line-a"></span>
+    <span class="rail rail-line rail-line-b"></span>
+    <span class="rail rail-line rail-line-c"></span>
+  </div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow"><span class="dot"></span>空间智能体</span>
@@ -119,7 +126,11 @@
         <div class="row"><b>人工闭环</b>　发现、判断、处置、复盘仍主要由人工串联</div>
         <div class="foot">交付的是“一套能力”</div>
       </div>
-        <div class="arrow"><span class="ar">→</span><small>升级</small></div>
+        <div class="arrow" aria-label="升级">
+          <span class="rise-mark" aria-hidden="true">
+            <img class="rise-icon" src="assets/images/ui/rise-arrow.svg" alt="">
+          </span>
+        </div>
       <div class="col new">
         <div class="ctitle"><span class="pin">北斗方向</span><span class="shift-grad">交付运营结果</span></div>
         <div class="row"><b>持续运营</b>　把运营能力以智能体形态部署到空间里，按结果服务</div>
@@ -218,11 +229,11 @@
       <button class="cbtn" onclick="scrollCases(1)">→</button>
     </div>
     <div class="case-track" id="caseTrack">
-      <div class="ccard"><div class="ind">案例 · 轨道公安</div><h4>深圳地铁公共安全智能巡防标杆</h4><div class="big">70%↑</div><div class="bigl">有效告警率提升（以打架斗殴为例）</div><p>全国首个结合大小模型的公共场所智能视频巡，秒级监测异常，主动感知止于未发</p></div>
-      <div class="ccard"><div class="ind">案例 · 边检口岸</div><h4>国家级科研牵引的<br class="copy-break">口岸双提升标杆</h4><div class="big">98%↑</div><div class="bigl">突发事件主动发现率（50 起中 49 起 AI 发现）</div><p>牵头科技部国家重点研发计划，已在深圳六大口岸部署，高峰通关效率提升 40%</p></div>
-      <div class="ccard"><div class="ind">案例 · 智慧高速·低空</div><h4>承接广东交通集团 AI+<br class="copy-break">三年行动计划</h4><div class="big">空地协同</div><div class="bigl">无人机巡检 + 边缘识别 + 云端研判闭环</div><p>聚焦路网管控、安全应急、低空智化，惠盐高速空地协同巡检验证落地</p></div>
-      <div class="ccard"><div class="ind">案例 · 智慧园区物业</div><h4>赋能华润、招商局头部物企</h4><div class="big">626</div><div class="bigl">招商局视觉中台覆盖空间数（9 家二级公司）</div><p>“科研能力—工程平台—物业场景”转化闭环，AI 覆盖巡查业务 40%、提效 66%</p></div>
-      <div class="ccard"><div class="ind">案例 · 交通枢纽</div><h4>枢纽出行服务平台</h4><div class="big">统一调度</div><div class="bigl">客流、运力与周边交通统一监测</div><p>掌握运力匹配情况，提升综合交通枢纽的客流运输效率与服务水平</p></div>
+      <div class="ccard"><div class="case-card-head"><div class="ind">案例 · 轨道公安</div><h4>深圳地铁公共安全智能巡防标杆</h4></div><div class="case-card-body"><div class="big">70%↑</div><div class="bigl">有效告警率提升（以打架斗殴为例）</div><p>全国首个结合大小模型的公共场所智能视频巡，秒级监测异常，主动感知止于未发</p></div></div>
+      <div class="ccard"><div class="case-card-head"><div class="ind">案例 · 边检口岸</div><h4>国家级科研牵引的<br class="copy-break">口岸双提升标杆</h4></div><div class="case-card-body"><div class="big">98%↑</div><div class="bigl">突发事件主动发现率（50 起中 49 起 AI 发现）</div><p>牵头科技部国家重点研发计划，已在深圳六大口岸部署，高峰通关效率提升 40%</p></div></div>
+      <div class="ccard"><div class="case-card-head"><div class="ind">案例 · 智慧高速·低空</div><h4>承接广东交通集团 AI+<br class="copy-break">三年行动计划</h4></div><div class="case-card-body"><div class="big">空地协同</div><div class="bigl">无人机巡检 + 边缘识别 + 云端研判闭环</div><p>聚焦路网管控、安全应急、低空智化，惠盐高速空地协同巡检验证落地</p></div></div>
+      <div class="ccard"><div class="case-card-head"><div class="ind">案例 · 智慧园区物业</div><h4>赋能华润、招商局头部物企</h4></div><div class="case-card-body"><div class="big">626</div><div class="bigl">招商局视觉中台覆盖空间数（9 家二级公司）</div><p>“科研能力—工程平台—物业场景”转化闭环，AI 覆盖巡查业务 40%、提效 66%</p></div></div>
+      <div class="ccard"><div class="case-card-head"><div class="ind">案例 · 交通枢纽</div><h4>枢纽出行服务平台</h4></div><div class="case-card-body"><div class="big">统一调度</div><div class="bigl">客流、运力与周边交通统一监测</div><p>掌握运力匹配情况，提升综合交通枢纽的客流运输效率与服务水平</p></div></div>
     </div>
     <div class="partners reveal">
       <div class="label">合作伙伴</div>
@@ -466,7 +477,7 @@
     <span class="section-label">空间感知</span>
     <div class="split rev">
       <div class="shot-slot">
-        <div><div class="tag">产品界面预览</div><div class="desc">AI 安全员行为识别、异常预警与事件闭环能力，可按客户场景提供演示材料</div></div>
+        <img src="assets/images/ui/nebula-ai-analysis-platform.png" alt="星辰智能分析平台产品界面预览" loading="lazy" decoding="async">
       </div>
       <div>
         <h2 class="block-title">空间感知 · 星辰</h2>
