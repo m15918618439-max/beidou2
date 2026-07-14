@@ -2,10 +2,10 @@ const nav=document.getElementById('nav');
 addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>30)});
 
 // ---- router ----
-const pages=['home','agent','products','solutions','sol-traffic','sol-safety','sol-property','sol-public','sc-rail','sc-hub','sc-highway','sc-railpolice','sc-border','sc-residential','sc-commercial','sc-office','sc-park','sc-gov','sc-hospital','sc-school','tech','t-perception','t-worldmodel','t-event','t-knowledge','t-agentsys','t-execution','about'];
-const sectionRoutes={'t-stack':['tech','t-stack'],'t-flywheel':['tech','t-flywheel'],'t-asset':['tech','t-asset'],'t-cert':['tech','t-cert']};
+const pages=['home','agent','products','solutions','sol-traffic','sol-safety','sol-property','sol-public','sc-rail','sc-hub','sc-highway','sc-railpolice','sc-border','sc-residential','sc-commercial','sc-office','sc-park','sc-gov','sc-hospital','sc-school','tech','about'];
+const sectionRoutes={'t-stack':['tech','t-stack'],'t-flow':['tech','t-flow'],'t-flywheel':['tech','t-flywheel'],'t-cert':['tech','t-cert']};
 const pageTitles={
-  home:'北斗智能 · 空间智能体 | 值得信赖的行业 AI 赋能专家',
+  home:'北斗智能 · 空间智能体 | 物理世界运营的 Agentic AI 平台',
   agent:'空间智能体 | 北斗智能',
   products:'产品体系 | 北斗智能',
   solutions:'行业解决方案 | 北斗智能',
@@ -26,8 +26,9 @@ function showPage(id,scrollTo){
   applyRevealStagger(cur);
   cur.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('in');io.observe(el)});
   cur.querySelectorAll('[data-count]').forEach(el=>{co.observe(el)});
-  if(id==='home')setTimeout(initHeroLight,80);
+  initStarBorderCards(cur);
   if(id==='home'||id==='products')setTimeout(()=>document.querySelectorAll('.emp-grid').forEach(t=>t._empUpdate?.()),100);
+  if(id==='home')setTimeout(()=>initPlasma(cur),80);
   if(scrollTo){const t=document.getElementById(scrollTo);if(t){setTimeout(()=>t.scrollIntoView({behavior:'smooth'}),60);return;}}
   window.scrollTo({top:0,behavior:'instant'in window?'instant':'auto'});
 }
@@ -80,121 +81,6 @@ function initSpotlightCards(root=document){
       card.style.setProperty('--my',`${e.clientY-rect.top}px`);
     });
   });
-}
-
-function initHeroLight(){
-  const hero=document.querySelector('#page-home .hero');
-  if(!hero)return;
-  if(hero.dataset.lightReady){hero._resizeLight?.();return;}
-  hero.dataset.lightReady='true';
-  const canvas=hero.querySelector('.hero-light-canvas');
-  const ctx=canvas ? canvas.getContext('2d',{alpha:true}) : null;
-  const pointer={x:.78,y:.24};
-  const target={x:.78,y:.24};
-  const setLight=(x=.78,y=.24)=>{
-    hero.style.setProperty('--hx',`${Math.round(x*100)}%`);
-    hero.style.setProperty('--hy',`${Math.round(y*100)}%`);
-    hero.style.setProperty('--light-push-x',`${(x-.78)*46}px`);
-    hero.style.setProperty('--light-push-y',`${(y-.24)*46}px`);
-    target.x=x;target.y=y;
-  };
-  hero.addEventListener('pointermove',e=>{
-    const rect=hero.getBoundingClientRect();
-    const x=Math.min(Math.max((e.clientX-rect.left)/rect.width,.08),.92);
-    const y=Math.min(Math.max((e.clientY-rect.top)/rect.height,.08),.82);
-    setLight(x,y);
-  });
-  hero.addEventListener('pointerleave',()=>setLight());
-  setLight();
-  if(!ctx)return;
-  let w=0,h=0,dpr=1,raf=0;
-  const resize=()=>{
-    const rect=canvas.getBoundingClientRect();
-    dpr=Math.min(window.devicePixelRatio||1,1.5);
-    w=Math.max(1,Math.floor(rect.width*dpr));
-    h=Math.max(1,Math.floor(rect.height*dpr));
-    canvas.width=w;canvas.height=h;
-  };
-  hero._resizeLight=resize;
-  const drawCurve=(points,color,width,blur,alpha)=>{
-    ctx.save();
-    ctx.globalCompositeOperation='lighter';
-    ctx.globalAlpha=alpha;
-    ctx.shadowColor=color;
-    ctx.shadowBlur=blur*dpr;
-    ctx.strokeStyle=color;
-    ctx.lineWidth=width*dpr;
-    ctx.lineCap='round';
-    ctx.beginPath();
-    ctx.moveTo(points[0].x*w,points[0].y*h);
-    ctx.bezierCurveTo(points[1].x*w,points[1].y*h,points[2].x*w,points[2].y*h,points[3].x*w,points[3].y*h);
-    ctx.stroke();
-    ctx.restore();
-  };
-  const drawRibbon=(points,energy=1)=>{
-    drawCurve(points,'rgba(15,60,180,.18)',62*energy,58,.50);
-    drawCurve(points,'rgba(18,90,255,.28)',34*energy,44,.58);
-    drawCurve(points,'rgba(32,118,255,.40)',18*energy,30,.62);
-    drawCurve(points,'rgba(77,238,255,.66)',5.5*energy,18,.50);
-    drawCurve(points,'rgba(238,255,255,.58)',1.25*energy,7,.34);
-  };
-  const drawGlow=(x,y,r,color,alpha)=>{
-    const gx=x*w,gy=y*h,gr=r*Math.min(w,h);
-    const g=ctx.createRadialGradient(gx,gy,0,gx,gy,gr);
-    g.addColorStop(0,color.replace('ALPHA',alpha));
-    g.addColorStop(.18,color.replace('ALPHA',alpha*.72));
-    g.addColorStop(.45,color.replace('ALPHA',alpha*.22));
-    g.addColorStop(1,color.replace('ALPHA',0));
-    ctx.fillStyle=g;
-    ctx.fillRect(gx-gr,gy-gr,gr*2,gr*2);
-  };
-  const render=(time)=>{
-    const t=time*.001;
-    pointer.x+=(target.x-pointer.x)*.045;
-    pointer.y+=(target.y-pointer.y)*.045;
-    ctx.clearRect(0,0,w,h);
-    ctx.globalCompositeOperation='source-over';
-    const base=ctx.createLinearGradient(0,0,w,h);
-    base.addColorStop(0,'rgba(6,12,24,0)');
-    base.addColorStop(.45,'rgba(20,60,160,.08)');
-    base.addColorStop(1,'rgba(4,10,20,0)');
-    ctx.fillStyle=base;
-    ctx.fillRect(0,0,w,h);
-    const px=pointer.x,py=pointer.y;
-    drawGlow(px,py,.42,'rgba(45,118,255,ALPHA)',.34);
-    drawGlow(px+.06*Math.sin(t*.7),py+.04*Math.cos(t*.8),.24,'rgba(90,248,255,ALPHA)',.28);
-    drawGlow(.92+.018*Math.sin(t*.45),.78,.28,'rgba(22,94,255,ALPHA)',.20);
-    drawGlow(.58,.64+.04*Math.cos(t*.5),.24,'rgba(20,90,255,ALPHA)',.13);
-    const wave=Math.sin(t*.65);
-    const pulse=.5+.5*Math.sin(t*.9);
-    const curves=[
-      [{x:.02,y:1.02},{x:.24,y:.78+.05*wave},{x:.54,y:.46-.07*pulse},{x:1.08,y:.24+.04*Math.sin(t)}],
-      [{x:.40,y:-.12},{x:.55,y:.12+.06*Math.sin(t*.7)},{x:.75,y:.42+.05*Math.cos(t*.8)},{x:1.10,y:.11}],
-      [{x:.60,y:.04},{x:.78,y:.18},{x:.92,y:.35+.08*Math.sin(t*.55)},{x:.94,y:1.08}],
-      [{x:.27,y:.72},{x:.48,y:.62+.04*Math.cos(t*.8)},{x:.73,y:.56},{x:1.04,y:.43}],
-      [{x:.74,y:-.03},{x:.85,y:.18},{x:.94,y:.43+.04*Math.sin(t*.9)},{x:.86,y:1.08}],
-      [{x:.52,y:.18},{x:.64,y:.36+.05*Math.sin(t*.6)},{x:.80,y:.48},{x:1.07,y:.33}],
-      [{x:.05,y:.28},{x:.38,y:.15+.04*Math.cos(t*.5)},{x:.62,y:.27},{x:1.02,y:.08}]
-    ];
-    curves.forEach((c,i)=>{
-      const influenced=c.map((p,j)=>({
-        x:p.x+(px-.78)*((j===1 || j===2) ? 0.12 : 0.04),
-        y:p.y+(py-.24)*((j===1 || j===2) ? 0.12 : 0.04)
-      }));
-      drawRibbon(influenced,i===2 || i===4 ? 1.08 : i===0 ? .92 : .72);
-    });
-    const sparks=[
-      {x:px,y:py,r:.020,a:.75},
-      {x:.82+.018*Math.sin(t*.8),y:.36+.03*Math.cos(t*.7),r:.015,a:.58},
-      {x:.90+.014*Math.cos(t*.9),y:.77+.02*Math.sin(t*.6),r:.012,a:.40},
-      {x:.55+.025*Math.sin(t*.55),y:.22+.018*Math.cos(t*.75),r:.010,a:.34}
-    ];
-    sparks.forEach(s=>drawGlow(s.x,s.y,s.r,'rgba(170,255,250,ALPHA)',s.a));
-    raf=requestAnimationFrame(render);
-  };
-  resize();
-  addEventListener('resize',resize,{passive:true});
-  raf=requestAnimationFrame(render);
 }
 
 function scrollCases(dir){const t=document.getElementById('caseTrack');if(t)t.scrollBy({left:dir*380,behavior:'smooth'});}
@@ -346,6 +232,320 @@ function initEmployeeCarousels(root=document){
     update();
   });
 }
+function initPlasma(root=document){
+  const container=root.querySelector('[data-plasma]');
+  if(!container||container.dataset.plasmaReady)return;
+  container.dataset.plasmaReady='true';
+
+  const canvas=document.createElement('canvas');
+  container.appendChild(canvas);
+  const gl=canvas.getContext('webgl2',{
+    alpha:true,
+    premultipliedAlpha:false,
+    antialias:false,
+    depth:false,
+    stencil:false,
+    powerPreference:'high-performance'
+  });
+  if(!gl){
+    container.removeChild(canvas);
+    container.classList.add('plasma-fallback-only');
+    return;
+  }
+
+  const vertex=`#version 300 es
+precision highp float;
+in vec2 position;
+in vec2 uv;
+out vec2 vUv;
+void main() {
+  vUv = uv;
+  gl_Position = vec4(position, 0.0, 1.0);
+}
+`;
+  const fragment=`#version 300 es
+precision highp float;
+uniform vec2 iResolution;
+uniform float iTime;
+uniform vec3 uCustomColor;
+uniform float uUseCustomColor;
+uniform float uSpeed;
+uniform float uDirection;
+uniform float uScale;
+uniform float uOpacity;
+uniform vec2 uMouse;
+uniform float uMouseInteractive;
+uniform float uMouseStrength;
+out vec4 fragColor;
+
+void mainImage(out vec4 o, vec2 C) {
+  vec2 center = iResolution.xy * 0.5;
+  C = (C - center) / uScale + center;
+  float interaction = clamp(uMouseInteractive, 0.0, 1.0);
+  vec2 mouseOffset = (uMouse - center) * 0.00045;
+  vec2 mouseDelta = uMouse - C;
+  float mouseRange = max(iResolution.y * 0.38, 1.0);
+  float localPull = exp(-dot(mouseDelta, mouseDelta) / (mouseRange * mouseRange));
+  C += mouseOffset * length(C - center) * uMouseStrength * interaction;
+  C += normalize(mouseDelta + vec2(0.001)) * localPull * iResolution.y * 0.072 * uMouseStrength * interaction;
+
+  float i = 0.0, d = 0.0, z = 0.0, T = iTime * uSpeed * uDirection;
+  vec3 O = vec3(0.0), p, S;
+
+  for (vec2 r = iResolution.xy, Q; ++i < 60.0; O += o.w / d * o.xyz) {
+    p = z * normalize(vec3(C - 0.5 * r, r.y));
+    p.z -= 4.0;
+    S = p;
+    d = p.y - T;
+    p.x += 0.4 * (1.0 + p.y) * sin(d + p.x * 0.1) * cos(0.34 * d + p.x * 0.05);
+    Q = p.xz *= mat2(cos(p.y + vec4(0, 11, 33, 0) - T));
+    z += d = abs(sqrt(length(Q * Q)) - 0.25 * (5.0 + S.y)) / 3.0 + 8e-4;
+    o = 1.0 + sin(S.y + p.z * 0.5 + S.z - length(S - p) + vec4(2, 1, 0, 8));
+  }
+  o.xyz = tanh(O / 1e4);
+}
+
+bool finite1(float x){ return !(isnan(x) || isinf(x)); }
+vec3 sanitize(vec3 c){
+  return vec3(
+    finite1(c.r) ? c.r : 0.0,
+    finite1(c.g) ? c.g : 0.0,
+    finite1(c.b) ? c.b : 0.0
+  );
+}
+
+void main() {
+  vec4 o = vec4(0.0);
+  mainImage(o, gl_FragCoord.xy);
+  vec3 rgb = sanitize(o.rgb);
+  float intensity = (rgb.r + rgb.g + rgb.b) / 3.0;
+  vec3 customColor = intensity * uCustomColor;
+  vec3 finalColor = mix(rgb, customColor, step(0.5, uUseCustomColor));
+  float alpha = clamp(length(rgb) * uOpacity, 0.0, 1.0);
+  fragColor = vec4(finalColor, alpha);
+}`;
+
+  const hexToRgb=hex=>{
+    const result=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? [parseInt(result[1],16)/255,parseInt(result[2],16)/255,parseInt(result[3],16)/255] : [1,.5,.2];
+  };
+  const compile=(type,source)=>{
+    const shader=gl.createShader(type);
+    gl.shaderSource(shader,source);
+    gl.compileShader(shader);
+    if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)){
+      console.warn(gl.getShaderInfoLog(shader));
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  };
+  const vert=compile(gl.VERTEX_SHADER,vertex);
+  const frag=compile(gl.FRAGMENT_SHADER,fragment);
+  if(!vert||!frag){
+    container.removeChild(canvas);
+    return;
+  }
+
+  const program=gl.createProgram();
+  gl.attachShader(program,vert);
+  gl.attachShader(program,frag);
+  gl.linkProgram(program);
+  gl.deleteShader(vert);
+  gl.deleteShader(frag);
+  if(!gl.getProgramParameter(program,gl.LINK_STATUS)){
+    console.warn(gl.getProgramInfoLog(program));
+    gl.deleteProgram(program);
+    container.removeChild(canvas);
+    return;
+  }
+
+  const vertices=new Float32Array([
+    -1,-1,0,0,
+     1,-1,1,0,
+    -1, 1,0,1,
+     1, 1,1,1
+  ]);
+  const buffer=gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
+  gl.bufferData(gl.ARRAY_BUFFER,vertices,gl.STATIC_DRAW);
+  gl.useProgram(program);
+  const stride=4*Float32Array.BYTES_PER_ELEMENT;
+  const positionLoc=gl.getAttribLocation(program,'position');
+  const uvLoc=gl.getAttribLocation(program,'uv');
+  gl.enableVertexAttribArray(positionLoc);
+  gl.vertexAttribPointer(positionLoc,2,gl.FLOAT,false,stride,0);
+  gl.enableVertexAttribArray(uvLoc);
+  gl.vertexAttribPointer(uvLoc,2,gl.FLOAT,false,stride,2*Float32Array.BYTES_PER_ELEMENT);
+
+  const uniforms={};
+  ['iResolution','iTime','uCustomColor','uUseCustomColor','uSpeed','uDirection','uScale','uOpacity','uMouse','uMouseInteractive','uMouseStrength'].forEach(name=>{
+    uniforms[name]=gl.getUniformLocation(program,name);
+  });
+
+  const color=hexToRgb('#2d6dff');
+  gl.uniform3f(uniforms.uCustomColor,color[0],color[1],color[2]);
+  gl.uniform1f(uniforms.uUseCustomColor,1);
+  gl.uniform1f(uniforms.uSpeed,.26);
+  gl.uniform1f(uniforms.uDirection,1);
+  gl.uniform1f(uniforms.uScale,1.12);
+  gl.uniform1f(uniforms.uOpacity,.68);
+  gl.uniform1f(uniforms.uMouseInteractive,0);
+  gl.uniform1f(uniforms.uMouseStrength,1.85);
+  gl.uniform2f(uniforms.uMouse,0,0);
+  gl.clearColor(0,0,0,0);
+  gl.disable(gl.DEPTH_TEST);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+
+  let raf=0;
+  let running=false;
+  let contextLost=false;
+  let dpr=1;
+  let pointerActive=false;
+  let interaction=0;
+  let targetInteraction=0;
+  let idleTimer=0;
+  const mouse={x:0,y:0};
+  const targetMouse={x:0,y:0};
+  const t0=performance.now();
+  const clamp=(value,min,max)=>Math.min(Math.max(value,min),max);
+  const setNeutralMouse=(immediate=false)=>{
+    const rect=container.getBoundingClientRect();
+    const x=rect.width*.5;
+    const y=rect.height*.42;
+    targetMouse.x=x*dpr;
+    targetMouse.y=y*dpr;
+    container.style.setProperty('--plasma-x',`${x}px`);
+    container.style.setProperty('--plasma-y',`${y}px`);
+    container.style.setProperty('--plasma-glow','.16');
+    hitArea.style.setProperty('--hero-pointer-core','0');
+    hitArea.style.setProperty('--hero-pointer-halo','0');
+    if(immediate){
+      mouse.x=targetMouse.x;
+      mouse.y=targetMouse.y;
+      gl.uniform2f(uniforms.uMouse,mouse.x,mouse.y);
+    }
+  };
+  const setSize=()=>{
+    const rect=container.getBoundingClientRect();
+    if(!rect.width||!rect.height)return;
+    dpr=Math.min(devicePixelRatio||1,1.75);
+    const width=Math.max(1,Math.floor(rect.width*dpr));
+    const height=Math.max(1,Math.floor(rect.height*dpr));
+    if(canvas.width!==width||canvas.height!==height){
+      canvas.width=width;
+      canvas.height=height;
+      gl.viewport(0,0,width,height);
+      gl.uniform2f(uniforms.iResolution,width,height);
+      if(!pointerActive)setNeutralMouse(true);
+    }
+  };
+  const render=t=>{
+    if(!running||contextLost)return;
+    raf=requestAnimationFrame(render);
+    if(container.offsetParent===null)return;
+    setSize();
+    mouse.x+=(targetMouse.x-mouse.x)*.12;
+    mouse.y+=(targetMouse.y-mouse.y)*.12;
+    interaction+=(targetInteraction-interaction)*(targetInteraction > interaction ? .42 : .06);
+    gl.uniform2f(uniforms.uMouse,mouse.x,mouse.y);
+    gl.uniform1f(uniforms.uMouseInteractive,interaction);
+    gl.uniform1f(uniforms.iTime,(t-t0)*.001);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+  };
+  const start=()=>{
+    if(running||contextLost)return;
+    running=true;
+    raf=requestAnimationFrame(render);
+  };
+  const stop=()=>{
+    running=false;
+    cancelAnimationFrame(raf);
+  };
+  const hitArea=container.closest('.hero')||container;
+  const updateMouse=e=>{
+    const heroRect=hitArea.getBoundingClientRect();
+    const insideHero=e.clientX>=heroRect.left&&e.clientX<=heroRect.right&&e.clientY>=heroRect.top&&e.clientY<=heroRect.bottom;
+    if(!insideHero){
+      if(pointerActive)resetMouse();
+      return;
+    }
+    const rect=container.getBoundingClientRect();
+    const x=clamp(e.clientX-rect.left,0,rect.width);
+    const y=clamp(e.clientY-rect.top,0,rect.height);
+    const hx=clamp(e.clientX-heroRect.left,0,heroRect.width);
+    const hy=clamp(e.clientY-heroRect.top,0,heroRect.height);
+    pointerActive=true;
+    targetInteraction=1;
+    clearTimeout(idleTimer);
+    idleTimer=setTimeout(()=>{
+      targetInteraction=0;
+      container.style.setProperty('--plasma-glow','.16');
+      hitArea.style.setProperty('--hero-pointer-core','0');
+      hitArea.style.setProperty('--hero-pointer-halo','0');
+    },820);
+    targetMouse.x=x*dpr;
+    targetMouse.y=y*dpr;
+    container.style.setProperty('--plasma-x',`${x}px`);
+    container.style.setProperty('--plasma-y',`${y}px`);
+    container.style.setProperty('--plasma-glow','.9');
+    hitArea.style.setProperty('--hero-pointer-x',`${hx}px`);
+    hitArea.style.setProperty('--hero-pointer-y',`${hy}px`);
+    hitArea.style.setProperty('--hero-pointer-core','.42');
+    hitArea.style.setProperty('--hero-pointer-halo','.3');
+  };
+  const resetMouse=()=>{
+    pointerActive=false;
+    targetInteraction=0;
+    clearTimeout(idleTimer);
+    setNeutralMouse();
+  };
+  hitArea.addEventListener('pointermove',updateMouse,{passive:true});
+  hitArea.addEventListener('mousemove',updateMouse,{passive:true});
+  hitArea.addEventListener('pointerleave',resetMouse,{passive:true});
+  addEventListener('pointermove',updateMouse,{passive:true});
+  addEventListener('mousemove',updateMouse,{passive:true});
+  addEventListener('resize',setSize,{passive:true});
+  canvas.addEventListener('webglcontextlost',e=>{
+    e.preventDefault();
+    contextLost=true;
+    stop();
+  });
+  canvas.addEventListener('webglcontextrestored',()=>{contextLost=false;start();});
+  if('ResizeObserver'in window)new ResizeObserver(setSize).observe(container);
+  if('IntersectionObserver'in window){
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>entry.isIntersecting?start():stop());
+    },{threshold:.01});
+    observer.observe(container.closest('.hero')||container);
+  }else{
+    start();
+  }
+  setSize();
+  start();
+}
+function initStarBorderCards(root=document){
+  const selectors=[
+    '#page-home .hero-stats .s',
+    '.pcard','.layer','.emp','.mcell','.sol','.ccard','.panel','.techcol','.acard',
+    '.shift .col','.def-card','.vs-box','.oslayer','.capcard','.flywheel','.sentry',
+    '.metric-row .mc','.vmcard','.cc','.case-inline','.shot-slot','.cta-box',
+    '#page-solutions .solution-card'
+  ].join(',');
+  root.querySelectorAll(selectors).forEach(card=>{
+    if(card.dataset.starBorderReady)return;
+    card.dataset.starBorderReady='true';
+    card.classList.add('star-border-card');
+    ['top','bottom'].forEach(position=>{
+      const ray=document.createElement('span');
+      ray.className=`star-border-flow star-border-flow-${position}`;
+      ray.setAttribute('aria-hidden','true');
+      card.appendChild(ray);
+    });
+  });
+}
 function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';
   setTimeout(()=>{document.getElementById('formView').style.display='block';document.getElementById('successView').style.display='none';},200);}
@@ -375,5 +575,6 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 // init
 initSpotlightCards();
 initEmployeeCarousels();
+initStarBorderCards();
 showPage(location.hash.slice(1)||'home');
 
