@@ -83,6 +83,7 @@ function showPage(id,scrollTo){
   applyRevealStagger(cur);
   cur.querySelectorAll('.reveal').forEach(el=>{el.classList.remove('in');io.observe(el)});
   cur.querySelectorAll('[data-count]').forEach(el=>{co.observe(el)});
+  initSectionFields(cur);
   initStarBorderCards(cur);
   initScenarioBridge(cur);
   initSolutionCases(cur);
@@ -2876,6 +2877,91 @@ function initProductsPixelBlast(root=document){
   inView=container.offsetParent!==null;
   sync();
 }
+
+const sectionFieldBlocks=new Set();
+let sectionFieldRaf=0;
+const sectionFieldReduceMotion=()=>window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+const sectionFieldObserver='IntersectionObserver'in window?new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    entry.target.classList.toggle('field-live',entry.isIntersecting);
+    if(entry.isIntersecting)sectionFieldBlocks.add(entry.target);
+    else sectionFieldBlocks.delete(entry.target);
+  });
+  scheduleSectionFieldUpdate();
+},{rootMargin:'18% 0px 18% 0px',threshold:[0,.12,.38,.72]}):null;
+
+function initSectionFields(root=document){
+  const blocks=Array.from(root.children).filter(el=>el.matches?.('section,header.hero'));
+  blocks.forEach((block,index)=>{
+    block.classList.add('field-motion');
+    block.style.setProperty('--field-seed',String((index%7)+1));
+    block.style.setProperty('--field-delay',`${-((index%9)*1.37).toFixed(2)}s`);
+    block.style.setProperty('--field-current-angle',`${(((index%7)+1)-4)*.7}deg`);
+    if(!Array.from(block.children).some(child=>child.classList?.contains('section-field'))){
+      const field=document.createElement('span');
+      field.className='section-field';
+      field.setAttribute('aria-hidden','true');
+      block.insertBefore(field,block.firstChild);
+    }
+    if(!block.dataset.fieldMotionReady){
+      block.dataset.fieldMotionReady='true';
+      block.style.setProperty('--field-mx','50%');
+      block.style.setProperty('--field-my','46%');
+      block.addEventListener('pointermove',event=>{
+        if(sectionFieldReduceMotion())return;
+        const rect=block.getBoundingClientRect();
+        if(!rect.width||!rect.height)return;
+        const x=Math.max(0,Math.min(100,((event.clientX-rect.left)/rect.width)*100));
+        const y=Math.max(0,Math.min(100,((event.clientY-rect.top)/rect.height)*100));
+        block.style.setProperty('--field-mx',`${x.toFixed(2)}%`);
+        block.style.setProperty('--field-my',`${y.toFixed(2)}%`);
+      },{passive:true});
+      block.addEventListener('pointerleave',()=>{
+        block.style.setProperty('--field-mx','50%');
+        block.style.setProperty('--field-my','46%');
+      },{passive:true});
+      if(sectionFieldObserver)sectionFieldObserver.observe(block);
+    }
+    if(root.classList?.contains('active')&&block.offsetParent!==null){
+      block.classList.add('field-live');
+      sectionFieldBlocks.add(block);
+    }
+  });
+  scheduleSectionFieldUpdate();
+}
+
+function scheduleSectionFieldUpdate(){
+  if(sectionFieldRaf)return;
+  sectionFieldRaf=requestAnimationFrame(updateSectionFields);
+}
+
+function updateSectionFields(){
+  sectionFieldRaf=0;
+  const viewportHeight=innerHeight||1;
+  sectionFieldBlocks.forEach(block=>{
+    if(!block.isConnected||block.closest('.page')?.classList.contains('active')===false)return;
+    const rect=block.getBoundingClientRect();
+    if(rect.bottom<0||rect.top>viewportHeight)return;
+    const center=(rect.top+rect.height*.5)/viewportHeight;
+    const depth=Math.max(-1,Math.min(1,(.5-center)*2));
+    const progress=Math.max(0,Math.min(1,(viewportHeight-rect.top)/(viewportHeight+rect.height)));
+    const scrollOffset=scrollY*.08+progress*140;
+    block.style.setProperty('--field-depth',depth.toFixed(3));
+    block.style.setProperty('--field-progress',progress.toFixed(3));
+    block.style.setProperty('--field-depth-y',`${(depth*18).toFixed(2)}px`);
+    block.style.setProperty('--field-current-x',`${((progress-.5)*28).toFixed(2)}px`);
+    block.style.setProperty('--field-current-y',`${(depth*-26).toFixed(2)}px`);
+    block.style.setProperty('--field-skew',`${(depth*1.8).toFixed(3)}deg`);
+    block.style.setProperty('--field-current-bg',`${(50+depth*22).toFixed(2)}% ${(50+progress*18).toFixed(2)}%`);
+    block.style.setProperty('--field-scroll-a-x',`${(-scrollOffset).toFixed(2)}px`);
+    block.style.setProperty('--field-scroll-a-y',`${(scrollOffset*.6).toFixed(2)}px`);
+    block.style.setProperty('--field-scroll-b-x',`${(scrollOffset*.72).toFixed(2)}px`);
+    block.style.setProperty('--field-scroll-b-y',`${(scrollOffset*-.42).toFixed(2)}px`);
+  });
+}
+
+addEventListener('scroll',scheduleSectionFieldUpdate,{passive:true});
+addEventListener('resize',scheduleSectionFieldUpdate,{passive:true});
 
 function initStarBorderCards(root=document){
   const selectors=[
