@@ -20,5 +20,5 @@
 1. 根目录只保留入口、说明和工程配置。
 2. 页面代码放在 `src/`，运行时图片、视频、品牌素材放在 `assets/`。
 3. PPT、内容源稿、需求资料等放在 `resources/`，不要混入根目录。
-4. 文件名使用英文小写 kebab-case，例如 `beidou-logo.svg`、`fight-detection-0205.mp4`。
+4. 文件名使用英文小写 kebab-case，例如 `beidou-logo.svg`、`nebula-ai-analysis-platform.png`。
 5. 新增页面组件时，先看 `docs/naming-conventions.md`，保持类名、资源名和数据属性一致。

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="beamA" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#9fe3ff" stop-opacity=".58"/>
+      <stop offset=".48" stop-color="#5c9bff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#5227ff" stop-opacity=".34"/>
+    </linearGradient>
+    <linearGradient id="beamB" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#6fd9ff" stop-opacity=".34"/>
+      <stop offset=".5" stop-color="#4e7dff" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#5227ff" stop-opacity=".18"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-20%" width="160%" height="140%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="wide" x="-40%" y="-25%" width="180%" height="150%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+    <style>
+      .wide-beam{animation:pillarPulse 7.2s ease-in-out infinite}
+      .core-beam{animation:pillarPulse 5.8s ease-in-out infinite reverse}
+      .flow{stroke-dasharray:150 980;stroke-dashoffset:0;animation:pillarFlow 4.8s linear infinite}
+      .flow.b{animation-duration:6.2s;animation-delay:-1.4s}
+      .flow.c{animation-duration:5.4s;animation-delay:-2.2s}
+      @keyframes pillarFlow{to{stroke-dashoffset:-1130}}
+      @keyframes pillarPulse{0%,100%{opacity:.58}50%{opacity:.34}}
+    </style>
+  </defs>
+  <g fill="none" stroke-linecap="round">
+    <g class="wide-beam">
+      <animateTransform attributeName="transform" type="translate" values="-12 0;10 -10;-12 0" dur="12s" repeatCount="indefinite"/>
+      <path d="M728 -70 C650 105 652 245 713 350 C785 472 755 616 626 770 C585 820 566 870 566 968" stroke="url(#beamA)" stroke-width="72" opacity=".14" filter="url(#wide)"/>
+      <path d="M832 -74 C732 96 733 238 790 354 C865 510 830 645 702 780 C648 837 626 892 620 978" stroke="url(#beamB)" stroke-width="62" opacity=".12" filter="url(#wide)"/>
+      <path d="M786 -78 C718 88 724 238 780 350 C840 471 820 585 756 702 C722 764 700 854 716 974" stroke="url(#beamB)" stroke-width="44" opacity=".09" filter="url(#wide)"/>
+    </g>
+    <g class="core-beam">
+      <animateTransform attributeName="transform" type="translate" values="8 -6;-8 8;8 -6" dur="10s" repeatCount="indefinite"/>
+      <path d="M708 -80 C647 106 662 244 719 346 C785 465 756 612 630 766 C584 823 563 880 564 970" stroke="#a9efff" stroke-width="12" opacity=".58" filter="url(#soft)"/>
+      <path d="M832 -60 C740 122 744 250 798 360 C863 494 826 642 702 780 C650 838 628 890 622 974" stroke="#7bdcff" stroke-width="11" opacity=".46" filter="url(#soft)"/>
+      <path d="M780 -64 C720 112 726 254 780 352 C844 468 818 590 758 704 C724 768 704 852 720 972" stroke="#63a7ff" stroke-width="9" opacity=".32" filter="url(#soft)"/>
+    </g>
+    <g opacity=".7">
+      <path class="flow" d="M708 -80 C647 106 662 244 719 346 C785 465 756 612 630 766 C584 823 563 880 564 970" stroke="#d8fbff" stroke-width="9" filter="url(#soft)"/>
+      <path class="flow b" d="M832 -60 C740 122 744 250 798 360 C863 494 826 642 702 780 C650 838 628 890 622 974" stroke="#9fe3ff" stroke-width="8" filter="url(#soft)"/>
+      <path class="flow c" d="M780 -64 C720 112 726 254 780 352 C844 468 818 590 758 704 C724 768 704 852 720 972" stroke="#70a8ff" stroke-width="7" filter="url(#soft)"/>
+    </g>
+  </g>
+  <ellipse cx="720" cy="500" rx="190" ry="370" fill="#2f68ff" opacity=".07" filter="url(#wide)">
+    <animate attributeName="opacity" values=".045;.09;.045" dur="7s" repeatCount="indefinite"/>
+  </ellipse>
+</svg>

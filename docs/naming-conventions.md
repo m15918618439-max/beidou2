@@ -8,7 +8,7 @@
 beidou-logo.svg
 ai-security.png
 partner-casm-white.png
-fight-detection-0205.mp4
+nebula-ai-analysis-platform.png
 ```
 
 避免在正式文件名中使用中文、空格、括号和版本口语，例如：

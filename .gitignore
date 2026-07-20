@@ -1,4 +1,6 @@
 tmp/
+archive/
+.DS_Store
 ~$*
 *.pdf
 *.pptx

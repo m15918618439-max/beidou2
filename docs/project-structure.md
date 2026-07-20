@@ -13,18 +13,15 @@
 │       └── main.js
 ├── assets/
 │   ├── brand/
-│   │   ├── beidou-logo.png
 │   │   └── beidou-logo.svg
 │   ├── images/
 │   │   ├── ai-employees/
-│   │   └── partners/
-│   └── videos/
+│   │   ├── partners/
+│   │   ├── solutions/
+│   │   └── ui/
 ├── resources/
 │   └── source-documents/
-├── archive/
-│   └── releases/
-├── docs/
-└── tmp/
+└── docs/
 ```
 
 ## 目录职责
@@ -42,20 +39,19 @@
 线上页面会直接加载的素材，按类型归档：
 - `brand/`：品牌 logo、品牌图形、favicon 候选。
 - `images/`：页面图片，按业务模块继续分组。
-- `videos/`：页面视频、演示视频。
 
 `resources/`
 内容源资料和项目资源板块，例如 PPT、原始文案、客户资料、素材来源说明。这里的文件不一定会被网页直接加载。
 
-`archive/`
-历史发布版本、阶段性快照和不可直接维护的旧文件。
-
 `tmp/`
-临时截图、视觉验证图和一次性产物。该目录被 `.gitignore` 忽略，不作为正式项目结构的一部分。
+临时截图、视觉验证图、浏览器 profile 和一次性产物。该目录被 `.gitignore` 忽略，不作为正式项目结构的一部分，用完应删除。
+
+`archive/`
+历史发布版本、阶段性快照和不可直接维护的旧文件。默认不保留在工作目录；确需归档时应说明用途和过期时间。
 
 ## 新增文件规则
 
 1. 能被页面直接加载的文件放 `assets/`。
-2. 只用于整理、沟通、备份的文件放 `resources/` 或 `archive/`。
+2. 只用于整理、沟通的文件放 `resources/`；历史备份默认不要放进项目，确需保留再放 `archive/`。
 3. 不要在根目录新增图片、视频、PPT、临时 HTML。
 4. 新增模块素材时，优先建立业务子目录，例如 `assets/images/cases/`。
