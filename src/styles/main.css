@@ -1201,35 +1201,81 @@ section{padding:92px 0;position:relative}
 #page-about .about-cert{
   padding:112px 0 124px;
   background:
-    linear-gradient(180deg,rgba(9,15,26,.86),rgba(7,12,21,.98)),
+    linear-gradient(120deg,rgba(31,48,83,.14),transparent 34%,rgba(182,151,84,.08) 70%,transparent),
+    linear-gradient(180deg,rgba(9,15,26,.88),rgba(7,12,21,.98)),
     #070c15;
 }
 #page-about .about-honor-grid{
+  --honor-wheat-left:url("../../assets/images/about/wheat-left.svg");
+  --honor-wheat-right:url("../../assets/images/about/wheat-right.svg");
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
   margin-top:58px;
-  border-top:1px solid rgba(112,166,234,.2);
-  border-left:1px solid rgba(112,166,234,.2);
 }
 #page-about .about-honor-grid div{
-  min-height:112px;
-  padding:24px 18px;
+  position:relative;
+  min-height:124px;
+  padding:30px 58px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:rgba(217,229,247,.8);
+  color:rgba(235,241,252,.9);
   font-size:15px;
   line-height:1.55;
-  border-right:1px solid rgba(112,166,234,.2);
-  border-bottom:1px solid rgba(112,166,234,.2);
-  background:rgba(10,20,37,.46);
-  transition:color .25s ease,background .25s ease,box-shadow .25s ease;
+  font-weight:700;
+  letter-spacing:.02em;
+  border:1px solid rgba(129,164,220,.22);
+  border-radius:8px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.01)),
+    rgba(10,20,37,.58);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 18px 38px rgba(0,0,0,.16);
+  overflow:hidden;
+  isolation:isolate;
+  transition:color .25s ease,background .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+#page-about .about-honor-grid div::before,
+#page-about .about-honor-grid div::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:42px;
+  height:74px;
+  opacity:.92;
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+  transform:translateY(-50%);
+  transition:opacity .25s ease,transform .25s ease,filter .25s ease;
+}
+#page-about .about-honor-grid div::before{
+  left:12px;
+  background-image:var(--honor-wheat-left);
+}
+#page-about .about-honor-grid div::after{
+  right:12px;
+  background-image:var(--honor-wheat-right);
 }
 #page-about .about-honor-grid div:hover{
-  color:#f4f8ff;
-  background:rgba(18,42,78,.72);
-  box-shadow:inset 0 0 28px rgba(48,132,255,.12);
+  color:#fff7dd;
+  border-color:rgba(226,190,105,.45);
+  background:
+    linear-gradient(180deg,rgba(226,190,105,.1),rgba(255,255,255,.018)),
+    rgba(18,42,78,.74);
+  box-shadow:inset 0 0 32px rgba(226,190,105,.11),0 22px 46px rgba(0,0,0,.24);
+  transform:translateY(-3px);
+}
+#page-about .about-honor-grid div:hover::before{
+  opacity:1;
+  filter:drop-shadow(0 0 12px rgba(255,220,94,.36));
+  transform:translate(-3px,-50%) scale(1.04);
+}
+#page-about .about-honor-grid div:hover::after{
+  opacity:1;
+  filter:drop-shadow(0 0 12px rgba(255,220,94,.36));
+  transform:translate(3px,-50%) scale(1.04);
 }
 #page-about .about-partners-section{
   padding:112px 0 118px;
@@ -1575,7 +1621,13 @@ section{padding:92px 0;position:relative}
     margin-top:42px;
   }
   #page-about .about-honor-grid div{
-    min-height:78px;
+    min-height:94px;
+    padding:24px 56px;
+  }
+  #page-about .about-honor-grid div::before,
+  #page-about .about-honor-grid div::after{
+    width:36px;
+    height:64px;
   }
   #page-about .about-partners-section .partners .sub{
     margin:14px 0 38px;
